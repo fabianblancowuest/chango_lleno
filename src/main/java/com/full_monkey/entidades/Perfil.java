@@ -22,9 +22,9 @@ public class Perfil {
     private String nombre;
     private String apellido;
     private Integer dni;
+    @Temporal(TemporalType.DATE)
     private Date nacimiento;
     private String domicilio;
-    @Temporal(TemporalType.DATE)
     private String email;
     @OneToMany
     private List<Compra> historial;
