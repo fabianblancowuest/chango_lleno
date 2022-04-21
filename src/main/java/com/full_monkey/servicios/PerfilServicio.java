@@ -17,7 +17,7 @@ public class PerfilServicio {
     private PerfilRepository pr;
 
     public Perfil crearPerfil(String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
-
+        validator(nombre, apellido, dni, nacimiento, email, domicilio);
         Perfil p = new Perfil();
         p.setApellido(apellido);
         p.setDni(dni);
@@ -37,7 +37,7 @@ public class PerfilServicio {
 
     public Perfil modifPerfil(String id, String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
         Optional<Perfil> respuesta = pr.findById(id);
-
+        validator(nombre, apellido, dni, nacimiento, email, domicilio);
         if (respuesta.isPresent()) {
             Perfil p = respuesta.get();
             p.setApellido(apellido);
