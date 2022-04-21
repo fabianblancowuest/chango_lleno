@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PerfilServicio {
@@ -16,6 +17,7 @@ public class PerfilServicio {
     @Autowired
     private PerfilRepository pr;
 
+    @Transactional
     public Perfil crearPerfil(String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
         validator(nombre, apellido, dni, nacimiento, email, domicilio);
         Perfil p = new Perfil();
@@ -35,6 +37,7 @@ public class PerfilServicio {
         return pr.save(p);
     }
 
+    @Transactional
     public Perfil modifPerfil(String id, String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
         Optional<Perfil> respuesta = pr.findById(id);
         validator(nombre, apellido, dni, nacimiento, email, domicilio);
@@ -59,6 +62,7 @@ public class PerfilServicio {
         }
     }
     
+    @Transactional
     public void eliminarPerfil(String id) {
         pr.delete(pr.getById(id));
     }
