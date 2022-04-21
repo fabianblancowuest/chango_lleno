@@ -21,7 +21,7 @@ public class Perfil {
     private String fotoPerfil;
     private String nombre;
     private String apellido;
-    private Integer dni;
+    private Long dni;
     @Temporal(TemporalType.DATE)
     private Date nacimiento;
     private String domicilio;
@@ -34,7 +34,7 @@ public class Perfil {
     public Perfil() {
     }
 
-    public Perfil(String fotoPerfil, String nombre, String apellido, Integer dni, Date nacimiento, String domicilio, String email, List<Compra> historial, Carrito pendiente) {
+    public Perfil(String fotoPerfil, String nombre, String apellido, Long dni, Date nacimiento, String domicilio, String email, List<Compra> historial, Carrito pendiente) {
         this.fotoPerfil = fotoPerfil;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -78,11 +78,11 @@ public class Perfil {
         this.apellido = apellido;
     }
 
-    public Integer getDni() {
+    public Long getDni() {
         return dni;
     }
 
-    public void setDni(Integer dni) {
+    public void setDni(Long dni) {
         this.dni = dni;
     }
 
