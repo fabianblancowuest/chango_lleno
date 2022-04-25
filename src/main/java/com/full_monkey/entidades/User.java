@@ -23,6 +23,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+<<<<<<< HEAD
     public User() {
     }
 
@@ -41,6 +42,8 @@ public class User {
         this.id = id;
     }
 
+=======
+>>>>>>> bc7ba6981bec575e3b1d2beba00feb5208032f92
     public String getUsername() {
         return username;
     }
@@ -73,5 +76,10 @@ public class User {
         this.role = role;
     }
     
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> bc7ba6981bec575e3b1d2beba00feb5208032f92
 }
 
