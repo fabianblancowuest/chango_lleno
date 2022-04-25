@@ -78,7 +78,7 @@ public class Perfil {
         this.apellido = apellido;
     }
 
-    public Integer getDni() {
+    public Long getDni() {
         return dni;
     }
 
