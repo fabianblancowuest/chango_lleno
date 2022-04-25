@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PerfilRepository extends JpaRepository<Perfil, String> {
 
-  @Query("SELECT p FROM Perfil p WHERE p.dni = :dni")
-  public Perfil findByDni(@Param("dni") Long dni);
+    @Query("SELECT p FROM Perfil p WHERE p.dni = :dni")
+    public Perfil findByDni(@Param("dni") Long dni);
+
 }
