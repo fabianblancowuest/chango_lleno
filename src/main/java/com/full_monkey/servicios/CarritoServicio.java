@@ -19,7 +19,6 @@ public class CarritoServicio {
     @Autowired
     private UserRepository userRepository;
     
-    //Se crea con el usuario
     @Transactional
     public void crearCarrito() {
         Carrito carrito = new Carrito();
@@ -27,13 +26,7 @@ public class CarritoServicio {
     }
 
     @Transactional
-    public void eliminarCarrito(String idCarrito, String idUser) throws Exception {
-        validadarIdUsuario(idCarrito, idUser);
-        User user = userRepository.findById(idUser).get();
-        if(!user.getPerfil().getPendiente().getId().equals(idCarrito)){
-            throw new Exception("No tiene permisos para haceder a este carrito");
-        }
- 
+    public void eliminarCarrito(String idCarrito) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
@@ -44,8 +37,7 @@ public class CarritoServicio {
         }
     }
     @Transactional
-    public void poner(String idCarrito, List<Producto> productos, String idUser) throws Exception {
-        validadarIdUsuario(idCarrito, idUser);
+    public void poner(String idCarrito, List<Producto> productos) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         Double total = 0D;
         if (respuesta.isPresent()) {
@@ -63,8 +55,7 @@ public class CarritoServicio {
     }
 
     @Transactional
-    public void sacar(String idCarrito, List<Producto> productos, String idUser) throws Exception {
-        validadarIdUsuario(idCarrito, idUser);
+    public void sacar(String idCarrito, List<Producto> productos) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (productos.isEmpty()) {
             throw new Exception("Lista de productos vacia");
@@ -81,7 +72,7 @@ public class CarritoServicio {
         }
     }
     @Transactional
-    public void precioDeEnvio(String idCarrito, Double precio_envio, String idUser) throws Exception {
+    public void precioDeEnvio(String idCarrito, Double precio_envio) throws Exception {
         validarPrecioEnvio(precio_envio);
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
@@ -99,8 +90,7 @@ public class CarritoServicio {
         }
     }
     @Transactional
-    public void modificarPrecioDeEnvio(String idCarrito, Double precio_envio, String idUser) throws Exception {
-        validadarIdUsuario(idCarrito, idUser);
+    public void modificarPrecioDeEnvio(String idCarrito, Double precio_envio) throws Exception {   
         validarPrecioEnvio(precio_envio);
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
@@ -120,14 +110,8 @@ public class CarritoServicio {
             throw new Exception("No existe el carrito");
         }
     }
-    public void validadarIdUsuario(String idCarrito, String idUser) throws Exception{
-        User user = userRepository.findById(idUser).get();
-        if(!user.getPerfil().getPendiente().getId().equals(idCarrito)){
-            throw new Exception("No tiene permisos para haceder a este carrito");
-        }
-    }
     public void validarPrecioEnvio(Double precio_envio) throws Exception{
-        if(precio_envio<0D||precio_envio!=null){
+        if(precio_envio<0D||precio_envio==null){
             throw new Exception("");
         }
     }
