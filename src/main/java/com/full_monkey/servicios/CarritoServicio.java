@@ -2,9 +2,7 @@ package com.full_monkey.servicios;
 
 import com.full_monkey.entidades.Carrito;
 import com.full_monkey.entidades.Producto;
-import com.full_monkey.entidades.User;
 import com.full_monkey.repository.CarritoRepository;
-import com.full_monkey.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +14,6 @@ public class CarritoServicio {
    
     @Autowired
     private CarritoRepository carritoRepository;
-    @Autowired
-    private UserRepository userRepository;
     
     @Transactional
     public void crearCarrito() {
@@ -67,6 +63,7 @@ public class CarritoServicio {
                 carritoRepository.delete(carrito);
             }
             carrito.setUnidades(carrito.getUnidades() - productos.size());
+            carritoRepository.save(carrito);
         } else {
             throw new Exception("No existe el carrito");
         }
@@ -77,7 +74,6 @@ public class CarritoServicio {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
-            //El carrito puede existir pero no tener productos
             if (!carrito.getProductos().isEmpty()) {
                 carrito.setPrecio_envio(precio_envio);
                 carrito.setPrecio_total(carrito.getPrecio_total() + precio_envio);
@@ -95,16 +91,12 @@ public class CarritoServicio {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
-            //El carrito puede existir pero no tener productos
             if (!carrito.getProductos().isEmpty()) {
-                //precio total le saco el evio anterior
-                carrito.setPrecio_total(carrito.getPrecio_total() - carrito.getPrecio_envio());
-                //precio total con el nuevo precio de envio
+                carrito.setPrecio_total(carrito.getPrecio_total() - carrito.getPrecio_envio()+ precio_envio);
                 carrito.setPrecio_envio(precio_envio);
-                carrito.setPrecio_total(carrito.getPrecio_total() + precio_envio);
                 carritoRepository.save(carrito);
             } else {
-                throw new Exception("Carrito vacio");
+                throw new Exception("Carrito vacío");
             }
         } else {
             throw new Exception("No existe el carrito");
@@ -112,7 +104,7 @@ public class CarritoServicio {
     }
     public void validarPrecioEnvio(Double precio_envio) throws Exception{
         if(precio_envio<0D||precio_envio==null){
-            throw new Exception("");
+            throw new Exception("Valor inválido");
         }
     }
     
