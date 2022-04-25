@@ -12,4 +12,8 @@ public interface PerfilRepository extends JpaRepository<Perfil, String> {
 
     @Query("SELECT p FROM Perfil p WHERE p.dni = :dni")
     public Perfil findByDni(@Param("dni") Long dni);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 947dc35b7206946abc47c76fd8c4e2a2a304446c
 }
