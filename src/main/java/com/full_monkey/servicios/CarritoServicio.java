@@ -18,6 +18,7 @@ public class CarritoServicio {
     @Transactional
     public void crearCarrito() {
         Carrito carrito = new Carrito();
+        carrito.setPrecio_total(0D);
         carritoRepository.save(carrito);
     }
 
@@ -35,15 +36,15 @@ public class CarritoServicio {
     @Transactional
     public void poner(String idCarrito, List<Producto> productos) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
-        Double total = 0D;
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
             carrito.setProductos(productos);
+            Double total = carrito.getPrecio_total();
             carrito.setUnidades(carrito.getProductos().size());
             for (Producto aux : carrito.getProductos()) {
                 total += aux.getPrecio();
             }
-            carrito.setPrecio_envio(total);
+            carrito.setPrecio_total(total);
             carritoRepository.save(carrito);
         } else {
             throw new Exception("No existe el carrito");
@@ -76,7 +77,6 @@ public class CarritoServicio {
             Carrito carrito = respuesta.get();
             if (!carrito.getProductos().isEmpty()) {
                 carrito.setPrecio_envio(precio_envio);
-                carrito.setPrecio_total(carrito.getPrecio_total() + precio_envio);
                 carritoRepository.save(carrito);
             } else {
                 throw new Exception("Carrito vacio");
@@ -92,7 +92,6 @@ public class CarritoServicio {
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
             if (!carrito.getProductos().isEmpty()) {
-                carrito.setPrecio_total(carrito.getPrecio_total() - carrito.getPrecio_envio()+ precio_envio);
                 carrito.setPrecio_envio(precio_envio);
                 carritoRepository.save(carrito);
             } else {
