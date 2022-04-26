@@ -28,7 +28,12 @@ public class CarritoServicio {
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
             carritoRepository.delete(carrito);
-
+            // problemas con el set del precio
+            Carrito carrito2 = new Carrito();
+            carrito2.setPrecio_total(0D);
+            carritoRepository.save(carrito2);
+            
+//            carritoRepository.save(new Carrito());
         } else {
             throw new Exception("No existe el carrito");
         }
