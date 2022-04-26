@@ -33,7 +33,7 @@ public class CarritoServicio {
             carrito2.setPrecio_total(0D);
             carritoRepository.save(carrito2);
             
-//            carritoRepository.save(new Carrito());
+//            carritoRepository.save(new Carrito()); otra solución seteando el precioTotal con cero en el constructor vacio
         } else {
             throw new Exception("No existe el carrito");
         }
