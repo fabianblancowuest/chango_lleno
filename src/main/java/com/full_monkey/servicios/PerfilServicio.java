@@ -36,9 +36,16 @@ public class PerfilServicio {
         p.setPendiente(pendiente);
         return pr.save(p);
     }
+    
+    public Perfil findById(String id)throws Exception{
+        if(pr.findById(id)== null){
+            throw new Exception("No Existe Un Perfil Con Ese Id");
+        }
+        return pr.getById(id);
+    }
 
     @Transactional
-    public Perfil modifPerfil(String id, String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
+    public Perfil modifPerfil(String id, String nombre, String apellido, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
         Optional<Perfil> respuesta = pr.findById(id);
         validator(nombre, apellido, dni, nacimiento, email, domicilio);
         if (respuesta.isPresent()) {
@@ -52,10 +59,8 @@ public class PerfilServicio {
             } else {
                 p.setFotoPerfil(fotoPerfil);
             }
-            p.setHistorial(historial);
             p.setNacimiento(nacimiento);
             p.setNombre(nombre);
-            p.setPendiente(pendiente);
             return pr.save(p);
         } else {
             throw new Exception("No existe ese perfil");
@@ -85,6 +90,9 @@ public class PerfilServicio {
         }
         if (domicilio == null || domicilio.trim().isEmpty()) {
             throw new Exception("necesita una domicilio");
+        }
+        if (pr.findByDni(dni)!=null){
+            throw new Exception("El Dni ya le pertenece a otro usuario");
         }
     }
 }
