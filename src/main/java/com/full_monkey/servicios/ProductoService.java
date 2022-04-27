@@ -1,4 +1,4 @@
-package com.full_monkey.service;
+package com.full_monkey.servicios;
 
 import com.full_monkey.entidades.Producto;
 import com.full_monkey.repository.ProductoRepository;

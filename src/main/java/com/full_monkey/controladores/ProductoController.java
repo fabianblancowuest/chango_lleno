@@ -1,7 +1,6 @@
-package com.full_monkey.controller;
+package com.full_monkey.controladores;
 import com.full_monkey.entidades.Producto;
-import com.full_monkey.repository.ProductoRepository;
-import com.full_monkey.service.ProductoService;
+import com.full_monkey.servicios.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,9 +11,6 @@ import java.util.List;
 @Controller
 @RequestMapping(path = "producto")
 public class ProductoController {
-
-    @Autowired
-    private ProductoRepository productoRepository;
 
     @Autowired
     private ProductoService productoService;
