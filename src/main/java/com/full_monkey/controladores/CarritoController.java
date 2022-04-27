@@ -23,9 +23,22 @@ public class CarritoController {
 
     @Autowired
     CarritoServicio carritoServicio;
-    
+
     @Autowired
     ProductoRepository productoRepository;
+
+
+    @PostMapping("/crearCarrito")
+    public String crearCarrito(HttpSession session) {
+        carritoServicio.crearCarrito();
+        return "";
+    }
+    
+    @PostMapping("/crearCarrito")
+    public String crearCarrito() {
+        
+        return "";
+    }
 
     @PostMapping("/cargar")
     public String cargarCarrito(ModelMap modelo, @RequestParam String idProducto, @RequestParam Integer unidades, HttpSession session) {
@@ -48,6 +61,11 @@ public class CarritoController {
             return "";
         }
     }
+    
+    @PostMapping("/cargar")
+    public String cargarCarrito(){
+        return " ";
+    }
 
     @PostMapping("/sacar")
     public String sacarDelCarrito(ModelMap modelo, @RequestParam String idProducto, @RequestParam Integer unidades, HttpSession session) {
@@ -56,7 +74,7 @@ public class CarritoController {
                 throw new Exception();
             }
             User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity
-            
+
             List<Producto> productos = new ArrayList();
             Producto prod = productoRepository.findById(idProducto).get();
             prod.setStock(prod.getStock() + unidades);
@@ -71,10 +89,21 @@ public class CarritoController {
         }
     }
     
+    @GetMapping("/sacar")
+    public String sacarDelCarrito(ModelMap modelo, HttpSession session){
+        User u = (User) session.getAttribute("usuariosession");
+
+        List<Producto> producto = productoRepository.findAll();
+
+        modelo.addAttribute("listaProductos", producto);
+        return "";
+    }
+    
+
     @PostMapping("/elimanar")
-    public String eliminarCarrito(ModelMap modelo, HttpSession session){
-        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity  
-        //si se crea con el usuario no lo puedo eliminar  
+    public String eliminarCarrito(ModelMap modelo, HttpSession session) {
+        User u = (User) session.getAttribute("usuariosession");
+   
         try {
             carritoServicio.eliminarCarrito(u.getPerfil().getPendiente().getId());
         } catch (Exception ex) {
@@ -83,35 +112,55 @@ public class CarritoController {
         return "";
     }
     
-    @PostMapping("/precioEnvio")
-    public String precioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio){
-        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity 
-        try { 
-            carritoServicio.precioDeEnvio(u.getPerfil().getPendiente().getId(), precioEnvio);          
-        } catch (Exception ex) { 
-            Logger.getLogger(CarritoController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-      return ""; 
-    }
-    
-    public String modificarPrecioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio){
-         User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity 
-         try { 
-            carritoServicio.modificarPrecioDeEnvio(u.getPerfil().getPendiente().getId(), precioEnvio);   
-        } catch (Exception ex) { 
-            Logger.getLogger(CarritoController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-      return ""; 
-    }
-    
-    @GetMapping("/mostrarProductos")
-    public String mostrarProductosDelCarrito(ModelMap modelo, HttpSession session){
-        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity  
-        
-        List<Producto> producto = productoRepository.findAll();
-        
-        modelo.addAttribute("listaProductos",producto);
+    @GetMapping("/eliminar")
+    public String eliminarCarrito(){
         return "";
+    }
+
+    @PostMapping("/precioEnvio")
+    public String precioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio) {
+        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity 
+        try {
+            carritoServicio.precioDeEnvio(u.getPerfil().getPendiente().getId(), precioEnvio);
+        } catch (Exception ex) {
+            Logger.getLogger(CarritoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+    
+    @GetMapping("/precioEnvio")
+    public String seleccionarPrecioEnvio(){
         
+        return "";
+    }
+
+    @PostMapping("/modificarEnvio")
+    public String modificarPrecioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio) {
+        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity 
+        try {
+            carritoServicio.modificarPrecioDeEnvio(u.getPerfil().getPendiente().getId(), precioEnvio);
+        } catch (Exception ex) {
+            Logger.getLogger(CarritoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+    
+    @GetMapping("/moificarEnvio")
+    public String mostrarPrecioEnvio(ModelMap modelo, HttpSession session) {
+        User u = (User) session.getAttribute("usuariosession");
+
+        modelo.put("precioEnvio", u.getPerfil().getPendiente().getPrecio_envio());
+        return "";
+    }
+
+    @GetMapping("/mostrarProductos")
+    public String mostrarProductosDelCarrito(ModelMap modelo, HttpSession session) {
+        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity  
+
+        List<Producto> producto = productoRepository.findAll();
+
+        modelo.addAttribute("listaProductos", producto);
+        return "";
+
     }
 }

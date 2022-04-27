@@ -16,14 +16,17 @@ public class CarritoServicio {
     private CarritoRepository carritoRepository;
     
     @Transactional
-    public void crearCarrito() {
+    public Carrito crearCarrito() {
         Carrito carrito = new Carrito();
         carrito.setPrecio_total(0D);
-        carritoRepository.save(carrito);
+        return carritoRepository.save(carrito);
     }
 
     @Transactional
     public void eliminarCarrito(String idCarrito) throws Exception {
+        
+        //Retornar unidades a stock 
+        
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
