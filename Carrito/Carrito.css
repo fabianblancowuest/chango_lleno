@@ -1,0 +1,461 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.MainCarrito {
+
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    background: #FFFFFF;
+}
+
+.ImgLogo {
+    position: absolute;
+    width: 98px;
+    height: 85px;
+    left: 43px;
+    top: 1px;
+}
+
+.ImgLogo1 {
+    position: absolute;
+    width: 98px;
+    height: 85px;
+    left: 43px;
+    top: 1px;
+}
+.Encabezado {
+    position: absolute;
+    width: 1366px;
+    height: 97px;
+    left: 0px;
+    top: 0px;
+
+    background: #FFDC05;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+.BotonIMGPerfil {
+
+
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    left: 1271px;
+    top: 21px;
+
+}
+
+.TextProducto{
+
+
+    position: absolute;
+    width: 136px;
+    height: 40px;
+    left: 59px;
+    top: 102px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.TextPrecioPorUnidad {
+
+    position: absolute;
+    width: 265px;
+    height: 40px;
+    left: 653px;
+    top: 108px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+.TextCantidad {
+
+
+    position: absolute;
+    width: 134px;
+    height: 40px;
+    left: 954px;
+    top: 108px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+.divListaProductos {
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 1351px;
+    height: 104px;
+    left: 0px;
+    top: 159px;
+
+
+}
+
+.Rectangulo1{
+
+
+    position: absolute;
+    width: 1282px;
+    height: 5px;
+    left: 43px;
+    top: 154px;
+
+    background: #FFDC05;}
+
+
+
+.DivProductosCarrito {
+
+    position: absolute;
+    width: 1351px;
+    height: 104px;
+    left: 0px;
+    top: 159px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+
+}
+
+
+.DivProductoCarrito {
+
+    position: static;
+    width: 1351px;
+    height: 104px;
+    left: 0px;
+    top: 0px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+.DivProductoCarrito1 {
+
+    position: static;
+    width: 1351px;
+    height: 104px;
+    left: 0px;
+    top: 0px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+.DivProductoCarrito2 {
+
+    position: static;
+    width: 1351px;
+    height: 104px;
+    left: 0px;
+    top: 0px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+.ImgProducto {
+
+    position: absolute;
+    width: 109px;
+    height: 84px;
+    left: 72px;
+    top: 11px;
+}
+.ImgProducto1 {
+
+    width: 109px;
+    height: 84px;
+    left: 72px;
+    top: 11px;
+}
+.NombreProducto {
+
+    position: absolute;
+    width: 85px;
+    height: 33px;
+    left: 253px;
+    top: 37px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.NroPrecioUnidad {
+
+    position: absolute;
+    width: 76px;
+    height: 33px;
+    left: 748px;
+    top: 37px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.NroSubtotalUnidad {
+
+    position: absolute;
+    width: 81px;
+    height: 33px;
+    left: 1152px;
+    top: 37px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.BotonImgEliminar {
+
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 1285px;
+    top: 27px;
+    cursor: pointer;
+}
+
+.ImgMenos {
+
+    position: absolute;
+    width: 43px;
+    height: 40px;
+    left: 958px;
+    top: 37px;
+}
+
+
+
+.NroCantidad {
+
+    position: absolute;
+    width: 16px;
+    height: 33px;
+    left: 1021px;
+    top: 37px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.ImgMas {
+
+    position: absolute;
+    width: 43px;
+    height: 40px;
+    left: 1052px;
+    top: 37px;
+
+}
+
+
+.RectanguloProducto {
+    position: absolute;
+    width: 1282px;
+    height: 5px;
+    left: 43px;
+    top: 99px;
+
+    background: #C4C4C4;
+}
+
+
+.DivTotal {
+    position: relative;
+    width: 500px;
+    height: 220px;
+    left: 851px;
+    top: 0px;
+
+}
+
+.TextSubtotal {
+    position: absolute;
+    width: 131px;
+    height: 41px;
+    left: 1124px;
+    top: 108px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+
+    color: #000000;
+}
+.TextSubtotal2{
+
+
+    position: absolute;
+    width: 131px;
+    height: 40px;
+    left: 106px;
+    top: 25px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.NroSubtotal{
+
+position: absolute;
+width: 81px;
+height: 33px;
+left: 298px;
+top: 24px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 32px;
+/* identical to box height */
+
+color: #000000;
+}
+
+
+
+.TextTotal {
+
+     position: absolute;
+     width: 81px;
+     height: 40px;
+     left: 131px;
+     top: 77px;
+
+     font-family: 'Inder';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 32px;
+     line-height: 40px;
+     /* identical to box height */
+
+     color: #000000;
+ }
+
+
+
+.NroTotal{
+
+position: absolute;
+width: 81px;
+height: 33px;
+left: 298px;
+top: 77px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 32px;
+/* identical to box height */
+
+color: #000000
+
+;
+}
+
+
+
+.ImgComprar {
+
+position: absolute;
+width: 223px;
+height: 59px;
+left: 233px;
+top: 130px;
+
+background: #000000;}
