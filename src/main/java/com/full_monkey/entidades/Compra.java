@@ -1,5 +1,7 @@
 package com.full_monkey.entidades;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +20,8 @@ public class Compra {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    @Temporal(TemporalType.DATE)
-    private Date fecha_compra;
+    
+    private LocalDateTime fecha_compra;
     @OneToOne
     private Carrito carro;
     private String metodopago;
@@ -28,8 +30,8 @@ public class Compra {
     public Compra() {
     }
 
-    public Compra(Date fecha_compra, Carrito carro, String metodopago, Double precio_final) {
-        this.fecha_compra = fecha_compra;
+    public Compra(LocalDateTime fecha_compra, Carrito carro, String metodopago, Double precio_final) {
+        this.fecha_compra = fecha_compra.now();
         this.carro = carro;
         this.metodopago = metodopago;
         this.precio_final = precio_final;
@@ -43,11 +45,11 @@ public class Compra {
         this.id = id;
     }
 
-    public Date getFecha_compra() {
+    public LocalDateTime getFecha_compra() {
         return fecha_compra;
     }
 
-    public void setFecha_compra(Date fecha_compra) {
+    public void setFecha_compra(LocalDateTime fecha_compra) {
         this.fecha_compra = fecha_compra;
     }
 
