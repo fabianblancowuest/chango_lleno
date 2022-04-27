@@ -17,17 +17,19 @@ public class Producto {
     protected Integer stock;
     protected String categoria;
     protected String descripcion;
+    protected Integer unidades;
 
     public Producto() {
     }
 
-    public Producto(String img, String nombre, Double precio, Integer stock, String area, String descripcion) {
+    public Producto(String img, String nombre, Double precio, Integer stock, String area, String descripcion,Integer unidades) {
         this.img = img;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
         this.categoria = area;
         this.descripcion = descripcion;
+        this.unidades = unidades;
     }
 
     public String getId() {
@@ -85,6 +87,9 @@ public class Producto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
+    public Integer getUnidades() { return unidades; }
+
+    public void setUnidades(Integer unidades) { this.unidades = unidades; }
 }
 
