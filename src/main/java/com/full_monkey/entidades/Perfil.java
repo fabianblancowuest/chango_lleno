@@ -25,6 +25,7 @@ public class Perfil {
     @Temporal(TemporalType.DATE)
     private Date nacimiento;
     private String domicilio;
+    private Long tarjeta;
     private String email;
     @OneToMany
     private List<Compra> historial;
@@ -34,7 +35,7 @@ public class Perfil {
     public Perfil() {
     }
 
-    public Perfil(String fotoPerfil, String nombre, String apellido, Long dni, Date nacimiento, String domicilio, String email, List<Compra> historial, Carrito pendiente) {
+    public Perfil(Long tarjeta,String fotoPerfil, String nombre, String apellido, Long dni, Date nacimiento, String domicilio, String email, List<Compra> historial, Carrito pendiente) {
         this.fotoPerfil = fotoPerfil;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -44,8 +45,18 @@ public class Perfil {
         this.email = email;
         this.historial = historial;
         this.pendiente = pendiente;
+        this.tarjeta = tarjeta;
     }
 
+    public Long getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(Long tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+    
     public String getId() {
         return id;
     }
