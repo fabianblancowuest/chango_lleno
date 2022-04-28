@@ -18,7 +18,7 @@ public class PerfilServicio {
     private PerfilRepository pr;
 
     @Transactional
-    public Perfil crearPerfil(String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
+    public Perfil crearPerfil(String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil,Long tarjeta) throws Exception {
         validator(nombre, apellido, dni, nacimiento, email, domicilio);
         Perfil p = new Perfil();
         p.setApellido(apellido);
@@ -34,9 +34,11 @@ public class PerfilServicio {
         p.setNacimiento(nacimiento);
         p.setNombre(nombre);
         p.setPendiente(pendiente);
+        p.setTarjeta(tarjeta);
         return pr.save(p);
     }
     
+    @Transactional(readOnly = true)
     public Perfil findById(String id)throws Exception{
         if(pr.findById(id)== null){
             throw new Exception("No Existe Un Perfil Con Ese Id");
@@ -45,7 +47,7 @@ public class PerfilServicio {
     }
 
     @Transactional
-    public Perfil modifPerfil(String id, String nombre, String apellido, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
+    public Perfil modifPerfil(String id, String nombre, String apellido, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil,Long tarjeta) throws Exception {
         Optional<Perfil> respuesta = pr.findById(id);
         validator(nombre, apellido, dni, nacimiento, email, domicilio);
         if (respuesta.isPresent()) {
@@ -61,6 +63,7 @@ public class PerfilServicio {
             }
             p.setNacimiento(nacimiento);
             p.setNombre(nombre);
+            p.setTarjeta(tarjeta);
             return pr.save(p);
         } else {
             throw new Exception("No existe ese perfil");
