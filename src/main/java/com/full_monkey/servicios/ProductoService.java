@@ -35,6 +35,10 @@ public class ProductoService {
             throw new Exception("No se puede eliminar ese producto porque no existe en la base de datos");
         }
     }
+    
+    public List<Producto> findAll(){
+        return productoRepository.findAll();
+    }
 
     public Producto getOne(String id) {
         return productoRepository.getOne(id);

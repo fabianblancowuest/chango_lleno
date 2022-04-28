@@ -52,6 +52,16 @@ public class CarritoServicio {
     }
 
     @Transactional
+    public List<Producto> mostrarProductos(String idCarrito) throws Exception{
+        Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
+        if (respuesta.isPresent()) {
+           return respuesta.get().getProductos();
+        } else {
+            throw new Exception("No existe el carrito");
+        }
+    }
+    
+    @Transactional
     public void sacar(String idCarrito, List<Producto> productos) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (productos.isEmpty()) {
