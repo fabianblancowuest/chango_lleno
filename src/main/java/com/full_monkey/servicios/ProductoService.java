@@ -5,8 +5,8 @@ import com.full_monkey.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.*;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @SuppressWarnings("deprecation")
@@ -14,14 +14,17 @@ public class ProductoService {
     @Autowired
     private ProductoRepository productoRepository;
 
+    @Transactional(readOnly = true)
     public List<Producto> findByNombre(String nombre) {
         return productoRepository.finByNombre(nombre);
     }
 
+    @Transactional(readOnly = true)
     public List<Producto> finByCategoria (String categoria){
         return productoRepository.finByCategoria(categoria);
     }
 
+    @Transactional
     public void crearProducto(Producto producto) throws Exception {
         validar(producto.getNombre(),producto.getPrecio(),producto.getStock(),producto.getCategoria(),producto.getDescripcion(),producto.getImg());
         productoRepository.save(producto);
@@ -36,15 +39,18 @@ public class ProductoService {
         }
     }
     
+    @Transactional(readOnly = true)
     public List<Producto> findAll(){
         return productoRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
     public Producto getOne(String id) {
         return productoRepository.getOne(id);
 
     }
 
+    @Transactional
     public Producto modificarProducto(Producto producto) throws Exception {
 
         validar(producto.getNombre(),producto.getPrecio(),producto.getStock(),producto.getCategoria(),producto.getDescripcion(),producto.getImg());
@@ -65,7 +71,7 @@ public class ProductoService {
 
     }
 
-    public void validar(String nombre,double precio,Integer stock,String categoria,String descripcion,String img) throws Exception {
+    public void validar(String nombre,Double precio,Integer stock,String categoria,String descripcion,String img) throws Exception {
         if (nombre == null || nombre.isEmpty()){
             throw new Exception("El producto no puede estar vacio");
         }
