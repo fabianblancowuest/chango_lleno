@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class User {
+public class Usuario {
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -23,10 +23,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public User() {
+    public Usuario() {
     }
 
-    public User(String username, String password, Perfil perfil, Role role) {
+    public Usuario(String username, String password, Perfil perfil, Role role) {
         this.username = username;
         this.password = password;
         this.perfil = perfil;
@@ -74,3 +74,4 @@ public class User {
     }
 
 }
+

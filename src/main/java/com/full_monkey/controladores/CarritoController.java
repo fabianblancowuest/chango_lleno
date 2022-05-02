@@ -1,7 +1,8 @@
 package com.full_monkey.controladores;
 
 import com.full_monkey.entidades.Producto;
-import com.full_monkey.entidades.User;
+import com.full_monkey.entidades.Usuario;
+
 import com.full_monkey.servicios.CarritoServicio;
 import com.full_monkey.servicios.ProductoService;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class CarritoController {
             if (unidades == 0 || unidades == null) {
                 throw new Exception();
             }
-            User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity
+            Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity
 
             List<Producto> productos = new ArrayList();
             Producto prod = productoServicio.getOne(idProducto);
@@ -62,7 +63,7 @@ public class CarritoController {
 
     @GetMapping("/sacar")
     public String sacarDelCarrito(ModelMap modelo, HttpSession session) {
-        User u = (User) session.getAttribute("usuariosession");
+        Usuario u = (Usuario) session.getAttribute("usuariosession");
 
         List<Producto> producto = productoServicio.findAll();
 
@@ -76,7 +77,7 @@ public class CarritoController {
             if (unidades == 0 || unidades == null) {
                 throw new Exception();
             }
-            User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity
+            Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity
 
             List<Producto> productos = new ArrayList();
             Producto prod = productoServicio.getOne(idProducto);
@@ -110,7 +111,7 @@ public class CarritoController {
 
     @PostMapping("/precioEnvio")
     public String precioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio) {
-        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity 
+       Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity 
         try {
             carritoServicio.precioDeEnvio(u.getPerfil().getPendiente().getId(), precioEnvio);
             return "";
@@ -121,7 +122,7 @@ public class CarritoController {
 
     @GetMapping("/moificarEnvio")
     public String mostrarPrecioEnvio(ModelMap modelo, HttpSession session) {
-        User u = (User) session.getAttribute("usuariosession");
+        Usuario u = (Usuario) session.getAttribute("usuariosession");
 
         modelo.put("precioEnvio", u.getPerfil().getPendiente().getPrecio_envio());
         return "";
@@ -129,7 +130,7 @@ public class CarritoController {
     
     @PostMapping("/modificarEnvio")
     public String modificarPrecioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio) {
-        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity 
+        Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity 
         try {
             carritoServicio.modificarPrecioDeEnvio(u.getPerfil().getPendiente().getId(), precioEnvio);
             return "";
@@ -140,7 +141,7 @@ public class CarritoController {
 
     @GetMapping("/mostrarProductos")
     public String mostrarProductosDelCarrito(ModelMap modelo, HttpSession session){
-        User u = (User) session.getAttribute("usuariosession");//falta SpringSegurity  
+        Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity  
 
         List<Producto> producto;
         try {
