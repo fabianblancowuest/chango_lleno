@@ -1,0 +1,182 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background: #FFFFFF;
+}
+.header {
+	width: 1366px;
+	height: 97px;
+	border: solid 1px #000;
+	background-color: #ffdc05;
+}
+
+
+.graciasPorTuCompraText {
+
+	position: absolute;
+	width: 611px;
+	height: 85px;
+	left: 370px;
+	top: 127px;
+
+	font-family: 'Kanit';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 57px;
+	line-height: 85px;
+
+	color: #666666;
+}
+
+
+
+.monoSaludoImg {
+
+	position: absolute;
+	width: 385px;
+	height: 380px;
+	left: 85px;
+	top: 220px;
+}
+
+
+.nroOrdenText {
+
+	position: absolute;
+	width: 384px;
+	height: 58px;
+	left: 638px;
+	top: 286px;
+
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 46px;
+	line-height: 58px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+
+
+.nroOrdenDato {
+
+	position: absolute;
+	width: 234px;
+	height: 58px;
+	left: 1037px;
+	top: 286px;
+
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 46px;
+	line-height: 58px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+
+.verDetalleDelPedidoBoton {
+
+	position: absolute;
+	width: 383px;
+	height: 45px;
+	left: 643px;
+	top: 652px;
+
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 45px;
+	/* identical to box height */
+	text-decoration-line: underline;
+
+	color: #000000;
+	cursor: pointer;
+}
+
+
+.rectanguloVector {
+
+	position: absolute;
+	width: 633px;
+	height: 5px;
+	left: 638px;
+	top: 427px;
+
+	background: #C4C4C4;
+}
+
+
+.fechaOrdenText {
+
+	position: absolute;
+	width: 251px;
+	height: 41px;
+	left: 638px;
+	top: 366px;
+
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 33px;
+	line-height: 41px;
+
+	color: #666666;
+}
+
+
+.fechaOrdenDato {
+
+	position: absolute;
+	width: 328px;
+	height: 41px;
+	left: 899px;
+	top: 366px;
+
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 33px;
+	line-height: 41px;
+
+	color: #666666;
+}
+
+
+
+
+
+.logoBoton {
+
+	position: absolute;
+	width: 98px;
+	height: 85px;
+	left: 43px;
+	top: 1px;
+}
+
+
+
+.perfilBoton {
+
+	position: absolute;
+	width: 54px;
+	height: 54px;
+	left: 1271px;
+	top: 21px;
+}
+
