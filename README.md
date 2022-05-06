@@ -1,2 +1,3 @@
 # chango_lleno
-Proyecto de una aplicación e-commerce.
+
+Pruebas de Front End
