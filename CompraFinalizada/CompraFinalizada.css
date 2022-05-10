@@ -88,27 +88,6 @@ body {
 }
 
 
-.verDetalleDelPedidoBoton {
-
-	position: absolute;
-	width: 383px;
-	height: 45px;
-	left: 643px;
-	top: 652px;
-
-	font-family: 'Inder';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 36px;
-	line-height: 45px;
-	/* identical to box height */
-	text-decoration-line: underline;
-
-	color: #000000;
-	cursor: pointer;
-}
-
-
 .rectanguloVector {
 
 	position: absolute;
@@ -120,6 +99,26 @@ body {
 	background: #C4C4C4;
 }
 
+.verDetalleDelPedidoBoton{
+
+
+position: absolute;
+width: 389px;
+height: 45px;
+left: 643px;
+top: 716px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 45px;
+/* identical to box height */
+
+text-decoration-line: underline;
+
+color: #000000;}
+{}
 
 .fechaOrdenText {
 
@@ -180,3 +179,383 @@ body {
 	top: 21px;
 }
 
+.divDatos{
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 558px;
+height: 245px;
+left: 643px;
+top: 432px;}
+
+
+
+.divDestino{
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 480px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 5px 0px;}
+
+
+.destinoDato{
+
+position: absolute;
+width: 307px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 9px;
+color: #666666;}
+
+
+
+.direccionDato{
+
+position: absolute;
+width: 149px;
+height: 44px;
+left: 331px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+
+color: #666666;}
+
+
+
+.divNombre{
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 418px;
+height: 44px;
+left: 0px;
+top: 54px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 5px 0px;}
+
+
+.nombreCompradorText{
+
+position: static;
+width: 138px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+
+color: #666666;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 8px;}
+
+
+.nombreCompradorDato{
+
+position: static;
+width: 272px;
+height: 44px;
+left: 146px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+
+color: #666666;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 8px;}
+
+
+.divDni{
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 237px;
+height: 44px;
+left: 0px;
+top: 103px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+margin: 5px 0px;}
+
+
+.dniCompradorText{
+
+position: static;
+width: 65px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+
+color: #666666;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 8px;}
+
+
+.dniCompradorDato{
+
+position: static;
+width: 164px;
+height: 44px;
+left: 73px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+
+color: #666666;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 8px;}
+
+
+.divDomicilio{
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 558px;
+height: 44px;
+left: 0px;
+top: 152px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+margin: 5px 0px;}
+
+
+.domicilioCompradorText{
+
+position: static;
+width: 161px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+
+color: #666666;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 8px;}
+
+
+.domicilioCompradorDato{
+
+position: static;
+width: 389px;
+height: 44px;
+left: 169px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+
+color: #666666;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 8px;}
+
+
+.divMail{
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: static;
+width: 562px;
+height: 44px;
+left: 0px;
+top: 201px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+margin: 5px 0px;}
+
+
+.mailCompradorText
+{
+position: static;
+width: 76px;
+height: 44px;
+left: 0px;
+top: 0px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 44px;
+/* identical to box height */
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 8px;
+
+color: #666666;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 8px;}
+
+
+.mailCompradorDato {
+
+	
+	
+	position: static;
+	width: 455px;
+	height: 44px;
+	left: 84px;
+	top: 0px;
+	
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 35px;
+	line-height: 44px;
+	/* identical to box height */
+	
+	color: #666666;
+	
+	
+	/* Inside auto layout */
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	margin: 0px 8px;
+	
+}

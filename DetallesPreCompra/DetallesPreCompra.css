@@ -367,7 +367,22 @@
     color: #000000;
 }
 
+.telefonoClienteText {
 
+    position: absolute;
+    width: 227px;
+    height: 40px;
+    left: 116px;
+    top: 115px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+}
 
 .modificarEnvioText {
 
@@ -485,10 +500,10 @@
 }
 
 
-.bancoYnroText {
+.nombreBancoDato {
 
     position: absolute;
-    width: 198px;
+    width: 72px;
     height: 33px;
     left: 145px;
     top: 36px;
@@ -503,7 +518,23 @@
     color: #000000;
 }
 
+.nroBancoDato {
 
+    position: absolute;
+    width: auto;
+    height: 33px;
+    left: 245px;
+    top: 36px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
 
 .cuotasText {
 

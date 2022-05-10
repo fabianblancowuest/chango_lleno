@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>DetallesPreCompra</title>
@@ -17,29 +18,65 @@
 
 <body>
 	<div class="Encabezado"></div>
-	<img src="img/ImgLogo.png" class="ImgLogo">
-	<input type="image" src="img/BotonIMGPerfil.png" class="BotonIMGPerfil">
-	<span class="detallesDelPagoText">
-		Detalles del pago
-	</span>
+
+	<!-- th:href -->
+	<a href="">
+		<img src="img/ImgLogo.png" class="ImgLogo">
+	</a>
+	<!-- th:href -->
+
+	<!-- th:href -->
+	<a href="">
+		<img src="img/BotonIMGPerfil.png" class="BotonIMGPerfil">
+	</a>
+	<!-- th:href -->
+
+	<span class="detallesDelPagoText">Detalles del pago</span>
 
 	<div class="cajaMetodoDePago">
 
+		<!-- th:value -->
 		<img src="img/mastercarLogoImg.png" class="mastercarLogoImg">
-		<span class="bancoYnroText">BBVA **** 1234</span>
-		<span class="cuotasText">Pagas 1x $20</span>
-		<input type="button" class="modificarPagoText" value="Modificar">
-	</div>
-	
+		<!-- th:value -->
 
-	<span class="detallesDelEnvioText">Detalles del Envio</span>
+		<!-- th:value -->
+		<span class="nombreBancoDato">BBVA </span>
+		<!-- th:value -->
+
+		<!-- th:value -->
+		<span class="nroBancoDato">**** 1234</span>
+		<!-- th:value -->
+
+		<span class="cuotasText">Pagas 1x $20</span>
+
+		<!-- th:value -->
+		<a href="" class="modificarPagoText">Modificar</a>
+		<!-- th:value -->
+
+	</div>
+
+
+	<span class="detallesDelEnvioText">Envio a domicilio</span>
 
 	<div class="cajaEnviosDetalle">
 
 		<input type="checkbox" class="checkBoxEnvio"></input>
+
+		<!-- th:value -->
 		<span class="direccionEnvioText">9 Julio 1234</span>
-		<span class="direccionCompletaClienteText">C.P 1234 - CABA, Buenos AIres Esteban Quito - 1112345678</span>
-		<input type="button" class="modificarEnvioText" value="Modificar">
+		<!-- th:value -->
+
+		<!-- th:value -->
+		<span class="direccionCompletaClienteText">C.P 1234 - CABA, Buenos AIres Esteban Quito</span>
+		<!-- th:value -->
+
+		<!-- th:value -->
+		<span class="telefonoClienteText">1112345678</span>
+		<!-- th:value -->
+
+		<!-- th:href -->
+		<a href="" class="modificarEnvioText">Modificar</a>
+		<!-- th:heref -->
 
 	</div>
 
@@ -58,14 +95,33 @@
 		<div class="cajaDetalleCompra">
 
 			<span class="productoText">Producto</span>
+
+			<!-- th:heref -->
+
 			<span class="nroProductoText">$20</span>
-			<span class="envioText">Envio</span>
-			<span class="nroEnvioText">$2</span>
+			<!-- th:heref -->
+
+			<div>
+				<span class="envioText">Envio</span>
+				<span class="nroEnvioText">$2</span>
+			</div>
+
 			<span class="SubtotalText">Subtotal</span>
+
+			<!-- th:heref -->
 			<span class="nroSubtotalText">$22</span>
+			<!-- th:heref -->
+
 			<div class="rectanguloDetalleProducto"></div>
+
+			<!-- th:heref -->
 			<span class="totalText">Total</span>
+			<!-- th:heref -->
+
+			<!-- th:heref -->
 			<span class="nroTotalText">$22</span>
+			<!-- th:heref -->
+
 		</div>
 
 		<img src="img/pulgarManoImg.png" class="pulgarManoImg">
@@ -76,5 +132,6 @@
 
 	</div>
 
-</body></html>
+</body>
 
+</html>
