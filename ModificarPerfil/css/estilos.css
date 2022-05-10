@@ -1,0 +1,195 @@
+/* Fuentes
+
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: #FFDC05;
+    height: 70px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "none none none botonCatalogo";
+}
+
+.header a{
+    height: 70px;
+}
+
+.botonCatalogo{
+    display: flex;
+    justify-content: end;  
+    align-items: center; 
+    grid-area: botonCatalogo;
+}
+
+/* SECTION */
+.section{
+    background-image: url('../img/carroCompra.png');
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "formulario";
+
+}
+
+.formulario{
+    background-color: #ffffff;
+    width: 517px;
+    margin: 5px auto;
+    /*flex: 0.5;*/
+    grid-area: formulario;
+}
+
+.input-text{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0 18px 25px;
+}
+
+.input-text label{
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.input-text input{
+    height: 42px;
+    border-radius: 15px;
+    padding: 0 15px;
+}
+
+#btnCrearCuenta{
+    margin-top: 28px;
+    height: 55px;
+    background-color: #505052;
+    color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Inria Sans', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+}
+#btnCrearCuenta:hover{
+    background-color: #999999;
+}
+
+.iconoCrearUsuario{
+    margin-right: 10px;
+}
+
+.formulario h1{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 24px;
+    padding-bottom: 14px;
+    margin: 0;
+}
+
+.input-file{
+    margin: 0 auto;
+    width: 145px;
+    height: 145px;
+    border-style: dashed;
+    border-width: 1px;
+    background-color: #E6E6E6;
+    border-radius: 75px;
+}
+
+.input-file:hover{
+    background-color: #CCCCCC;
+}
+
+.input-file-input{
+    display: none;
+}
+
+.input-file__btn {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 95px;
+    color: black;    
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+    font-family: 'Inria Sans', sans-serif;
+    font-weight: 600;
+}
+
+.input-file__btn img{
+    margin: 31px auto 6.5px;
+    width: 47px;
+    height: 42px;
+}
+
+/* TABLET */
+@media screen and (max-width: 768px) {
+    .header{
+        background-color: #FFDC05;
+        height: 70px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "none none none botonCatalogo";
+    }
+
+    .formulario{
+        margin: 5px auto;
+    }    
+}
+
+/* CELULAR */
+@media screen and (max-width: 375px){
+    .header{
+        background-color: #FFDC05;
+        height: 70px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "botonCatalogo";
+    }
+
+    .botonCatalogo{
+        margin: 0 auto;
+    }
+
+    .section{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas: "formulario"
+                             "texto";
+    }
+
+    .formulario{
+        margin: 5px 10px;
+        width: 360px;
+    }
+    
+    .input-text{
+        margin: 5px;
+    }
+
+    .input-file{
+        width: 130px;
+        height: 130px;
+    }
+
+    .input-file__btn img{
+        margin: 25px auto 6.5px;
+        width: 43px;
+        height: 38px;
+    }    
+}
