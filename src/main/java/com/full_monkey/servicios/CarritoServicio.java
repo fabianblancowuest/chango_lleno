@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CarritoServicio {
-   
+
     @Autowired
     private CarritoRepository carritoRepository;
-    
+
     @Transactional
     public void crearCarrito() {
         Carrito carrito = new Carrito();
@@ -33,17 +33,16 @@ public class CarritoServicio {
             throw new Exception("No existe el carrito");
         }
     }
+
     @Transactional
-    public void poner(String idCarrito, List<Producto> productos) throws Exception {
+    public void poner(String idCarrito, Producto producto) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
-            carrito.setProductos(productos);
+            carrito.getProductos().add(producto);
             Double total = carrito.getPrecio_total();
             carrito.setUnidades(carrito.getProductos().size());
-            for (Producto aux : carrito.getProductos()) {
-                total += aux.getPrecio();
-            }
+            total = producto.getPrecio() * producto.getUnidades();
             carrito.setPrecio_total(total);
             carritoRepository.save(carrito);
         } else {
@@ -52,33 +51,31 @@ public class CarritoServicio {
     }
 
     @Transactional
-    public List<Producto> mostrarProductos(String idCarrito) throws Exception{
+    public List<Producto> mostrarProductos(String idCarrito) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
-           return respuesta.get().getProductos();
+            return respuesta.get().getProductos();
         } else {
             throw new Exception("No existe el carrito");
         }
     }
-    
+
     @Transactional
-    public void sacar(String idCarrito, List<Producto> productos) throws Exception {
+    public void sacar(String idCarrito, Producto producto, Integer unidades) throws Exception {
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
-        if (productos.isEmpty()) {
-            throw new Exception("Lista de productos vacia");
-        }
+
         if (respuesta.isPresent()) {
             Carrito carrito = respuesta.get();
-            for (Producto aux : productos) {
-                carrito.setPrecio_total(carrito.getPrecio_total() - aux.getPrecio());
-                carritoRepository.delete(carrito);
-            }
-            carrito.setUnidades(carrito.getUnidades() - productos.size());
+            producto.setUnidades(producto.getUnidades() - unidades);
+            Double total = producto.getPrecio() * unidades;
+            carrito.setPrecio_total(carrito.getPrecio_total() - total);
+
             carritoRepository.save(carrito);
         } else {
             throw new Exception("No existe el carrito");
         }
     }
+
     @Transactional
     public void precioDeEnvio(String idCarrito, Double precio_envio) throws Exception {
         validarPrecioEnvio(precio_envio);
@@ -95,8 +92,9 @@ public class CarritoServicio {
             throw new Exception("No existe el carrito");
         }
     }
+
     @Transactional
-    public void modificarPrecioDeEnvio(String idCarrito, Double precio_envio) throws Exception {   
+    public void modificarPrecioDeEnvio(String idCarrito, Double precio_envio) throws Exception {
         validarPrecioEnvio(precio_envio);
         Optional<Carrito> respuesta = carritoRepository.findById(idCarrito);
         if (respuesta.isPresent()) {
@@ -111,10 +109,11 @@ public class CarritoServicio {
             throw new Exception("No existe el carrito");
         }
     }
-    public void validarPrecioEnvio(Double precio_envio) throws Exception{
-        if(precio_envio<0D||precio_envio==null){
+
+    public void validarPrecioEnvio(Double precio_envio) throws Exception {
+        if (precio_envio < 0D || precio_envio == null) {
             throw new Exception("Valor inválido");
         }
     }
-    
+
 }

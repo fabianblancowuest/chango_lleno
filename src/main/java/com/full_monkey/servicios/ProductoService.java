@@ -1,5 +1,6 @@
 package com.full_monkey.servicios;
 
+import com.full_monkey.entidades.Categoria;
 import com.full_monkey.entidades.Producto;
 import com.full_monkey.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,11 +72,11 @@ public class ProductoService {
 
     }
 
-    public void validar(String nombre,Double precio,Integer stock,String categoria,String descripcion,String img) throws Exception {
+    public void validar(String nombre,Double precio,Integer stock,Categoria categoria,String descripcion,String img) throws Exception {
         if (nombre == null || nombre.isEmpty()){
             throw new Exception("El producto no puede estar vacio");
         }
-        if (categoria == null ||categoria.isEmpty()){
+        if (categoria == null){
             throw new Exception("El producto debe tener una categoria");
         }
         if (descripcion == null ||descripcion.isEmpty()){

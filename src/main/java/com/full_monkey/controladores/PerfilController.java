@@ -41,7 +41,7 @@ public class PerfilController {
     @PostMapping("/modificar/{id}")
     public String cambiarPerfil(@PathVariable String id,ModelMap modelo,@RequestParam String nombre, @RequestParam String apellido, @RequestParam Long dni, @RequestParam Date nacimiento, @RequestParam String email,  @RequestParam String domicilio, @RequestParam String fotoPerfil, @RequestParam Long tarjeta) throws Exception{
         try{
-            ps.modifPerfil(id, nombre, apellido, dni, nacimiento, email, domicilio, fotoPerfil, tarjeta);
+            ps.modifPerfil(id, nombre, apellido, dni, nacimiento, email, domicilio, fotoPerfil);
             return "redirect:/Perfil";
        }catch (Exception e){
            modelo.put("error", e.getMessage());
