@@ -35,7 +35,7 @@ public class UsuarioServicio implements UserDetailsService {
     private PerfilServicio ps;
 
     @Transactional
-    public Usuario registroUsuario(String username, String password, String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
+    public Usuario registroUsuario(String username, String password, String nombre, String apellido, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil, List<Compra> historial, Carrito pendiente) throws Exception {
         validator(username, password, email);
         Usuario u = new Usuario();
         u.setUsername(username);
