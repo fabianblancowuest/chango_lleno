@@ -32,7 +32,7 @@ public class PerfilController {
     public String modificarPerfil(@PathVariable String id,ModelMap modelo){
        try{
             modelo.addAttribute("perfil", ps.findById(id));
-            return "modif-perfil-html";
+            return "modificarPerfil.html";
        }catch (Exception e){
            return "redirect:/";
        }
@@ -46,7 +46,7 @@ public class PerfilController {
        }catch (Exception e){
            modelo.put("error", e.getMessage());
            modelo.addAttribute("perfil", ps.findById(id));
-           return "modif-perfil-html";
+           return "modificarPerfil.html";
        }
     }
 }
