@@ -15,19 +15,21 @@ public class Producto {
     protected String nombre;
     protected Double precio;
     protected Integer stock;
-    protected String categoria;
+    protected Categoria categoria;
     protected String descripcion;
+    protected Integer unidades;
 
     public Producto() {
     }
 
-    public Producto(String img, String nombre, Double precio, Integer stock, String area, String descripcion) {
+    public Producto(String img, String nombre, Double precio, Integer stock, Categoria area, String descripcion,Integer unidades) {
         this.img = img;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
         this.categoria = area;
         this.descripcion = descripcion;
+        this.unidades = unidades;
     }
 
     public String getId() {
@@ -70,11 +72,11 @@ public class Producto {
         this.stock = stock;
     }
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -85,6 +87,9 @@ public class Producto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
+    public Integer getUnidades() { return unidades; }
+
+    public void setUnidades(Integer unidades) { this.unidades = unidades; }
 }
 

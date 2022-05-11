@@ -26,6 +26,7 @@ public class Perfil {
     private Date nacimiento;
     private String domicilio;
     private String email;
+    private String pregunta;
     @OneToMany
     private List<Compra> historial;
     @OneToOne
@@ -45,7 +46,7 @@ public class Perfil {
         this.historial = historial;
         this.pendiente = pendiente;
     }
-
+    
     public String getId() {
         return id;
     }

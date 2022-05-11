@@ -1,0 +1,627 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.DetallesPreCompra {
+
+    position: relative;
+    width: 1351px;
+    height: 772px;
+
+    background: #FFFFFF;
+}
+
+
+.encabezado {
+
+    position: absolute;
+    width: 1351px;
+    height: 97px;
+    left: 0px;
+    top: 0px;
+}
+
+
+
+.Encabezado {
+
+    position: absolute;
+    width: 1349px;
+    height: 97px;
+    left: 0px;
+    top: 0px;
+
+    background: #FFDC05;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+
+.ImgLogo {
+
+    position: absolute;
+    width: 98px;
+    height: 85px;
+    left: 43px;
+    top: 1px;
+}
+
+
+
+.BotonIMGPerfil {
+
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    left: 1271px;
+    top: 21px;
+}
+
+
+.cajaConfirmarCompra {
+
+    position: absolute;
+    width: 481px;
+    height: 675px;
+    left: 831px;
+    top: 96px;
+
+    background: #F9F9F9;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+}
+
+
+.pulgarManoImg {
+
+    position: absolute;
+    width: 86.32px;
+    height: 105.65px;
+    left: 03px;
+    top: 506px;
+
+}
+
+
+.cajaDetalleCompra {
+
+    position: absolute;
+    width: 440px;
+    height: 381px;
+    left: 20px;
+    top: 43px;
+}
+
+
+.productoText {
+
+    position: absolute;
+    width: 147px;
+    height: 47px;
+    left: 44px;
+    top: 33px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.nroProductoText {
+
+    position: absolute;
+    width: 54px;
+    height: 47px;
+    left: 321px;
+    top: 34px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.nroEnvioText {
+
+    position: absolute;
+    width: 35px;
+    height: 47px;
+    left: 329px;
+    top: 112px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.nroSubtotalText {
+
+    position: absolute;
+    width: 51px;
+    height: 47px;
+    left: 323px;
+    top: 193px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.nroTotalText {
+
+    position: absolute;
+    width: 51px;
+    height: 47px;
+    left: 321px;
+    top: 312px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+.envioText {
+
+    position: absolute;
+    width: 96px;
+    height: 47px;
+    left: 44px;
+    top: 111px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.SubtotalText {
+
+    position: absolute;
+    width: 137px;
+    height: 47px;
+    left: 43px;
+    top: 193px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.totalText {
+
+    position: absolute;
+    width: 85px;
+    height: 47px;
+    left: 44px;
+    top: 319px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.rectanguloDetalleProducto {
+
+    position: absolute;
+    width: 425px;
+    height: 5px;
+    left: 3px;
+    top: 275px;
+
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+
+.confirmarCompraBoton {
+
+
+    position: absolute;
+    left: 89px;
+    top: 515px;
+
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:20px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 37px;
+    line-height: 46px;
+
+    color: #000000;
+
+    background: #FFDC05;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
+
+
+.confirmarCompraText {
+
+    position: absolute;
+    width: 318px;
+    height: 48px;
+    left: 8px;
+    top: 31px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 37px;
+    line-height: 46px;
+
+    color: #000000;
+}
+
+
+
+.cajaEnviosDetalle {
+
+    position: absolute;
+    width: 731px;
+    height: 146px;
+    left: 43px;
+    top: 363px;
+
+    background: #EFEFEF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+
+.direccionEnvioText {
+
+    position: absolute;
+    width: 150px;
+    height: 33px;
+    left: 116px;
+    top: 31px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.direccionCompletaClienteText {
+
+    position: absolute;
+    width: 227px;
+    height: 40px;
+    left: 116px;
+    top: 73px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+}
+
+
+
+.modificarEnvioText {
+
+    position: absolute;
+    width: 90px;
+    height: 26px;
+    left: 616px;
+    top: 23px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 26px;
+    text-decoration-line: underline;
+
+    color: #0A5DFF;
+}
+
+
+
+.checkBoxEnvio {
+
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 32px;
+    top: 47px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+
+.cajaSucursalRetiro {
+
+    position: absolute;
+    width: 731px;
+    height: 146px;
+    left: 43px;
+    top: 569px;
+
+    background: #EFEFEF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.calleSucursalText {
+
+    position: absolute;
+    width: 167px;
+    height: 33px;
+    left: 116px;
+    top: 31px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.direccionCompletaSucursalText {
+
+    position: absolute;
+    width: 227px;
+    height: 20px;
+    left: 116px;
+    top: 73px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.checkBoxSucursal {
+
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 32px;
+    top: 47px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+
+.cajaMetodoDePago {
+
+    position: absolute;
+    width: 731px;
+    height: 146px;
+    left: 43px;
+    top: 157px;
+
+    background: #EFEFEF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+
+.bancoYnroText {
+
+    position: absolute;
+    width: 198px;
+    height: 33px;
+    left: 145px;
+    top: 36px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.cuotasText {
+
+    position: absolute;
+    width: 101px;
+    height: 20px;
+    left: 149px;
+    top: 71px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.modificarPagoText {
+
+    position: absolute;
+    width: 90px;
+    height: 26px;
+    left: 615px;
+    top: 16px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 26px;
+    text-decoration-line: underline;
+
+    color: #0A5DFF;
+}
+
+
+
+.mastercarLogoImg {
+
+    position: absolute;
+    width: 110px;
+    height: 66px;
+    left: 18px;
+    top: 38px;
+}
+
+
+
+.retiroEnSucursalText {
+
+    position: absolute;
+    width: 222px;
+    height: 33px;
+    left: 51px;
+    top: 527px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.detallesDelEnvioText {
+
+    position: absolute;
+    width: 219px;
+    height: 33px;
+    left: 51px;
+    top: 321px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.detallesDelPagoText {
+
+    position: absolute;
+    width: 215px;
+    height: 33px;
+    left: 51px;
+    top: 115px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+
+
+.visaLogo {
+
+    position: absolute;
+    visibility: hidden;
+    width: 122px;
+    height: 40px;
+    left: 55px;
+    top: 208px;
+}
+
