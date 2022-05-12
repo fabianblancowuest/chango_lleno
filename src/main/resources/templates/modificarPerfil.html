@@ -33,6 +33,7 @@
                 </div>
 
                 <div class="input-text">  
+
                     <label for="username">Usuario</label>
                     <input type="text" name="username" id="username" th:field="*{username}">
 
@@ -55,9 +56,9 @@
                     <input type="date" name="nacimiento" id="nacimiento" th:field="*{nacimiento}">
 
                     <label for="domicilio">Domicilio</label>
-                    <input type="text" name="domicilio" th:field="*{domicilio}">
+                    <input type="text" name="domicilio" id="domicilio" th:field="*{domicilio}">
 
-                    <button id="btnCrearCuenta"><img class="iconoCrearUsuario" src="/IMG/iconoModificarPerfil.png" alt="">Guardar Cambios</button>
+                    <button  type="submit" id="btnCrearCuenta"><img class="iconoCrearUsuario" src="/IMG/iconoModificarPerfil.png" alt="/modificar/{id}">Guardar Cambios</button>
 
                 </div>          
             </form>
