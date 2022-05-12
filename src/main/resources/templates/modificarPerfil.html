@@ -20,10 +20,10 @@
             </a>
         </div>
     </header>
-    <section class="section">
-        <div class="formulario">
+    <section class="section" >
+        <div class="formulario"  id="contenedorForm">
             <h1>Modificar Perfil</h1>
-            <form action="">
+            <form action="@{/modificar/{id}}" th:object="${Perfil}" method="post" id="FormularioPerfil">
                 <div class="input-file">
                     <input type="file" id="file" class="input-file-input">
                     <label for="file" class="input-file__btn">
@@ -33,29 +33,29 @@
                 </div>
 
                 <div class="input-text">  
-                    <label for="">Usuario</label>
-                    <input type="text">
+                    <label for="id">Usuario</label>
+                    <input type="text" name="id" id="id" th:field="*{id}">
 
-                    <label for="">E-Mail</label>
-                    <input type="text">
+                    <label for="email">E-Mail</label>
+                    <input type="text" name="email" id="email" th:field="*{email}">
 
-                    <label for="">Password</label>
-                    <input type="password">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" th:field="*{password}">
 
-                    <label for="">Nombre</label>
-                    <input type="text">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" th:field="*{nombre}">
 
-                    <label for="">Apellido</label>
-                    <input type="text">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" th:field="*{apellido}">
                     
-                    <label for="">DNI</label>
-                    <input type="text">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" id="dni" th:field="*{dni}">
 
-                    <label for="">Fecha de Nacimiento</label>
-                    <input type="date">
+                    <label for="nacimiento">Fecha de Nacimiento</label>
+                    <input type="date" name="nacimiento" id="nacimiento" th:field="*{nacimiento}">
 
-                    <label for="">Domicilio</label>
-                    <input type="text">
+                    <label for="domicilio">Domicilio</label>
+                    <input type="text" name="domicilio" th:field="*{domicilio}">
 
                     <button id="btnCrearCuenta"><img class="iconoCrearUsuario" src="/IMG/iconoModificarPerfil.png" alt="">Guardar Cambios</button>
 

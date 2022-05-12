@@ -93,6 +93,16 @@ public class ProductoService {
         }
 
     }
+
+    public List<Producto> listarProductos() throws Exception {
+        if(!productoRepository.findAll().isEmpty()){
+            List<Producto> productos =  productoRepository.findAll();
+            return productos;
+
+        }else{
+            throw new Exception("No se encontro ningun producto en el catalogo");
+        }
+    }
 }
 
 

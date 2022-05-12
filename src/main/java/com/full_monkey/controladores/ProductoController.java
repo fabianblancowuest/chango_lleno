@@ -3,6 +3,7 @@ import com.full_monkey.entidades.Producto;
 import com.full_monkey.servicios.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -52,6 +53,13 @@ public class ProductoController {
     public ModelAndView procesarActualizacion(@ModelAttribute("producto")  Producto producto) throws Exception {
         productoService.modificarProducto(producto);
         return new ModelAndView("actualizado");
+    }
+
+    @RequestMapping(value ="/listaDeProductos",method = RequestMethod.GET)
+    public ModelAndView traerTodosLosProductos() throws Exception {
+        ModelMap modelo = new ModelMap();
+        modelo.put("listaDeProductos",productoService.listarProductos());
+        return new ModelAndView("catalogo",modelo);
     }
 
 }
