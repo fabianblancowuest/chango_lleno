@@ -15,9 +15,9 @@
 <body>
 <div class="MainCarrito">
         <div class="Encabezado"></div>
-        <img src="img/ImgLogo.png" class="ImgLogo"></img>
-        <img src="img/ImgLogo.png" class="ImgLogo1"></img>
-        <input type="image" src="/IMG/BotonIMGPerfil.png" class="BotonIMGPerfil">
+        <img src="/IMG/ImgLogo.png" class="ImgLogo"></img>
+        <img src="/IMG/ImgLogo.png" class="ImgLogo1"></img>
+        <input type="image" src="/static/IMG/BotonIMGPerfil.png" class="BotonIMGPerfil">
         <span class="TextProducto">Producto</span>
         <span class="TextPrecioPorUnidad">Precio por unidad</span>
         <span class="TextCantidad">Cantidad</span>
@@ -27,15 +27,14 @@
         <div class="divListaProductos">
             <!--Contenedor Producto-->
             <div class="DivProductoCarrito">
-
                 <img src="/IMG/ImgProducto.png" class="ImgProducto">
                 <span class="NombreProducto">Brocoli</span>
-                <span class="NroPrecioUnidad">$1</span>
-                <span class="NroCantidad">1</span>
-                <span class="NroSubtotalUnidad">$ 2.00</span>
+                <span class="NroPrecioUnidad">$<span id="precio">2.00</span></span>
+                <span class="NroCantidad" id="unidades">1</span>
+                <span class="NroSubtotalUnidad">$ <span id="subtotal">2.00</span></span>
                 <input type="image" src="/IMG/BotonImgEliminar.png" class="BotonImgEliminar">
-                <input type="image" src="/IMG/ImgMenos.png" class="ImgMenos">
-                <input type="image" src="/IMG/ImgMas.png" class="ImgMas">
+                <input type="image" id="sacar" src="/IMG/ImgMenos.png" class="ImgMenos">
+                <input type="image" id="agregar" src="/IMG/ImgMas.png" class="ImgMas">
                 <div class="RectanguloProducto"></div>
             </div>
 
@@ -48,5 +47,6 @@
         </div>
 
 </div>
+<script src="/static/JS/Carrito.js"></script>
 </body>
 </html>

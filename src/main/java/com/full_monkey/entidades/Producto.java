@@ -3,6 +3,7 @@ package com.full_monkey.entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -15,6 +16,7 @@ public class Producto {
     protected String nombre;
     protected Double precio;
     protected Integer stock;
+    @OneToOne
     protected Categoria categoria;
     protected String descripcion;
     protected Integer unidades;
