@@ -1,0 +1,1216 @@
+*{
+	margin: 0;
+	box-sizing: border-box;
+}
+.bordesito {
+	border-radius: 100px;
+}
+
+
+.myButton {
+	background-color: #f7ee70;
+	border-radius: 35px;
+	border: 1px solid #fbff23;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 28px;
+	padding: 4px 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #2f6627;
+}
+
+.myButton:hover {
+	background-color: #f8f40f;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+
+
+.CatalogoPrincipal {
+
+	/*position: absolute;*/
+	/*width: 1366px;*/
+	/*height: 2380px;*/
+
+	background: #FFFFFF;
+}
+
+.divHeader {
+
+	position: relative;
+	/*width: 1366px;*/
+	height: 112px;
+	left: 0px;
+	top: 0px;
+	background: #FFDC05;
+	border: 1px black;
+	display: flex;
+}
+
+.divFooter{
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 262px;
+
+position: relative;
+background: #FFDC05;
+/* width: 1366px; */
+height: 40px;  
+/* left: 10px;
+top: 2332px;} */
+}
+
+
+.encabezado {
+
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 1440px;
+	height: 112px;
+	left: 0px;
+	top: 0px;
+
+	background: #FFDC05;
+	border: 1px solid #000000;
+}
+
+
+.carritoImgBoton {
+
+	position: relative;
+	width: 53px;
+	height: 53px;
+	left: 1236px;
+	top: 29px;
+	cursor: pointer;
+
+}
+
+
+
+
+.BarraBusquedaInput {
+
+	position: absolute;
+	width: 466px;
+	height: 45px;
+	left: 466px;
+	top: 33px;
+
+	background: #F4F0F0;
+	border-radius: 12px;
+}
+
+
+.lupaImg {
+
+	position: absolute;
+	width: 33px;
+	height: 33px;
+	left: 885px;
+	top: 39px;
+	cursor: pointer;
+}
+
+
+
+
+.perfilImgBoton {
+
+	position: relative;
+	width: 54px;
+	height: 54px;
+	left: 1235px;
+	top: 29px;
+	cursor: pointer;
+
+}
+
+
+/*!* palmeraImg *!*/
+
+/*position: absolute;*/
+/*visibility: hidden;*/
+/*width: 659.83px;*/
+/*height: 1072.76px;*/
+/*left: 793.47px;*/
+/*top: 1700.44px;*/
+
+/*background: url(Sin título-1.png);*/
+/*border-radius: 49px;*/
+/*transform: matrix(-0.82, -0.65, -0.52, 0.81, 0, 0);*/
+
+
+/*!* palmeraImg *!*/
+
+/*position: absolute;*/
+/*visibility: hidden;*/
+/*width: 679.02px;*/
+/*height: 1072.76px;*/
+/*left: 582px;*/
+/*top: 1717.97px;*/
+
+/*background: url(Sin título-1.png);*/
+/*border-radius: 49px;*/
+/*transform: matrix(0.8, -0.53, 0.66, 0.81, 0, 0);*/
+
+
+/*!* pngwing 5 *!*/
+
+/*position: absolute;*/
+/*visibility: hidden;*/
+/*width: 899px;*/
+/*height: 657px;*/
+/*left: -261px;*/
+/*top: 764px;*/
+
+/*background: url(pngwing.png);*/
+
+
+/*!* pngwing 9 *!*/
+
+/*position: absolute;*/
+/*visibility: hidden;*/
+/*width: 1837px;*/
+/*height: 1837px;*/
+/*left: -146px;*/
+/*top: 1748px;*/
+
+/*background: url(pngwing.png);*/
+
+
+/*!* palmeraImg *!*/
+
+/*position: absolute;*/
+/*visibility: hidden;*/
+/*width: 679.02px;*/
+/*height: 1072.76px;*/
+/*left: 691px;*/
+/*top: 902.74px;*/
+
+/*background: url(Sin título-1.png);*/
+/*border-radius: 49px;*/
+/*transform: matrix(0.86, -0.44, 0.56, 0.88, 0, 0);*/
+
+
+/*!* palmeraImg *!*/
+
+/*position: absolute;*/
+/*visibility: hidden;*/
+/*width: 659.83px;*/
+/*height: 1072.76px;*/
+/*left: 717.47px;*/
+/*top: 924.44px;*/
+
+/*background: url(Sin título-1.png);*/
+/*border-radius: 49px;*/
+/*transform: matrix(-0.82, -0.65, -0.52, 0.81, 0, 0);*/
+
+
+/*!* sol3 1 *!*/
+
+/*position: absolute;*/
+/*visibility: hidden;*/
+/*width: 433px;*/
+/*height: 433px;*/
+/*left: 477px;*/
+/*top: 300px;*/
+
+/*background: url(sol3.png);*/
+/*border-radius: 450px;*/
+
+
+
+.rectanguloFutten {
+
+	position: absolute;
+	width: 1440px;
+	height: 60px;
+	left: -10px;
+	top: -12px;
+
+	background: #FFDC05;
+}
+
+
+.mailText {
+
+
+width: 339px;
+height: 40px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 3;
+flex-grow: 0;}
+
+.direccionText {
+
+
+width: 249px;
+height: 40px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;}
+
+
+
+.divCarruselProductos3 {
+
+	/* Auto layout */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0px;
+
+	position: absolute;
+	width: 257px;
+	height: 386px;
+	left: 43px;
+	top: 1586px;
+}
+
+
+
+.divProducto1 {
+
+	/* Auto layout */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0px;
+
+	position: static;
+	width: 257px;
+	height: 386px;
+	left: 0px;
+	top: 0px;
+
+
+	/* Inside auto layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 43px;
+}
+
+
+.divProductos1 {
+
+	/* Auto layout */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0px;
+
+	position: static;
+	width: 257px;
+	height: 386px;
+	left: 0px;
+	top: 0px;
+
+
+	/* Inside auto layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 43px;
+}
+
+
+.divProductoLista2 {
+
+	position: static;
+	width: 257px;
+	height: 386px;
+	left: 0px;
+	top: 0px;
+
+
+	/* Inside auto layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 43px;
+}
+
+
+.rectanguloProductoLista2 {
+
+	position: absolute;
+	width: 235px;
+	height: 368px;
+	left: 0px;
+	top: 18px;
+
+	background: #EFEFEF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 52px;
+}
+
+
+.nombreProductoLista2Dato {
+
+	position: absolute;
+	width: 97px;
+	height: 60px;
+	left: 70px;
+	top: 240px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 60px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+
+
+.descripcionProductoLista2Dato {
+
+	position: absolute;
+	width: 163px;
+	height: 36px;
+	left: 34px;
+	top: 282px;
+
+	font-family: 'Inknut Antiqua';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 36px;
+
+	color: #000000;
+}
+
+
+
+.precioProductoLista2Dato {
+
+	position: absolute;
+	width: 97px;
+	height: 77px;
+	left: 71px;
+	top: 288px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 96px;
+	line-height: 120px;
+
+	color: #000000;
+}
+
+
+
+.signoPesosLista2Text {
+
+	position: absolute;
+	width: 44px;
+	height: 77px;
+	left: 37px;
+	top: 288px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 96px;
+	line-height: 120px;
+
+	color: #000000;
+}
+
+
+
+.imagenProductoLista2Img {
+
+	position: absolute;
+	width: 217px;
+	height: 163px;
+	left: 0px;
+	top: 48px;
+}
+
+
+
+
+.rectanguloProductoLista2 {
+
+	position: absolute;
+	width: 227px;
+	height: 5px;
+	left: 0px;
+	top: 235px;
+
+	background: #C4C4C4;
+}
+
+.decimalesLista2Text {
+
+	position: absolute;
+	width: 32px;
+	height: 45px;
+	left: 168px;
+	top: 336px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 45px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+
+
+.agregarProductoLista1Boton {
+
+	position: absolute;
+	width: 79px;
+	height: 79px;
+	left: 178px;
+	top: 0px;
+	cursor: pointer;
+
+
+	background: none;
+}
+
+
+.categoria3Text {
+
+	position: absolute;
+	width: 206px;
+	height: 70px;
+	left: 602px;
+	top: 1516px;
+
+	font-family: 'Indie Flower';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 70px;
+	/* identical to box height */
+	text-decoration-line: underline;
+
+	color: #000000;
+}
+
+
+
+.divCarruselProductos2 {
+
+	/* Auto layout */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0px;
+
+	position: absolute;
+	width: 257px;
+	height: 386px;
+	left: 43px;
+	top: 1078px;
+}
+
+
+
+.divProductos1 {
+
+	/* Auto layout */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0px;
+
+	position: static;
+	width: 257px;
+	height: 386px;
+	left: 0px;
+	top: 0px;
+
+
+	/* Inside auto layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 43px;
+}
+
+
+.divProductoLista2 {
+
+	position: static;
+	width: 257px;
+	height: 386px;
+	left: 0px;
+	top: 0px;
+
+
+	/* Inside auto layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 43px;
+}
+
+
+.rectanguloProductoLista2 {
+
+	position: absolute;
+	width: 235px;
+	height: 368px;
+	left: 0px;
+	top: 18px;
+
+	background: #EFEFEF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 52px;
+}
+
+
+.nombreProductoLista2Dato {
+
+	position: absolute;
+	width: 97px;
+	height: 60px;
+	left: 70px;
+	top: 240px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 60px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+
+
+.descripcionProductoLista2Dato {
+
+	position: absolute;
+	width: 163px;
+	height: 36px;
+	left: 34px;
+	top: 282px;
+
+	font-family: 'Inknut Antiqua';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 36px;
+
+	color: #000000;
+}
+
+
+
+.precioProductoLista2Dato {
+
+	position: absolute;
+	width: 97px;
+	height: 77px;
+	left: 71px;
+	top: 288px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 96px;
+	line-height: 120px;
+
+	color: #000000;
+}
+
+
+
+.signoPesosLista2Text {
+
+	position: absolute;
+	width: 44px;
+	height: 77px;
+	left: 37px;
+	top: 288px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 96px;
+	line-height: 120px;
+
+
+	color: #000000;
+}
+
+
+
+.imagenProductoLista2Img {
+
+	position: absolute;
+	width: 217px;
+	height: 163px;
+	left: 0px;
+	top: 48px;
+}
+
+
+.rectanguloProductoLista2 {
+
+	position: absolute;
+	width: 227px;
+	height: 5px;
+	left: 0px;
+	top: 235px;
+
+	background: #C4C4C4;
+}
+
+
+.decimalesLista2Text {
+
+	position: absolute;
+	width: 32px;
+	height: 45px;
+	left: 168px;
+	top: 336px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 45px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+
+
+.agregarProductoLista2Boton {
+
+	position: absolute;
+	width: 79px;
+	height: 79px;
+	left: 178px;
+	top: 0px;
+
+	background: #FFFFFF;
+}
+
+
+.categoria2Text {
+
+	position: absolute;
+	width: 210px;
+	height: 70px;
+	left: 594px;
+	top: 978px;
+
+	font-family: 'Indie Flower';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 70px;
+	/* identical to box height */
+	text-decoration-line: underline;
+
+	color: #000000;
+}
+
+.divCategoria{
+	position: relative;
+	/*width: 1366px;*/
+}
+
+.divCarruselProductos1 {
+	position: relative;
+	margin: 0px 60px;
+
+	/*left: 51px;*/
+	/*width: 1309px;*/
+	/*top: 366px;*/
+	/* Auto layout */
+
+	/*display: flex;*/
+	/*flex-direction: row;*/
+	/*justify-content: left;*/
+	/*align-items: flex-start;*/
+	/*padding: 0px;*/
+
+	/*position: absolute;*/
+	/*width: 1366px;*/
+	/*height: 386px;*/
+
+	/*top: 370px;*/
+	/*overflow: scroll;*/
+}
+
+.divCarruselProductos2 {
+	position: relative;
+	margin: 0px 60px;
+
+	left: 51px;
+	/* width: 1309px; */
+	top: 1366px;
+	/* Auto layout */
+
+	/*display: flex;*/
+	/*flex-direction: row;*/
+	/*justify-content: left;*/
+	/*align-items: flex-start;*/
+	/*padding: 0px;*/
+
+	/*position: absolute;*/
+	/*width: 1366px;*/
+	/*height: 386px;*/
+
+	/*top: 370px;*/
+	/*overflow: scroll;*/
+}
+
+.carousel__siguiente,
+.carousel__anterior{
+	position: absolute;
+	display: block;
+	width: 52px;
+	/*height: 30px;*/
+	border: none;
+	top: 124px;
+	/*top: calc(50% - 712px);*/
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+
+}
+
+.carousel__anterior{
+	left: -54px;
+}
+
+.carousel__siguiente{
+	right: -44px;
+}
+
+.carousel__siguiente2,
+.carousel__anterior2{
+	position: absolute;
+	display: block;
+	width: 52px;
+	/*height: 30px;*/
+	border: none;
+	top: 124px;
+	/*top: calc(50% - 712px);*/
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+
+}
+
+.carousel__anterior2{
+	left: -54px;
+}
+
+.carousel__siguiente2{
+	right: -44px;
+}
+
+.carousel__siguiente3,
+.carousel__anterior3{
+	position: absolute;
+	display: block;
+	width: 52px;
+	/*height: 30px;*/
+	border: none;
+	top: 124px;
+	/*top: calc(50% - 712px);*/
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+
+}
+
+.carousel__anterior3{
+	left: -54px;
+}
+
+.carousel__siguiente3{
+	right: -44px;
+}
+
+.carrusel__lista{
+
+	/*position: relative;*/
+	/*width: auto;*/
+	/*height: 400px!important;*/
+}
+
+.glider-track {
+	width: 100%;
+	/* margin: 0px 44px; */
+	padding: 0;
+	display: flex;
+	z-index: 1;
+}
+
+.divProductoLista1 {
+
+	position: relative;
+	width: 312px!important;
+	height: 393px!important;
+	/*margin: 0px 29px;*/
+	/*left: 0px;*/
+	top: 0px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+
+;
+	/*left: 0px;*/
+
+	/*top: 0px;*/
+
+
+	/* Inside auto layout */
+
+	/*flex: none;*/
+	/*order: 0;*/
+	/*flex-grow: 0;*/
+	/*margin: 0px 33px;*/
+}
+
+
+.divProductoListaa1 {
+
+	position: relative;
+	width: 257px;
+	height: 386px;
+	left: 0px;
+	top: 0px;
+
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	margin: 0px 23px;
+}
+
+.rectanguloProductoCategoria1 {
+
+	position: absolute;
+	width: 235px;
+	height: 368px;
+	left: 0px;
+	top: 18px;
+
+	background: #EFEFEF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 52px;
+}
+
+
+.nombreProductoLista1Dato {
+
+	position: absolute;
+	width: 97px;
+	height: 60px;
+	left: 50px;
+	top: 240px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 60px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+
+
+.descripcionProductoLista1Dato {
+
+	position: absolute;
+	width: 163px;
+	height: 36px;
+	left: 49px;
+	top: 282px;
+
+	font-family: 'Inknut Antiqua';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 36px;
+
+	color: #000000;
+}
+
+
+
+.precioProductoLista1Dato {
+
+	position: absolute;
+	width: 97px;
+	height: 77px;
+	left: 71px;
+	top: 288px;
+
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 66px;
+	line-height: 120px;
+
+	color: #000000;
+}
+
+
+
+.signoPesosText {
+
+	position: absolute;
+	width: 44px;
+	height: 77px;
+	left: 37px;
+	top: 288px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 66px;
+	line-height: 120px;
+
+	color: #000000;
+}
+
+
+
+.imagenProductoImg {
+
+	position: relative;
+	width: 217px;
+	height: 163px;
+	left: 0px;
+	top: 48px;
+}
+
+
+.rectanguloProductoLista1 {
+
+	position: absolute;
+	width: 227px;
+	height: 5px;
+	left: 3px;
+	top: 235px;
+
+	background: #C4C4C4;
+}
+
+
+.decimalesText {
+
+	position: absolute;
+	width: 32px;
+	height: 45px;
+	left: 168px;
+	top: 336px;
+
+	font-family: 'Italianno';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 45px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+.categoria1Text {
+
+	/*position: absolute;*/
+	/*width: 202px;*/
+	/*height: 70px;*/
+	/*left: 610px;*/
+	/*top: 280px;*/
+
+	font-family: 'Indie Flower';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 70px;
+	display: flex;
+	justify-content: center;
+	/* identical to box height */
+
+
+	color: #000000;
+}
+
+
+
+.divBanner {
+
+	position: absolute;
+	width: 1469px;
+	height: 295px;
+	left: -29px;
+	top: 128px;
+}
+
+
+
+rectanguloBanner {
+
+	position: absolute;
+	width: 1440px;
+	height: 284px;
+	left: 29px;
+	top: 11px;
+
+	background: #E8E5E5;
+}
+
+
+.fotoBannerDerecho {
+
+	position: absolute;
+	width: 434px;
+	height: 283px;
+	left: 1035px;
+	top: 12px;
+}
+
+
+
+
+.fotoBannerIzquierdo {
+
+	position: absolute;
+	width: 434px;
+	height: 283px;
+	left: 463px;
+	top: 12px;
+}
+
+
+.logoImg {
+
+	position: absolute;
+	width: 215px;
+	height: 207px;
+	left: 633px;
+	top: 44px;
+}
+
+
+
+.encabezado {
+
+	position: absolute;
+	width: 1440px;
+	height: 112px;
+	left: 0px;
+	top: 0px;
+
+	background: #FFDC05;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+}
+
+
+
+.BarraBusquedaInput {
+
+	position: absolute;
+	width: 466px;
+	height: 45px;
+	left: 466px;
+	top: 33px;
+
+	background: #F4F0F0;
+	border-radius: 12px;
+}
+
+
+
+.telefonoText{
+
+
+width: 235px;
+height: 40px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;}

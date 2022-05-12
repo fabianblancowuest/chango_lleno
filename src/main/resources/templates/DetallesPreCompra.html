@@ -1,81 +1,149 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8">
-    <title>DetallesPreCompra</title>
-    <link rel="stylesheet" href="/CSS/DetallesPreCompra.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+<html lang="en">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<head>
+	<meta charset="UTF-8">
+	<title>DetallesPreCompra</title>
+	<link rel="stylesheet" href="DetallesPreCompra.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
 </head>
 
 
 <body>
-<div class="Encabezado"></div>
-<img src="/IMG/ImgLogo.png" class="ImgLogo">
-<input type="image" src="img/BotonIMGPerfil.png" class="BotonIMGPerfil">
-<span class="detallesDelPagoText">
-  Detalles del pago
-</span>
+	<div class="Encabezado"></div>
 
-<div class="cajaMetodoDePago">
+	<!-- th:href -->
+	<a href="">
+		<img src="img/ImgLogo.png" class="ImgLogo">
+	</a>
+	<!-- th:href -->
 
-    <img src="/IMG/mastercarLogoImg.png" class="mastercarLogoImg">
-    <span class="bancoYnroText">BBVA **** 1234</span>
-    <span class="cuotasText">Pagas 1x $20</span>
-    <input type="button" class="modificarPagoText" value="Modificar">
-</div>
+	<!-- th:href -->
+	<a href="">
+		<img src="img/BotonIMGPerfil.png" class="BotonIMGPerfil">
+	</a>
+	<!-- th:href -->
 
-<span class="detallesDelEnvioText">Detalles del Envio</span>
+	<span class="detallesDelPagoText">Detalles del pago</span>
 
-<div class="cajaEnviosDetalle">
+	<div class="cajaMetodoDePago">
 
-    <input type="checkbox" class="checkBoxEnvio"></input>
-    <span class="direccionEnvioText">9 Julio 1234</span>
-    <span class="direccionCompletaClienteText">C.P 1234 - CABA, Buenos AIres Esteban Quito - 1112345678</span>
-    <input type="button" class="modificarEnvioText" value="Modificar">
+		<!-- th:value -->
+		<img src="img/mastercarLogoImg.png" class="mastercarLogoImg">
+		<!-- th:value -->
 
-</div>
+		<!-- th:value -->
+		<span class="nombreBancoDato">BBVA </span>
+		<!-- th:value -->
 
-<span class="retiroEnSucursalText">Retiro en sucursal</span>
+		<!-- th:value -->
+		<span class="nroBancoDato">**** 1234</span>
+		<!-- th:value -->
 
-<div class="cajaSucursalRetiro">
+		<span class="cuotasText">Pagas 1x $</span>
 
-    <input type="checkbox" class="checkBoxSucursal"></input>
-    <span class="calleSucursalText">25 Mayo 1234</span>
-    <span class="direccionCompletaSucursalText">C.P 1234 - CABA, Buenos Aires</span>
+		<!-- th:value -->
+		<span class="cuotasTextDato">20</span>
+		<!-- th:value -->
 
-</div>
+		<!-- th:value -->
+		<a href="" class="modificarPagoText">Modificar</a>
+		<!-- th:value -->
 
-<div class="cajaConfirmarCompra">
-
-    <div class="cajaDetalleCompra">
-
-        <span class="productoText">Producto</span>
-        <span class="nroProductoText">$20</span>
-        <span class="envioText">Envio</span>
-        <span class="nroEnvioText">$2</span>
-        <span class="SubtotalText">Subtotal</span>
-        <span class="nroSubtotalText">$22</span>
-        <div class="rectanguloDetalleProducto"></div>
-        <span class="totalText">Total</span>
-        <span class="nroTotalText">$22</span>
-    </div>
-
-    <img src="/IMG/pulgarManoImg.png" class="pulgarManoImg">
+	</div>
 
 
-    <a class="confirmarCompraBoton" >Confirmar compra</a>
+	<span class="detallesDelEnvioText">Envio a domicilio</span>
+
+	<div class="cajaEnviosDetalle">
+
+		<input type="radio" class="checkBoxEnvio" name="envio" id="checkEnvio" checked></input>
+
+		<!-- th:value -->
+		<span class=" direccionEnvioText">9 Julio 1234</span>
+		<!-- th:value -->
+
+		<!-- th:value -->
+		<span class="direccionCompletaClienteText">C.P 1234 - CABA, Buenos AIres Esteban Quito</span>
+		<!-- th:value -->
+
+		<!-- th:value -->
+		<span class="telefonoClienteText">1112345678</span>
+		<!-- th:value -->
+
+		<!-- th:href -->
+		<a href="" class="modificarEnvioText">Modificar</a>
+		<!-- th:heref -->
+
+	</div>
+
+	<span class="retiroEnSucursalText">Retiro en sucursal</span>
+
+	<div class="cajaSucursalRetiro">
+
+		<input type="radio" class="checkBoxSucursal" id="checkSucursal" name="envio"></input>
+		<span class="calleSucursalText">25 Mayo 1234</span>
+		<span class="direccionCompletaSucursalText">C.P 1234 - CABA, Buenos Aires</span>
+
+	</div>
+
+	<div class="cajaConfirmarCompra">
+
+		<div class="cajaDetalleCompra">
+
+			<span class="productoText">Producto</span>
+			<span class="SignoNroProducto">$</span>
+			<!-- th:heref -->
+			<span class="nroProductoDato">20</span>
+			<!-- th:heref -->
+
+			<!-- Sobtotal detalle -->
+			<span class="envioText">Envio</span>
+			<!-- Sobtotal detalle -->
+
+			<!-- th:value -->
+			<span class="nroEnvioDato" id="envioPrecio">2</span>
+			<!-- th:value -->
+			<span class="SignoNroEnvioText">$</span>
 
 
-</div>
+			<!-- Envio detalle -->
+			<span class="SubtotalText">Subtotal</span>
+			<!-- Envio detalle -->
 
+			<!-- th:value -->
+			<span class="nroSubtotalDato">12</span>
+			<!-- th:value -->
+			<span class="SignoNroSubtotalText">$</span>
+
+			<div class="rectanguloDetalleProducto"></div>
+
+			<span class="totalText">Total</span>
+			<!-- th:value -->
+			<span class="nroTotalDato">22</span>
+			<!-- th:value -->
+			<span class="SignoNroTotalText">$</span>
+		</div>
+
+
+		<img src="img/pulgarManoImg.png" class="pulgarManoImg">
+
+
+		<a class="confirmarCompraBoton" href="">Confirmar compra</a>
+
+
+	</div>
+	<script src="script.js" type="text/javascript"></script>
 </body>
 
+
+</script>
 
 </html>
