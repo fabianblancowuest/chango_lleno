@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -59,6 +59,15 @@
     top: 21px;
 }
 
+.pulgarManoImg {
+
+    position: absolute;
+    width: 86.32px;
+    height: 105.65px;
+    left: 03px;
+    top: 506px;
+
+}
 
 .cajaConfirmarCompra {
 
@@ -74,24 +83,61 @@
 }
 
 
-.pulgarManoImg {
 
-    position: absolute;
-    width: 86.32px;
-    height: 105.65px;
-    left: 03px;
-    top: 506px;
 
+.divProductoConfirmar {
+    position: relative;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    top: 0px;
+    left: 0px;
 }
 
+.divEnvioConfirmar {
+
+    position: relative;
+    height: auto;
+    width: auto;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    padding : 0px;
+}
+
+.divSubtotalConfirmar {
+
+    position: relative;
+    height: auto;
+    width: auto;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.divTotalConfirmar {
+
+    position: relative;
+    height: auto;
+    width: auto;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
 
 .cajaDetalleCompra {
 
-    position: absolute;
+    position: relative;
     width: 440px;
     height: 381px;
     left: 20px;
     top: 43px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
 }
 
 
@@ -115,7 +161,7 @@
 
 
 
-.nroProductoText {
+.nroProductoDato {
 
     position: absolute;
     width: 54px;
@@ -133,9 +179,25 @@
     color: #000000;
 }
 
+.SignoNroProducto {
 
+    position: absolute;
+    width: 54px;
+    height: 47px;
+    left: 300px;
+    top: 34px;
 
-.nroEnvioText {
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.nroEnvioDato {
 
     position: absolute;
     width: 35px;
@@ -153,9 +215,25 @@
     color: #000000;
 }
 
+.SignoNroEnvioText {
 
+    position: absolute;
+    width: 35px;
+    height: 47px;
+    left: 300px;
+    top: 112px;
 
-.nroSubtotalText {
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.nroSubtotalDato {
 
     position: absolute;
     width: 51px;
@@ -173,9 +251,25 @@
     color: #000000;
 }
 
+.SignoNroSubtotalText {
 
+    position: absolute;
+    width: 51px;
+    height: 47px;
+    left: 300px;
+    top: 193px;
 
-.nroTotalText {
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.nroTotalDato {
 
     position: absolute;
     width: 51px;
@@ -193,6 +287,23 @@
     color: #000000;
 }
 
+.SignoNroTotalText {
+
+    position: absolute;
+    width: 51px;
+    height: 47px;
+    left: 300px;
+    top: 312px;
+
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #000000;
+}
 
 .envioText {
 
@@ -275,10 +386,10 @@
     left: 89px;
     top: 515px;
 
-    padding-top:20px;
-    padding-bottom:20px;
-    padding-left:20px;
-    padding-right:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 
     font-family: 'Inder';
     font-style: normal;
@@ -312,7 +423,6 @@
 
     color: #000000;
 }
-
 
 
 .cajaEnviosDetalle {
@@ -481,7 +591,7 @@
 
     border: 1px solid #000000;
     box-sizing: border-box;
-    
+
 }
 
 
@@ -554,7 +664,23 @@
     color: #000000;
 }
 
+.cuotasTextDato {
 
+    position: absolute;
+    width: 101px;
+    height: 20px;
+    left: 230px;
+    top: 71px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    color: #000000;
+}
 
 .modificarPagoText {
 
@@ -656,4 +782,5 @@
     left: 55px;
     top: 208px;
 }
+
 

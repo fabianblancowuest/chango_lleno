@@ -52,6 +52,25 @@
 	display: flex;
 }
 
+.divFooter{
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 262px;
+
+position: relative;
+background: #FFDC05;
+/* width: 1366px; */
+height: 40px;  
+/* left: 10px;
+top: 2332px;} */
+}
 
 
 .encabezado {
@@ -214,16 +233,6 @@
 /*border-radius: 450px;*/
 
 
-.divFooter {
-
-	position: absolute;
-	width: 1407px;
-	height: 40px;
-	left: 10px;
-	top: 2332px;
-}
-
-
 
 .rectanguloFutten {
 
@@ -239,61 +248,49 @@
 
 .mailText {
 
-	position: absolute;
-	width: 339px;
-	height: 40px;
-	left: 1068px;
-	top: 0px;
 
-	font-family: 'Inder';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 32px;
-	line-height: 40px;
-	/* identical to box height */
+width: 339px;
+height: 40px;
 
-	color: #000000;
-}
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
 
 
-
-.telefonoText {
-
-	position: absolute;
-	width: 235px;
-	height: 40px;
-	left: 0px;
-	top: 0px;
-
-	font-family: 'Inder';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 32px;
-	line-height: 40px;
-	/* identical to box height */
-
-	color: #000000;
-}
+color: #000000;
 
 
+/* Inside auto layout */
+
+flex: none;
+order: 3;
+flex-grow: 0;}
 
 .direccionText {
 
-	position: absolute;
-	width: 249px;
-	height: 40px;
-	left: 638px;
-	top: 0px;
 
-	font-family: 'Inder';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 32px;
-	line-height: 40px;
-	/* identical to box height */
+width: 249px;
+height: 40px;
 
-	color: #000000;
-}
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;}
 
 
 
@@ -801,6 +798,29 @@
 	/*overflow: scroll;*/
 }
 
+.divCarruselProductos2 {
+	position: relative;
+	margin: 0px 60px;
+
+	left: 51px;
+	/* width: 1309px; */
+	top: 1366px;
+	/* Auto layout */
+
+	/*display: flex;*/
+	/*flex-direction: row;*/
+	/*justify-content: left;*/
+	/*align-items: flex-start;*/
+	/*padding: 0px;*/
+
+	/*position: absolute;*/
+	/*width: 1366px;*/
+	/*height: 386px;*/
+
+	/*top: 370px;*/
+	/*overflow: scroll;*/
+}
+
 .carousel__siguiente,
 .carousel__anterior{
 	position: absolute;
@@ -824,6 +844,55 @@
 .carousel__siguiente{
 	right: -44px;
 }
+
+.carousel__siguiente2,
+.carousel__anterior2{
+	position: absolute;
+	display: block;
+	width: 52px;
+	/*height: 30px;*/
+	border: none;
+	top: 124px;
+	/*top: calc(50% - 712px);*/
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+
+}
+
+.carousel__anterior2{
+	left: -54px;
+}
+
+.carousel__siguiente2{
+	right: -44px;
+}
+
+.carousel__siguiente3,
+.carousel__anterior3{
+	position: absolute;
+	display: block;
+	width: 52px;
+	/*height: 30px;*/
+	border: none;
+	top: 124px;
+	/*top: calc(50% - 712px);*/
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+
+}
+
+.carousel__anterior3{
+	left: -54px;
+}
+
+.carousel__siguiente3{
+	right: -44px;
+}
+
 .carrusel__lista{
 
 	/*position: relative;*/
@@ -1123,3 +1192,25 @@ rectanguloBanner {
 
 
 
+.telefonoText{
+
+
+width: 235px;
+height: 40px;
+
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+/* identical to box height */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;}

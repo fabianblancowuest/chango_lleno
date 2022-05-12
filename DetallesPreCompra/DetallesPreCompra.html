@@ -47,7 +47,11 @@
 		<span class="nroBancoDato">**** 1234</span>
 		<!-- th:value -->
 
-		<span class="cuotasText">Pagas 1x $20</span>
+		<span class="cuotasText">Pagas 1x $</span>
+
+		<!-- th:value -->
+		<span class="cuotasTextDato">20</span>
+		<!-- th:value -->
 
 		<!-- th:value -->
 		<a href="" class="modificarPagoText">Modificar</a>
@@ -94,35 +98,40 @@
 
 		<div class="cajaDetalleCompra">
 
-			<span class="productoText">Producto</span>
+				<span class="productoText">Producto</span>
+				<span class="SignoNroProducto">$</span>
+				<!-- th:heref -->
+				<span class="nroProductoDato">20</span>
+				<!-- th:heref -->
 
-			<!-- th:heref -->
+				<!-- Sobtotal detalle -->
+				<span class="envioText">Subtotal</span>
+				<!-- Sobtotal detalle -->
 
-			<span class="nroProductoText">$20</span>
-			<!-- th:heref -->
 
-			<div>
-				<span class="envioText">Envio</span>
-				<span class="nroEnvioText">$2</span>
-			</div>
+				<!-- th:value -->
+				<span class="nroEnvioDato">2</span>
+				<!-- th:value -->
+				<span class="SignoNroEnvioText">$</span>
 
-			<span class="SubtotalText">Subtotal</span>
+				<!-- Envio detalle -->
+				<span class="SubtotalText">Envio</span>
+				!-- Envio detalle -->
 
-			<!-- th:heref -->
-			<span class="nroSubtotalText">$22</span>
-			<!-- th:heref -->
+				<!-- th:value -->
+				<span class="nroSubtotalDato">22</span>
+				<!-- th:value -->
+				<span class="SignoNroSubtotalText">$</span>
 
-			<div class="rectanguloDetalleProducto"></div>
+				<div class="rectanguloDetalleProducto"></div>
 
-			<!-- th:heref -->
-			<span class="totalText">Total</span>
-			<!-- th:heref -->
-
-			<!-- th:heref -->
-			<span class="nroTotalText">$22</span>
-			<!-- th:heref -->
-
+				<span class="totalText">Total</span>
+				<!-- th:value -->
+				<span class="nroTotalDato">22</span>
+				<!-- th:value -->
+				<span class="SignoNroTotalText">$</span>
 		</div>
+
 
 		<img src="img/pulgarManoImg.png" class="pulgarManoImg">
 
