@@ -37,7 +37,7 @@ public class CarritoController {
         return " ";
     }
 
-    @PostMapping("/cargar/{idProducto")
+    @PostMapping("/cargar/{idProducto}")
     public String cargarCarrito(ModelMap modelo, @PathVariable String idProducto, @RequestParam Integer unidades, HttpSession session) {
         try {
             if (unidades == 0 || unidades == null) {

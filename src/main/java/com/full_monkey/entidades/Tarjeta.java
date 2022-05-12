@@ -20,7 +20,7 @@ public class Tarjeta {
     private Integer clave;
     private String expiracion;
     @OneToOne
-    Usuario user;
+    private Usuario user;
 
     public Tarjeta() {
     }
