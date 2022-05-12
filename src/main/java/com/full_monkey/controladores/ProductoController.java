@@ -59,7 +59,7 @@ public class ProductoController {
     public ModelAndView traerTodosLosProductos() throws Exception {
         ModelMap modelo = new ModelMap();
         modelo.put("listaDeProductos",productoService.listarProductos());
-        return new ModelAndView("catalogo",modelo);
+        return new ModelAndView("catalogoPrincipal",modelo);
     }
 
 }
