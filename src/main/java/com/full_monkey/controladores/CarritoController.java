@@ -5,6 +5,7 @@ import com.full_monkey.entidades.Usuario;
 
 import com.full_monkey.servicios.CarritoServicio;
 import com.full_monkey.servicios.ProductoService;
+import com.full_monkey.servicios.UsuarioServicio;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class CarritoController {
 
     @Autowired
     ProductoService productoServicio;
+    
+    @Autowired
+    UsuarioServicio us;
 
     @GetMapping("/crearCarrito")
     public String crearCarrito(HttpSession session) {
@@ -43,8 +47,8 @@ public class CarritoController {
             if (unidades == 0 || unidades == null) {
                 throw new Exception();
             }
-            Usuario u = (Usuario) session.getAttribute("usuariosession");
-
+            Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
             Producto prod = productoServicio.getOne(idProducto);
             prod.setStock(prod.getStock() - unidades);
             prod.setUnidades(unidades);
@@ -58,7 +62,8 @@ public class CarritoController {
 
     @GetMapping("/cargarUno/{idProducto}")
     public String cargarUnoCarrito(ModelMap modelo, @PathVariable String idProducto, HttpSession session) throws Exception {
-        Usuario u = (Usuario) session.getAttribute("usuariosession");
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
 
         Producto prod = productoServicio.getOne(idProducto);
         prod.setStock(prod.getStock() - 1);
@@ -83,7 +88,8 @@ public class CarritoController {
             if (unidades == 0 || unidades == null) {
                 throw new Exception();
             }
-            Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity
+            Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
 
             Producto prod = productoServicio.getOne(idProducto);
             prod.setStock(prod.getStock() + unidades);
@@ -97,7 +103,8 @@ public class CarritoController {
 
     @GetMapping("/sacarUno/{idProducto}")
     public String sacarUnoCarrito(ModelMap modelo, HttpSession session, @PathVariable String idProducto) throws Exception {
-        Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
 
         Producto prod = productoServicio.getOne(idProducto);
         prod.setStock(prod.getStock() + 1);
@@ -123,7 +130,8 @@ public class CarritoController {
 
     @PostMapping("/precioEnvio")
     public String precioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio) {
-        Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity 
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
         try {
             carritoServicio.precioDeEnvio(u.getPerfil().getPendiente().getId(), precioEnvio);
             return "";
@@ -134,7 +142,8 @@ public class CarritoController {
 
     @GetMapping("/moificarEnvio")
     public String mostrarPrecioEnvio(ModelMap modelo, HttpSession session) {
-        Usuario u = (Usuario) session.getAttribute("usuariosession");
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
 
         modelo.put("precioEnvio", u.getPerfil().getPendiente().getPrecio_envio());
         return "";
@@ -153,7 +162,8 @@ public class CarritoController {
 
     @GetMapping("/mostrarProductos")
     public String mostrarProductosDelCarrito(ModelMap modelo, HttpSession session) {
-        Usuario u = (Usuario) session.getAttribute("usuariosession");//falta SpringSegurity  
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId()); 
 
         List<Producto> producto;
         try {
