@@ -22,7 +22,7 @@ public class Compra {
     private String id;
     
     private LocalDateTime fecha_compra;
-    @OneToOne
+      @OneToOne
     private Carrito carro;
     private String metodopago;
     private Double precio_final;
