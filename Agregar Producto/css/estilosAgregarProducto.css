@@ -220,4 +220,18 @@ font-family: 'Poppins', sans-serif;
         font-size: 20px;
         height: 70px;
     }
+
+    .cuadro{
+        padding: 0 0 20px;
+    }
+
+    .i1,
+    .i2,
+    .i3,
+    .i4,
+    .i5{
+        margin: 20px auto 25px;
+        padding-left: 20px;
+    }
+    
 }
