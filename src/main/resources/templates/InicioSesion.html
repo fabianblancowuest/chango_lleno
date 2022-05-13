@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>InicioSesion</title>
 	<link rel="stylesheet" href="InicioSesion.css">
+	<link rel="stylesheet" href="estilosPopus.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
@@ -26,14 +27,17 @@
 		<a href=""><input type="image" src="Images/botonCatalogo.png" class="botonCatalogo"></input></a>
 	</div>
 
+	
+
+
+
 
 	<div class="IngresarDatos">
 
 		<div class="inicioSesionRectangulo"></div>
 		<img src="Images/logoFullMonkeyImg.png" class="logoFullMonkeyImg">
 
-		<a href="#" class="olvidadoContraseniaText">¿Has olvidado la contraseña?
-		</a>
+		<a href="#"  id="btn-abrir-popup" class="olvidadoContraseniaText">¿Has olvidado la contraseña?</a>
 
 
 		<div class="crearCuentaRectangulo"></div>
@@ -66,6 +70,23 @@
 
 
 
+	<div class="overlay" id="overlay">
+		<div class="popup" id="popup">
+			<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+			<h3>¿Olvidaste tu contraseña?</h3>
+			<h4>Completa los siguientes Datos.</h4>
+			<form action="">
+				<div class="contenedor-inputs">
+					<input type="email" placeholder="Ingresa tu Email">
+					<input type="password" placeholder="Contraseña">
+					<input type="password" placeholder="Repetir Contraseña">
+					<input type="text" placeholder="Nombre de tu Primer Mascota">
+				</div>
+				<input type="submit" class="btn-submit" value="Aceptar">
+			</form>
+		</div>
+	</div>
+	<script src="popup.js"></script>
 </body>
 
 </html>
