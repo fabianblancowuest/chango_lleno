@@ -9,6 +9,7 @@ import com.full_monkey.servicios.UsuarioServicio;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 @RequestMapping("/carrito")
 public class CarritoController {
 
@@ -38,7 +40,7 @@ public class CarritoController {
 
     @GetMapping("/cargar/{idProducto}")
     public String cargarCarrito(@PathVariable String idProducto) {
-        return " ";
+        return "";
     }
 
     @PostMapping("/cargar/{idProducto}")
@@ -162,16 +164,17 @@ public class CarritoController {
 
     @GetMapping("/mostrarProductos")
     public String mostrarProductosDelCarrito(ModelMap modelo, HttpSession session) {
+        try {
         Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId()); 
 
         List<Producto> producto;
-        try {
+        
             producto = carritoServicio.mostrarProductos(u.getPerfil().getPendiente().getId());
             modelo.addAttribute("listaProductos", producto);
-            return "";
+            return "Carrito.html";
         } catch (Exception ex) {
-            return "";
+            return "redirect:/producto/listaDeProductos";
         }
     }
 }

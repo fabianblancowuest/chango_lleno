@@ -6,6 +6,7 @@ import com.full_monkey.servicios.UsuarioServicio;
 import java.util.Date;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/Perfil")
+@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+@RequestMapping("/perfil")
 public class PerfilController {
 
     @Autowired
@@ -28,7 +30,7 @@ public class PerfilController {
            Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
             modelo.addAttribute("perfil", ps.findById(u.getPerfil().getId()));
-            return "perfil.html";
+            return "verPerfil.html";
        }catch (Exception e){
            return "redirect:/";
        }

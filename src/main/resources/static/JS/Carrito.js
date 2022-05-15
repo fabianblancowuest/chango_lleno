@@ -21,5 +21,4 @@ for (let contador = 0; contador < unidades.length; contador++) {
             }
             }
         )
-    
 }

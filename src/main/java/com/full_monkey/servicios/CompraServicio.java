@@ -2,8 +2,10 @@ package com.full_monkey.servicios;
 
 import com.full_monkey.entidades.Carrito;
 import com.full_monkey.entidades.Compra;
+import com.full_monkey.entidades.Tarjeta;
 import com.full_monkey.repository.CompraRepository;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,18 +18,20 @@ public class CompraServicio {
     private CompraRepository compraRepositorio;
 
     @Transactional
-    public Compra crearCompra(Carrito carro, String metodopago) throws Exception {
+    public Compra crearCompra(Carrito carro, Tarjeta metodopago) throws Exception {
         Compra compra = new Compra();
         validator(LocalDateTime.now(), carro, metodopago);
         compra.setFecha_compra(LocalDateTime.now());
         compra.setCarro(carro);
+        List<Compra> c = compraRepositorio.findAll();
+        compra.setNumerp_orden(c.size());
         compra.setMetodopago(metodopago);
         compra.setPrecio_final(carro.getPrecio_total() + carro.getPrecio_envio());
         return compraRepositorio.save(compra);
     }
 
     @Transactional
-    public Compra modificar(String id, LocalDateTime fecha_compra, Carrito carro, String metodopago, Double precio_final) throws Exception {
+    public Compra modificar(String id, LocalDateTime fecha_compra, Carrito carro, Tarjeta metodopago, Double precio_final) throws Exception {
         validator(fecha_compra, carro, metodopago);
         Optional<Compra> compraTraida = compraRepositorio.findById(id);
         if (compraTraida.isPresent()) {
@@ -54,14 +58,14 @@ public class CompraServicio {
 
     }
 
-    public void validator(LocalDateTime fecha_compra, Carrito carro, String metodopago) throws Exception {
+    public void validator(LocalDateTime fecha_compra, Carrito carro, Tarjeta metodopago) throws Exception {
         if (fecha_compra == null) {
             throw new Exception("fecha invalida");
         }
         if (carro == null) {
             throw new Exception("el carro es nulo");
         }
-        if (metodopago != "efectivo" || metodopago != "tarjeta") {
+        if (metodopago == null) {
             throw new Exception("metodo de pago incorrecto");
         }
 

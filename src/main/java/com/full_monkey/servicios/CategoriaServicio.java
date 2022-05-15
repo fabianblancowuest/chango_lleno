@@ -43,7 +43,7 @@ public class CategoriaServicio {
         Categoria c = cr.getById(id);
         cr.delete(c);
     }
-    
+    @Transactional(readOnly = true)
     public List<Categoria> findAll(){
         return cr.findAll();
     }
