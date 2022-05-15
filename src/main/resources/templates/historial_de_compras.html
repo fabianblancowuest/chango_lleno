@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/styleshiscompra.css">
+    <link rel="stylesheet" href="/static/CSS/styleshiscompra.css">
 
     <title>Historial de compras</title>
 </head>
@@ -21,29 +21,30 @@
 
             <span class="fotProducto">Nro de órden</span>
             <span class="TextNombre">Fecha</span>
-            <span class="TextStock">Subtotal</span>
+            <span class="TextStock">Total</span>
             <span class="TextCategoria">Detalle</span>
         </div>
         <div class="Encabezado1"></div>
         <!-- Productos -->
-        <form action="">
+        <div th:each="compra : ${productos}">
             <div class="DivProductoCarrito">
-                <span class="nombreProducto">
+
+                <span class="nombreProducto" th:text="${compra.numerp_orden}">
                     00000000001
                 </span>
-                <span class="NroPrecioUnidad">
+                <span class="NroPrecioUnidad" th:text="${combra.fecha_compra}">
                     21/04/2022
                 </span>
-                <span class="NroSubtotalUnidad">
+                <span class="NroSubtotalUnidad" th:text="${compra.precio_final}">
                     $ 180.00
                 </span>
 
-                <img src="/IMG/boton_detalle.svg" alt="" class="boton-detalle">
+                <a th:href="@{/detallesCompra}"><img src="/static/IMG/boton_detalle.svg" alt="" class="boton-detalle"></a>
 
                 <!-- Barra gris -->
                 <div class="Encabezado2"></div>
             </div>
-        </form>
+        </div>
 
     </main>
 
