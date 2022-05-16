@@ -1,47 +1,28 @@
-package com.full_monkey.controladores;
-
-<<<<<<< HEAD
-import com.full_monkey.entidades.Carrito;
-import com.full_monkey.entidades.Compra;
-import com.full_monkey.entidades.Perfil;
-import com.full_monkey.entidades.Usuario;
-import com.full_monkey.enums.Role;
-import com.full_monkey.servicios.UsuarioServicio;
-import java.util.Date;
-import java.util.List;
-import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-=======
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import com.full_monkey.entidades.Carrito;
 import com.full_monkey.entidades.Compra;
 import com.full_monkey.entidades.Usuario;
-import com.full_monkey.servicios.CarritoServicio;
 import com.full_monkey.servicios.UsuarioServicio;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
->>>>>>> 675e954dc6c4d338c8aabf6c20ea9dc95cd50573
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
-<<<<<<< HEAD
+ @Autowired
+ 
 private UsuarioServicio usuarioServicio;
-=======
 
-    @Autowired
-    private UsuarioServicio usuarioServicio;
 
->>>>>>> 675e954dc6c4d338c8aabf6c20ea9dc95cd50573
+
     @GetMapping
     public String index() {
         return "redirect:/login";

@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.full_monkey.controladores;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-@RequestMapping("/tarjeta")
-public class TarjetaController {
-    
-      @GetMapping
-    public String tarjeta() {
-        return "tarjeta.html";
-    }
-
-    
-}
-=======
 package com.full_monkey.controladores;
 
 import com.full_monkey.entidades.Tarjeta;
@@ -51,7 +27,7 @@ public class TarjetaController {
     
     @GetMapping("/registro")
     public String registrarTarjeta(){
-        return "";
+        return "tarjeta";
     }
     
     @PostMapping("/registro")
@@ -60,10 +36,10 @@ public class TarjetaController {
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
             ts.crearTarjeta(titular, fotoempresa, numero, clave, clave, expiracion, u);
-        return ""; 
+        return "DetallesPreCompra"; 
         }catch(Exception e){
             System.err.println(e.getMessage());
-         return "";   
+         return "DetallesPreCompra";   
         }
     }
     
@@ -74,12 +50,12 @@ public class TarjetaController {
             Usuario u = us.findById(user.getId());
             List<Tarjeta> lt = ts.findByUser(u);
             modelo.addAttribute("tarjetas", lt);
-            return "";
+            return "DetallesPreCompra";
         }catch(Exception e){
             System.err.println(e.getMessage());
-            return "";
+            return "DetallesPreCompra";
         }
     }
 }
 
->>>>>>> 675e954dc6c4d338c8aabf6c20ea9dc95cd50573
+

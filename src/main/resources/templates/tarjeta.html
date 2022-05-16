@@ -14,6 +14,13 @@ and open the template in the editor.
        
     </head>
     <body>
+         <div class="flechaatras">
+           
+            <a th:href="@{/compra}">                
+                <img src="/IMG/flechaatras.png" alt="">
+            </a>
+        </div>
+        
         <div class="contenedortotal">
         <div>
         <h1 >Nueva Tarjeta</h1>
@@ -27,21 +34,22 @@ and open the template in the editor.
          <img src="/IMG/naranja.jpg" class="naranja">
          
          </div>
-          <form th:action="@{/tarjeta}" method="POST">
+          <form th:action="@{/tarjeta/registro}" method="POST">
                
                 <div class="input-text">  
-                    <label for="" class="numerotarjeta"></label>
-                      <input type="text" placeholder="numero de tarjeta">
-               
+                    <div class="numerotarjeta">
+                    <label for="" ></label>
+                    <input name="numero" type="text" placeholder="numero de tarjeta">
+                    </div>
 
                     <label for=""></label>
-                    <input type="text" placeholder="Expiracion(MM/AA)" >
+                    <input name="expiracion" type="text" placeholder="Expiracion(MM/AA)" >
 
                     <label for=""></label>
-                    <input type="password" placeholder="Codigo de seguridad">
+                    <input name="clave" type="password" placeholder="Codigo de seguridad">
 
                     <label for=""></label>
-                    <input type="text" placeholder="nombre como figura en la tarjeta">
+                    <input name="titular" type="text" placeholder="nombre como figura en la tarjeta">
                     </div>   
                     <div class="iconoguardartarjeta">
                     <button id="guardartarjeta" type="submit"><img class="iconoguardartarjeta" src="/IMG/guardartarjeta.png" alt=""></button>
