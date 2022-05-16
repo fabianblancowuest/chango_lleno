@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Inria+Sans:wght@400;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilosAgregarProducto.css">
+    <title>Agregar Producto</title>
+</head>
+<body>
+    <header class="header">
+        <a href="">
+            <img class="imgLogo" src="./img/ImgLogo.png" alt="">
+        </a>
+
+        <a href="">
+            <img class="imgIcono" src="./img/btnPerfil.png" alt="">
+        </a>
+    </header>
+
+    <main class="main">
+        <div class="contenedor cuadro">
+            <div class="">
+                <form class="datos" th:action="@{/producto/crear}">
+
+                    <label class="l1" for="">Foto Producto</label>
+                    <input class="i1" name="img" type="text">
+
+                    <label class="l2" for="">Nombre</label>
+                    <input class="i2" name="nombre" type="text" >
+
+                    <label class="l3"for="">Categoria</label>
+                    <input class="i3" name="area" type="text">
+                    
+                    <label class="l4"for="">Stock</label>
+                    <input class="i4" name="stock" type="number">
+
+                    <label class="l5"for="">Precio</label>
+                    <input class="i5" name="precio" type="number">
+
+                    <button class="btnAgregar" type="submit"> Agregar Producto</button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

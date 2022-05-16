@@ -14,6 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProductoService {
     @Autowired
     private ProductoRepository productoRepository;
+    
+    @Autowired
+    private CategoriaServicio cs;
 
     @Transactional(readOnly = true)
     public List<Producto> findByNombre(String nombre) {
@@ -26,9 +29,16 @@ public class ProductoService {
     }
 
     @Transactional
-    public void crearProducto(Producto producto) throws Exception {
-        validar(producto.getNombre(),producto.getPrecio(),producto.getStock(),producto.getCategoria(),producto.getDescripcion(),producto.getImg());
-        productoRepository.save(producto);
+    public void crearProducto(String img, String nombre, Double precio, Integer stock, String area, String descripcion,Integer unidades) throws Exception {
+        validar(nombre, precio, stock, area, descripcion, img);
+        Producto p = new Producto();
+        p.setImg(img);
+        p.setNombre(nombre);
+        p.setPrecio(precio);
+        p.setStock(stock);
+        p.setUnidades(unidades);
+        p.setCategoria(cs.crearCategoria(area));
+        productoRepository.save(p);
     }
 
     @Transactional
@@ -54,7 +64,7 @@ public class ProductoService {
     @Transactional
     public Producto modificarProducto(Producto producto) throws Exception {
 
-        validar(producto.getNombre(),producto.getPrecio(),producto.getStock(),producto.getCategoria(),producto.getDescripcion(),producto.getImg());
+        validar(producto.getNombre(),producto.getPrecio(),producto.getStock(),producto.getCategoria().getNombre(),producto.getDescripcion(),producto.getImg());
         if (productoRepository.findById(producto.getId()).isPresent()){
             Producto productoBuscado = productoRepository.findById(producto.getId()).get();
             productoBuscado.setNombre(producto.getNombre());
@@ -72,7 +82,7 @@ public class ProductoService {
 
     }
 
-    public void validar(String nombre,Double precio,Integer stock,Categoria categoria,String descripcion,String img) throws Exception {
+    public void validar(String nombre,Double precio,Integer stock,String categoria,String descripcion,String img) throws Exception {
         if (nombre == null || nombre.isEmpty()){
             throw new Exception("El producto no puede estar vacio");
         }
@@ -92,6 +102,16 @@ public class ProductoService {
             throw new Exception("No se permiten productos sin imagen");
         }
 
+    }
+
+    public List<Producto> listarProductos() throws Exception {
+        if(!productoRepository.findAll().isEmpty()){
+            List<Producto> productos =  productoRepository.findAll();
+            return productos;
+
+        }else{
+            throw new Exception("No se encontro ningun producto en el catalogo");
+        }
     }
 }
 

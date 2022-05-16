@@ -1,0 +1,323 @@
+/* Fuentes
+
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  font-family: "Inter", sans-serif;
+}
+
+.header {
+  background-color: #ffdc05;
+  height: 70px;
+  width: 100%;
+}
+
+.section {
+  background-image: url("../img/carroCompra.png");
+  height: 100vh;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.contenedor {
+  background-color: #fff;
+  width: 1440px;
+  height: 772px;
+  margin: 5px auto;
+}
+
+/* ENCABEZADO */
+.encabezado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "botonAtras textoEncabezado textoEncabezado none";
+}
+
+.botonAtras {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 400;
+  grid-area: botonAtras;
+  border-radius: 50px;
+}
+
+.botonAtras:hover{
+  background: rgb(255, 255, 0);
+  background: linear-gradient(
+    90deg,
+    rgb(255, 237, 44) 10%,
+    rgb(254, 249, 119) 27%,
+    rgb(255, 248, 149) 53%,
+    #fffcc6fe 90%
+  );
+}
+
+.flecha {
+  width: 20px;
+  height: 16px;
+  margin-left: 18px;
+  margin-right: 8px;
+}
+
+.textoEncabezado {
+  text-align: center;
+  grid-area: textoEncabezado;
+}
+
+.textoEncabezado h2 {
+  color: #ffdc05;
+  font-size: 32px;
+  font-weight: 900;
+  margin-top: 15px;
+}
+
+.textoEncabezado p {
+  color: #000;
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* CUADRO */
+
+.titulo {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 16px 0;
+  font-size: 24px;
+  border: 1px solid #000;
+  margin: 0 18px;
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "text1 text1 imagenPerfil text2 text2";
+  border: 1px solid #000;
+  margin: 0 18px 18px;
+}
+.datos .par {
+  padding: 10px;
+  border-radius: 20px;
+  background: rgb(246, 247, 71);
+  background: linear-gradient(
+    90deg,
+    rgb(255, 255, 155) 1%,
+    rgb(254, 249, 119) 27%,
+    rgb(255, 246, 122) 53%,
+    #fffa9afe 80%
+  );
+  margin: 10px 0 10px 0;
+}
+.text2 .par{
+    padding: 10px;
+  border-radius: 20px;
+  background: rgb(246, 247, 71);
+  background: linear-gradient(
+    90deg,
+    rgb(255, 255, 155) 1%,
+    rgb(254, 249, 119) 27%,
+    rgb(255, 246, 122) 53%,
+    #fffa9afe 80%
+  );
+  margin: 10px 0 10px 0;
+}
+.text1 {
+  grid-area: text1;
+}
+
+.text2 {
+  grid-area: text2;
+}
+
+.imagenPerfil {
+  grid-area: imagenPerfil;
+  margin: 20px auto;
+  width: 145px;
+  height: 145px;
+  border-style: dashed;
+  border-width: 1px;
+  background-color: #e6e6e6;
+  border-radius: 75px;
+}
+
+.imagenPerfil img {
+  width: 100%;
+  height: 145px;
+  border-radius: 75px;
+}
+.text1,
+.text2 {
+  display: flex;
+  flex-direction: column;
+  margin: 120px 18px 0;
+  padding: 18px 0 22px;
+  font-size: 24px;
+}
+
+.text1 label,
+.text2 label {
+  margin-bottom: 8px;
+}
+
+.text1 input,
+.text2 input {
+  margin-bottom: 35px;
+  height: 40px;
+  background-color: #efefef;
+  border-style: none;
+}
+
+.text1 input:last-child,
+.text2 input:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor {
+    width: auto;
+    height: auto;
+  }
+
+  /* ENCABEZADO */
+  .encabezado {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "botonAtras textoEncabezado textoEncabezado textoEncabezado none";
+  }
+
+  .flecha {
+    margin-left: 12px;
+  }
+
+  .textoEncabezado h2 {
+    font-size: 28px;
+    margin-top: 15px;
+  }
+
+  .textoEncabezado p {
+    font-size: 20px;
+  }
+
+  /* CUADRO */
+  .titulo {
+    padding: 14px 0;
+    font-size: 20px;
+    margin: 0 12px;
+  }
+
+  .datos {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "imagenPerfil"
+      "text1"
+      "text2";
+    margin: 0 12px 12px;
+  }
+
+  .text1,
+  .text2 {
+    margin: 0 12px;
+    padding: 18px 0 22px;
+    font-size: 20px;
+  }
+
+  .text1 input,
+  .text2 input {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  /* ENCABEZADO */
+  .encabezado {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "botonAtras textoEncabezado textoEncabezado textoEncabezado textoEncabezado";
+  }
+
+  .botonAtras {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    grid-area: botonAtras;
+  }
+
+  .flecha {
+    margin-left: 6px;
+  }
+
+  .textoEncabezado h2 {
+    font-size: 28px;
+    margin-top: 15px;
+  }
+
+  .textoEncabezado p {
+    font-size: 20px;
+  }
+
+  /* CUADRO */
+  .titulo {
+    padding: 14px 0;
+    font-size: 20px;
+    margin: 0 12px;
+  }
+
+  .imagenPerfil {
+    grid-area: imagenPerfil;
+    margin: 20px auto;
+    width: 130px;
+    height: 130px;
+    border-style: dashed;
+    border-width: 1px;
+    background-color: #e6e6e6;
+    border-radius: 75px;
+  }
+
+  .imagenPerfil img {
+    width: 100%;
+    height: 130px;
+    border-radius: 75px;
+  }
+
+  .datos {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "imagenPerfil"
+      "text1"
+      "text2";
+    margin: 0 12px 12px;
+  }
+
+  .text1,
+  .text2 {
+    margin: 0 12px;
+    padding: 18px 0 22px;
+    font-size: 20px;
+  }
+
+  .text1 input,
+  .text2 input {
+    height: 35px;
+  }
+}

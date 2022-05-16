@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
     <meta charset="UTF-8">
     <title>Carrito</title>
@@ -12,41 +13,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
-<body>
-<div class="MainCarrito">
-        <div class="Encabezado"></div>
-        <img src="img/ImgLogo.png" class="ImgLogo"></img>
-        <img src="img/ImgLogo.png" class="ImgLogo1"></img>
-        <input type="image" src="/IMG/BotonIMGPerfil.png" class="BotonIMGPerfil">
-        <span class="TextProducto">Producto</span>
-        <span class="TextPrecioPorUnidad">Precio por unidad</span>
-        <span class="TextCantidad">Cantidad</span>
-        <span class="TextSubtotal">Subtotal</span>
-        <div class="Rectangulo1"></div>
 
+<body>
+    <div class="MainCarrito">
+        <div class="Encabezado">
+            <img src="/IMG/ImgLogo.png" class="ImgLogo"></img>
+            <img src="/IMG/ImgLogo.png" class="ImgLogo1"></img>
+            <input type="image" src="/IMG/BotonIMGPerfil.png" class="BotonIMGPerfil">
+            <span class="TextProducto">Producto</span>
+            <span class="TextPrecioPorUnidad">Precio por unidad</span>
+            <span class="TextCantidad">Cantidad</span>
+            <span class="TextSubtotal">Subtotal</span>
+            <div class="Rectangulo1"></div>
+        </div>
         <div class="divListaProductos">
             <!--Contenedor Producto-->
-            <div class="DivProductoCarrito">
-
-                <img src="/IMG/ImgProducto.png" class="ImgProducto">
-                <span class="NombreProducto">Brocoli</span>
-                <span class="NroPrecioUnidad">$1</span>
-                <span class="NroCantidad">1</span>
-                <span class="NroSubtotalUnidad">$ 2.00</span>
-                <input type="image" src="/IMG/BotonImgEliminar.png" class="BotonImgEliminar">
-                <input type="image" src="/IMG/ImgMenos.png" class="ImgMenos">
-                <input type="image" src="/IMG/ImgMas.png" class="ImgMas">
-                <div class="RectanguloProducto"></div>
+            <div th:each="producto : ${}">
+                <div class="DivProductoCarrito">
+                    <img src="/IMG/ImgProducto.png" class="ImgProducto">
+                    <span class="NombreProducto" th:text="${producto.nombre}"></span>
+                    <span id="precioProducto" class="NroPrecioUnidad precio" th:text="${producto.precio}"></span>
+                    <span class="signoPrecioUnidad">$</span>
+                    <span id="unidadesProducto" class="NroCantidad unidades" th:text="${producto.unidades}"></span>
+                    <span id="subtotalProducto" class="NroSubtotalUnidad subtotal" th:text="${producto.precio}"></span>
+                    <span class="signoSubtotalUnidad">$</span>
+                    <input type="image" src="/IMG/BotonImgEliminar.png" class="BotonImgEliminar">
+                    <input id="restarBoton" type="image" src="/IMG/ImgMenos.png" class="ImgMenos sacar">
+                    <input id="sumarBoton" type="image" src="/IMG/ImgMas.png" class="ImgMas agregar">
+                    <div class="RectanguloProducto"></div>
+                </div>
             </div>
-
-        <div class="DivTotal">
-            <p class="TextSubtotal2">Subtotal</p>
-            <p class="NroSubtotal">$ 2.00</p>
-            <p class="TextTotal">Total</p>
-            <p class="NroTotal">$ 2.00</p>
-            <input type="image" src="/IMG/ImgComprar.png" class="ImgComprar">
+            <!--Contenedor Total Productos-->
+            <div class="DivTotal">
+                <p class="TextSubtotal2">Subtotal</p>
+                <p class="NroSubtotal">$ 2.00</p>
+                <p class="TextTotal">Total</p>
+                <p class="NroTotal">$ 2.00</p>
+                <input type="image" src="/IMG/ImgComprar.png" class="ImgComprar">
+            </div>
         </div>
-
-</div>
+    </div>
+    <script src="/JS/Carrito.js"></script>
 </body>
+
 </html>

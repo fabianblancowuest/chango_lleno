@@ -12,19 +12,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@SuppressWarnings("deprecation")
 public class PerfilServicio {
 
     @Autowired
     private PerfilRepository pr;
 
     @Transactional
-    public Perfil crearPerfil(String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil) throws Exception {
+    public Perfil crearPerfil(String nombre, String apellido, List<Compra> historial, Carrito pendiente, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil, String pregunta) throws Exception {
         validator(nombre, apellido, dni, nacimiento, email, domicilio);
         Perfil p = new Perfil();
         p.setApellido(apellido);
         p.setDni(dni);
         p.setDomicilio(domicilio);
         p.setEmail(email);
+        p.setPregunta(pregunta);
         if (fotoPerfil == null || fotoPerfil.isEmpty()) {
             p.setFotoPerfil("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Face-monkey.svg/2048px-Face-monkey.svg.png");
         } else {
@@ -66,6 +68,12 @@ public class PerfilServicio {
         } else {
             throw new Exception("No existe ese perfil");
         }
+    }
+    
+    @Transactional
+    public Perfil cambiarCarrito(Perfil p,Carrito c){
+        p.setPendiente(c);
+        return pr.save(p);
     }
     
     @Transactional

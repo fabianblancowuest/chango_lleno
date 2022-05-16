@@ -34,16 +34,24 @@ public class UsuarioServicio implements UserDetailsService {
     @Autowired
     private PerfilServicio ps;
 
+    @Autowired
+    private CarritoServicio cs;
+    
     @Transactional
+<<<<<<< HEAD
     public Usuario registroUsuario(String username, String password, String nombre, String apellido, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil, List<Compra> historial, Carrito pendiente) throws Exception {
+=======
+    public Usuario registroUsuario(String username, String password, String nombre, String apellido, List<Compra> historial, Long dni, Date nacimiento, String email, String domicilio, String fotoPerfil, String pregunta) throws Exception {
+>>>>>>> 675e954dc6c4d338c8aabf6c20ea9dc95cd50573
         validator(username, password, email);
         Usuario u = new Usuario();
         u.setUsername(username);
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         u.setPassword(encoder.encode(password));
-        Perfil p = ps.crearPerfil(nombre, apellido, historial, pendiente, dni, nacimiento, email, domicilio, fotoPerfil);
-        u.setPerfil(p);
         u.setRole(Role.USER);
+        Carrito pendiente = cs.crearCarrito();
+         Perfil p = ps.crearPerfil(nombre, apellido, historial, pendiente, dni, nacimiento, email, domicilio, fotoPerfil,pregunta);
+         u.setPerfil(p);
         return usuarioRepositorio.save(u);
     }
 
@@ -72,9 +80,6 @@ public class UsuarioServicio implements UserDetailsService {
 
     @Transactional(readOnly = true)
     public Usuario findByEmail(String email) throws Exception {
-        if (usuarioRepositorio.findByEmail(email) == null) {
-            throw new Exception("No existe usuario con ese email");
-        }
         return usuarioRepositorio.findByEmail(email);
     }
 
@@ -99,48 +104,48 @@ public class UsuarioServicio implements UserDetailsService {
 
     public void validator(String username, String password, String email) throws Exception {
         if (findByUsername(username) != null) {
-            throw new Exception("");
+            throw new Exception("1");
         }
         if (username == null || username.trim().isEmpty()) {
-            throw new Exception("");
+            throw new Exception("2");
         }
         if (password == null || password.trim().isEmpty()) {
-            throw new Exception("");
+            throw new Exception("3");
         }
         if (password.length() < 8) {
-            throw new Exception("");
+            throw new Exception("4");
         }
         if (findByEmail(email) != null) {
-            throw new Exception("");
+            throw new Exception("5");
         }
     }
 
     public void validatorModif(Usuario u, String username, String password, String email) throws Exception {
         if (u.getUsername().equals(username)) {
             if (password == null || password.trim().isEmpty()) {
-                throw new Exception("");
+                throw new Exception("6");
             }
             if (password.length() < 8) {
-                throw new Exception("");
+                throw new Exception("7");
             }
         } else {
             if (findByUsername(username) != null) {
-                throw new Exception("");
+                throw new Exception("8");
             }
             if (username == null || username.trim().isEmpty()) {
-                throw new Exception("");
+                throw new Exception("9");
             }
             if (password == null || password.trim().isEmpty()) {
-                throw new Exception("");
+                throw new Exception("10");
             }
             if (password.length() < 8) {
-                throw new Exception("");
+                throw new Exception("11");
             }
         }
 
         if (!u.getPerfil().getEmail().equals(email)) {
             if (findByEmail(email) != null) {
-                throw new Exception("");
+                throw new Exception("12");
             }
         }
     }

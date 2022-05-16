@@ -20,22 +20,24 @@ public class Compra {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    
+    private Integer numerp_orden;
     private LocalDateTime fecha_compra;
       @OneToOne
     private Carrito carro;
-    private String metodopago;
+    private Tarjeta metodopago;
     private Double precio_final;
 
     public Compra() {
     }
 
-    public Compra(LocalDateTime fecha_compra, Carrito carro, String metodopago, Double precio_final) {
-        this.fecha_compra = fecha_compra.now();
+    public Compra(Integer numerp_orden, LocalDateTime fecha_compra, Carrito carro, Tarjeta metodopago, Double precio_final) {
+        this.numerp_orden = numerp_orden;
+        this.fecha_compra = fecha_compra;
         this.carro = carro;
         this.metodopago = metodopago;
         this.precio_final = precio_final;
     }
+
 
     public String getId() {
         return id;
@@ -61,11 +63,11 @@ public class Compra {
         this.carro = carro;
     }
 
-    public String getMetodopago() {
+    public Tarjeta getMetodopago() {
         return metodopago;
     }
 
-    public void setMetodopago(String metodopago) {
+    public void setMetodopago(Tarjeta metodopago) {
         this.metodopago = metodopago;
     }
 
@@ -75,6 +77,14 @@ public class Compra {
 
     public void setPrecio_final(Double precio_final) {
         this.precio_final = precio_final;
+    }
+
+    public Integer getNumerp_orden() {
+        return numerp_orden;
+    }
+
+    public void setNumerp_orden(Integer numerp_orden) {
+        this.numerp_orden = numerp_orden;
     }
     
     

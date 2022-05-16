@@ -1,52 +1,67 @@
 package com.full_monkey.controladores;
 
+import com.full_monkey.entidades.Usuario;
 import com.full_monkey.servicios.PerfilServicio;
+import com.full_monkey.servicios.UsuarioServicio;
 import java.util.Date;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/Perfil")
+@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+@RequestMapping("/perfil")
 public class PerfilController {
 
     @Autowired
     PerfilServicio ps;
+    @Autowired
+    UsuarioServicio us;
     
-    @GetMapping("/{id}")
-    public String mostrarPerfil(@PathVariable String id,ModelMap modelo){
+    @GetMapping
+    public String mostrarPerfil(ModelMap modelo,HttpSession session){
        try{
-            modelo.addAttribute("perfil", ps.findById(id));
-            return "perfil.html";
+           Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
+            modelo.addAttribute("perfil", ps.findById(u.getPerfil().getId()));
+            return "verPerfil.html";
        }catch (Exception e){
            return "redirect:/";
        }
     }
     
-    @GetMapping("/modificar/{id}")
-    public String modificarPerfil(@PathVariable String id,ModelMap modelo){
+    @GetMapping("/modificar")
+    public String modificarPerfil(ModelMap modelo,HttpSession session){
        try{
-            modelo.addAttribute("perfil", ps.findById(id));
-            return "modif-perfil-html";
+           Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
+            modelo.addAttribute("perfil", u);
+            return "modificarPerfil.html";
        }catch (Exception e){
            return "redirect:/";
        }
     }
     
-    @PostMapping("/modificar/{id}")
-    public String cambiarPerfil(@PathVariable String id,ModelMap modelo,@RequestParam String nombre, @RequestParam String apellido, @RequestParam Long dni, @RequestParam Date nacimiento, @RequestParam String email,  @RequestParam String domicilio, @RequestParam String fotoPerfil, @RequestParam Long tarjeta) throws Exception{
+    @PostMapping("/modificar")
+    public String cambiarPerfil(HttpSession session,ModelMap modelo,@RequestParam String username,@RequestParam String password,@RequestParam String nombre,@RequestParam String apellido,@RequestParam Long dni,@RequestParam Date nacimiento,@RequestParam String email,@RequestParam String domicilio,@RequestParam(required = false) String fotoPerfil) throws Exception{
         try{
-            ps.modifPerfil(id, nombre, apellido, dni, nacimiento, email, domicilio, fotoPerfil);
+            Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
+            us.modifUsuario(u.getId(), username, password, u.getPerfil().getId(), nombre, apellido, dni, nacimiento, email, domicilio, fotoPerfil);
             return "redirect:/Perfil";
        }catch (Exception e){
            modelo.put("error", e.getMessage());
-           modelo.addAttribute("perfil", ps.findById(id));
-           return "modif-perfil-html";
+           
+           Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
+            modelo.addAttribute("perfil", u);
+           return "modificarPerfil.html";
        }
     }
 }

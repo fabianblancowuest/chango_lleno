@@ -16,8 +16,12 @@ public class Producto {
     protected String nombre;
     protected Double precio;
     protected Integer stock;
+<<<<<<< HEAD
     
       @OneToOne
+=======
+    @OneToOne
+>>>>>>> 675e954dc6c4d338c8aabf6c20ea9dc95cd50573
     protected Categoria categoria;
     
     protected String descripcion;

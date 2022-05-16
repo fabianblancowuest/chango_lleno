@@ -6,7 +6,7 @@
 .MainCarrito {
 
 
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
 
@@ -154,7 +154,7 @@
 
 .DivProductoCarrito {
 
-    position: static;
+    position: relative;
     width: 1351px;
     height: 104px;
     left: 0px;
@@ -258,15 +258,12 @@
 
     color: #000000;
 }
-
-
-
-.NroSubtotalUnidad {
+.signoPrecioUnidad{
 
     position: absolute;
-    width: 81px;
+    width: 76px;
     height: 33px;
-    left: 1152px;
+    left: 720px;
     top: 37px;
 
     font-family: 'Inder';
@@ -280,6 +277,41 @@
 }
 
 
+.NroSubtotalUnidad {
+
+    position: absolute;
+    width: 81px;
+    height: 33px;
+    left: 1172px;
+    top: 37px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.signoSubtotalUnidad {
+
+    position: absolute;
+    width: 81px;
+    height: 33px;
+    left: 1150px;
+    top: 37px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    /* identical to box height */
+
+    color: #000000;
+}
 
 .BotonImgEliminar {
 

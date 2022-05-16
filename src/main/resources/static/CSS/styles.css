@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
+main div {
+    text-align: center;
+
+}
+.Encabezado {
+    width: 1351px;
+    height: 97px;
+    margin: 0 auto;
+    padding: 1px 26px 11px 43px;
+    border: solid 1px #000;
+    background-color: #ffdc05;
+  }
+
+  .Encabezado1 {
+    width: 1363px;
+    height: 5px;
+    margin: 10px auto;
+    background-color: #ffdc05;
+  }
+
+  .Encabezado2 {
+    width: 1363px;
+    height: 5px;
+    margin: 17px auto;
+    background-color: #c4c4c4;
+  }
+
+
+  .marginlet{
+      margin: auto;
+      text-align: center;
+
+  }
+
+  .fotProducto {
+    width: 216px;
+    height: 40px;
+    flex-grow: 0;
+    margin: 0 84px 12px 13px;
+    font-family: Inder;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .TextNombre {
+    width: 118px;
+    height: 40px;
+    flex-grow: 0;
+    margin: 0 135px 12px 81px;
+    font-family: Inder-Regular;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .TextCategoria {
+    width: 145px;
+    height: 40px;
+    flex-grow: 0;
+    margin: 0 161px 12px 1px;
+    font-family: Inder;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .TextStock {
+    width: 83px;
+    height: 40px;
+    flex-grow: 0;
+    margin: 0 37px 12px 0px;
+    font-family: Inder;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .TextPrecioPorUnidad {
+    width: 165px;
+    height: 40px;
+    margin: 5px 12px 32px 74px;
+    font-family: Inder;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+
+  .Vector {
+    width: 88px;
+    height: 82px;
+    margin: 0 254px -18px -45px;
+  }
+
+  .TextProducto {
+    width: 115px;
+    height: 40px;
+    margin: 0px 129px -1px 0px;
+    font-family: Inder;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .NroPrecioUnidad {
+    width: 96px;
+    height: 33px;
+    margin: 30px 114px 25px 93px;
+    font-family: Inder;
+    font-size: 26px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    
+  }
+
+
+  img.ImgMenos {
+    width: 43px;
+    height: 40px;
+    margin: 28px 1px -11px 21px;
+    object-fit: contain;
+  }
+
+  .NroCantidad {
+    width: 16px;
+    height: 33px;
+    margin: 28px 15px 27px 20px;
+    font-family: Inder;
+    font-size: 26px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  img.ImgMas {
+    width: 43px;
+    height: 40px;
+    margin: 28px 7px -11px 4px;
+    object-fit: contain;
+  }
+
+  .NroCantidadPrecio {
+    width: 31px;
+    height: 33px;
+    margin: 28px 15px 27px 183px;
+    font-family: Inder;
+    font-size: 26px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .RectanguloProdcuto {
+    width: 1282px;
+    height: 5px;
+    margin: 6px 0 0;
+    background-color: #c4c4c4;
+    text-align: center;
+
+  }
