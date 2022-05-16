@@ -51,7 +51,7 @@ public class CompraControladores {
             Perfil p = ps.findById(u.getPerfil().getId());
             ps.agregarCompra(p.getId(), c);
             ps.cambiarCarrito(p, cs.crearCarrito());
-            return "redirect/info";
+            return "redirect/crearCompra/info";
         } catch (Exception e) {
             System.err.println(e.getStackTrace());
             return "redirect:/";
@@ -76,35 +76,35 @@ public class CompraControladores {
         return "CompraFinalizada.html";
     }
 
-    @GetMapping("/editar/{id}")
-    public String editarCompra(@PathVariable String id, Model model) {
-        try {
-            Compra compra = compraServicio.buscarPorId(id);
-            model.addAttribute("compra", compra);
-            return "editar compra";
-        } catch (Exception exc) {
-            exc.printStackTrace();
-            return "redirect:/compra";
-        }
-    }
+//    @GetMapping("/editar/{id}")
+//    public String editarCompra(@PathVariable String id, Model model) {
+//        try {
+//            Compra compra = compraServicio.buscarPorId(id);
+//            model.addAttribute("compra", compra);
+//            return "editar compra";
+//        } catch (Exception exc) {
+//            exc.printStackTrace();
+//            return "redirect:/compra";
+//        }
+//    }
 
-    @GetMapping("/eliminar/{id}")
-    public String eliminarCompra(@PathVariable String id) {
-        Compra compra = compraServicio.buscarPorId(id);
-        compraServicio.eliminar(compra);
-        return "redirect:/compra";
-    }
+//    @GetMapping("/eliminar/{id}")
+//    public String eliminarCompra(@PathVariable String id) {
+//        Compra compra = compraServicio.buscarPorId(id);
+//        compraServicio.eliminar(compra);
+//        return "redirect:/compra";
+//    }
 
-    @PostMapping("/editar/{id}")
-    public String editCompra(String id, Carrito carro, Tarjeta metodopago, Double precio_final) {
-        try {
-            compraServicio.modificar(id, LocalDateTime.now(), carro, metodopago, precio_final);
-            return "redirect:/compra";
-        } catch (Exception exc) {
-            exc.printStackTrace();
-            return "redirect:/compra";
-        }
-    }
+//    @PostMapping("/editar/{id}")
+//    public String editCompra(String id, Carrito carro, Tarjeta metodopago, Double precio_final) {
+//        try {
+//            compraServicio.modificar(id, LocalDateTime.now(), carro, metodopago, precio_final);
+//            return "redirect:/compra";
+//        } catch (Exception exc) {
+//            exc.printStackTrace();
+//            return "redirect:/compra";
+//        }
+//    }
 
     @GetMapping("/historial")
     public String historial(ModelMap model, HttpSession session) throws Exception {

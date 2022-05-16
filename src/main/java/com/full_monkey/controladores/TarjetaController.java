@@ -11,9 +11,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
@@ -55,6 +57,18 @@ public class TarjetaController {
             System.err.println(e.getMessage());
             return "";
         }
+    }
+    
+    @GetMapping("/{id}")
+    public String tarjetaId(@PathVariable String id,RedirectAttributes ra){
+       try{
+          ts.findById(id);
+          ra.addFlashAttribute("actual", ts.findById(id));
+          return "redirect:/compra/crearCompra";
+       }catch(Exception e){
+           System.err.println(e.getMessage());
+           return "redirect:/tarjeta";
+       } 
     }
 }
 

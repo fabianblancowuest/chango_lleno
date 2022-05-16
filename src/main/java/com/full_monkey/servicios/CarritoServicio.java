@@ -69,7 +69,7 @@ public class CarritoServicio {
             producto.setUnidades(producto.getUnidades() - unidades);
             Double total = producto.getPrecio() * unidades;
             carrito.setPrecio_total(carrito.getPrecio_total() - total);
-
+            carrito.getProductos().remove(producto);
             carritoRepository.save(carrito);
         } else {
             throw new Exception("No existe el carrito");
