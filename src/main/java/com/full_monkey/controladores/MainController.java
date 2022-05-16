@@ -35,12 +35,12 @@ private UsuarioServicio usuarioServicio;
         }
         return "login";
     }
-     @GetMapping("/")
+     @GetMapping("/registro")
     public String registrarse() {
         return "registro";
     }
 
-    @PostMapping("/")
+    @PostMapping("/registro")
     public String guardarUsuario(@RequestParam String username, @RequestParam String password, @RequestParam String nombre, @RequestParam String apellido, @RequestParam Long dni, @RequestParam Date nacimiento, @RequestParam String email, @RequestParam String domicilio, @RequestParam String fotoPerfil, @RequestParam List<Compra>historial, @RequestParam Carrito pendiente){
         try {
 
@@ -48,7 +48,7 @@ private UsuarioServicio usuarioServicio;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return "redirect:/login";
+        return "registro";
     }
 
 }
