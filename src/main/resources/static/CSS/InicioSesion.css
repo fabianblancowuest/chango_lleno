@@ -10,18 +10,16 @@
 .fondoImg {
 
     position: absolute;
-    width: 1366px;
-    height: 555px;
+    width: 100%;
+    height: 90%;
     left: 0px;
     top: 70px;
 }
 
 .BannerSuperrior {
 
-
-
 position: absolute;
-width: 1347px;
+width: 100%;
 height: 70px;
 left: 0px;
 top: 0px;}
@@ -31,7 +29,7 @@ top: 0px;}
 .rectanguloSuperior {
 
     position: absolute;
-    width: 1366px;
+    width: 100%;
     height: 70px;
     left: 0px;
     top: 0px;
@@ -45,7 +43,8 @@ top: 0px;}
     position: absolute;
     width: 171px;
     height: 70px;
-    left: 1176px;
+    /* left: 1176px; */
+    right: 5px;
     top: 0px;
     cursor: pointer;
 
@@ -57,7 +56,8 @@ top: 0px;}
     position: absolute;
     width: 60px;
     height: 53px;
-    left: 1113px;
+    /* left: 1113px; */
+    right: 174px;
     top: 6px;
     animation: alternate;
 
@@ -107,6 +107,7 @@ top: 0px;}
     background: #FFFFFF;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 
@@ -187,6 +188,14 @@ top: 0px;}
     border: 1px solid #9E9E9E;
     box-sizing: border-box;
     cursor: pointer;
+
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+
+    color: #FFFFFF;
 }
 
 
@@ -254,6 +263,7 @@ top: 0px;}
     color: #FF0000;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 
 }
 

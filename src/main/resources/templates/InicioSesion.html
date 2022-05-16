@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="UTF-8">
+	<title>InicioSesion</title>
+	<link rel="stylesheet" href="/CSS/InicioSesion.css">
+	<link rel="stylesheet" href="/CSS/estilosPopus.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+	<img class="fondoImg" src="/IMG/fondoImg.png">
+	<div class="BannerSuperrior">
+
+		<div class="rectanguloSuperior"></div>
+		<img src="/IMG/manoMonoImg.png" class=manoMonoImg>
+
+
+		<a th:href="@{/producto/listaDeProductos}"><input type="image" src="/IMG/botonCatalogo.png" class="botonCatalogo"></input></a>
+	</div>
+
+	<div class="IngresarDatos">
+
+		<div class="inicioSesionRectangulo"></div>
+		<img src="/IMG/logoFullMonkeyImg.png" class="logoFullMonkeyImg">
+
+		<a href="#"  id="btn-abrir-popup" class="olvidadoContraseniaText">¿Has olvidado la contraseña?</a>
+
+
+		<div class="crearCuentaRectangulo"></div>
+		<!--<img src="Images/palmeraImg.png" class="palmeraImg">-->
+
+		<!-- th: action -->
+		<form th:action="@{/logincheck}" method="POST">
+			<label for="usuario" class="usuarioText">
+				Usuario
+			</label>
+			<input type="text" name="username" id="usuario" class="usuarioInput"></input>
+			<label for="pass" class="contraceniaText">
+				Contraseña
+			</label>
+			<input type="password" name="password" id="pass" class="contraceniaInput"></input>
+			<button type="submit" class="accederBoton">
+				Acceder </button>
+
+			<!-- <input type="submit" ></input>
+					<span class="accederText">
+						Acceder
+					</span> -->
+		</form>
+		<!-- th: action -->
+
+		<a th:href="@{/registro}" type="button" class="crearCuentaText" onclick="">¿Eres nuevo? Crea tu cuenta</a>
+	</div>
+
+	<div class="overlay" id="overlay">
+		<div class="popup" id="popup">
+			<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+			<h3>¿Olvidaste tu contraseña?</h3>
+			<h4>Completa los siguientes Datos.</h4>
+			<form action="">
+				<div class="contenedor-inputs">
+					<input type="email" placeholder="Ingresa tu Email">
+					<input type="password" placeholder="Contraseña">
+					<input type="password" placeholder="Repetir Contraseña">
+					<input type="text" placeholder="Nombre de tu Primer Mascota">
+				</div>
+				<input type="submit" class="btn-submit" value="Aceptar">
+			</form>
+		</div>
+	</div>
+	<script src="/JS/popup.js"></script>
+</body>
+
+</html>

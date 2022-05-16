@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
@@ -15,7 +16,7 @@
     <header class="header">
         <div class="botonCatalogo">
             <img src="/IMG/manoMono.png" alt="">
-            <a href="">                
+            <a th:href="@{/catalogo}">                
                 <img src="/IMG/botonCatalogo.png" alt="">
             </a>
         </div>
@@ -23,7 +24,7 @@
     <section class="section">
         <div class="formulario">
             <h1>Registro</h1>
-            <form action="">
+            <form th:action="@{/registro}" method="POST">
                 <div class="input-file">
                     <input type="file" id="file" class="input-file-input">
                     <label for="file" class="input-file__btn">
@@ -34,33 +35,33 @@
 
                 <div class="input-text">  
                     <label for="">Usuario</label>
-                    <input type="text">
+                    <input name="username" type="text">
 
                     <label for="">E-Mail</label>
-                    <input type="text">
+                    <input name="email" type="text">
 
                     <label for="">Password</label>
-                    <input type="password">
+                    <input name="password" type="password">
 
                     <label for="">Nombre</label>
-                    <input type="text">
+                    <input name="nombre" type="text">
 
                     <label for="">Apellido</label>
-                    <input type="text">
+                    <input name="apellido" type="text">
                     
                     <label for="">DNI</label>
-                    <input type="text">
+                    <input name="dni" type="text">
 
                     <label for="">Fecha de Nacimiento</label>
-                    <input type="date">
+                    <input name="nacimiento" type="date">
 
                     <label for="">Domicilio</label>
-                    <input type="text">
+                    <input name="domicilio" type="text">
 
                     <label for="">¿Nombre de tu Primer Mascota?</label>
-                    <input type="text">
+                    <input name="pregunta" type="text">
 
-                    <button id="btnCrearCuenta"><img class="iconoCrearUsuario" src="/IMG/IconoCrearUsuario.png" alt="">Crear Cuenta</button>
+                    <button id="btnCrearCuenta" type="submit"><img class="iconoCrearUsuario" src="/IMG/IconoCrearUsuario.png" alt="">Crear Cuenta</button>
 
                     <!--<div class="input-button"> 
                         <input id="btnCrearCuenta" type="submit" value="Crear Cuenta">

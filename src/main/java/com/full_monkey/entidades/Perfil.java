@@ -46,6 +46,15 @@ public class Perfil {
         this.historial = historial;
         this.pendiente = pendiente;
     }
+
+    public String getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(String pregunta) {
+        this.pregunta = pregunta;
+    }
+    
     
     public String getId() {
         return id;

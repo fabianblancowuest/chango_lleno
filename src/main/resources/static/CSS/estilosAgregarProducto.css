@@ -1,0 +1,237 @@
+/* Fuentes
+
+font-family: 'Inder', sans-serif;
+font-family: 'Inria Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+
+*/
+
+*{
+    margin: 0;
+}
+/* HEADER */
+.header{
+    width: 100%;
+    height: 97px;
+    background-color: #FFDC05;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header a{
+    text-decoration: none;
+}
+
+.imgLogo{
+    width: 98px;
+    height: 85px;
+    margin-left: 43px;
+}
+
+.imgIcono{
+    width: 54px;
+    height: 54px;
+    margin-right: 22px;
+}
+
+/* MAIN */
+.main{
+    background-image: url('../img/carroCompra.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.contenedor{
+    width: 1350px;
+    margin: 0 auto;
+}
+
+.cuadro{
+    background-color: white;
+    padding: 20px;
+}
+
+
+
+.datos{
+    display: grid;
+    grid-template-columns: 20% 25% 25% 15% 15%;
+    grid-template-rows: 60px 150px 100px;
+    grid-template-areas: "l1 l2 l3 l4 l5"
+                         "i1 i2 i3 i4 i5"
+                         "boton boton boton boton boton";
+}
+
+.datos label{
+    font-family: 'Inder', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    border-bottom: 2px solid #FFDC05;
+}
+
+.datos input{
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+}
+
+.l1{
+    grid-area: l1;
+}
+.l2{
+    grid-area: l2;
+}
+.l3{
+    grid-area: l3;
+}
+.l4{
+    grid-area: l4;
+}
+.l5{
+    grid-area: l5;
+}
+
+.l1,
+.l2,
+.l3,
+.l4,
+.l5{
+    text-align: center;
+    margin-top: 10px;
+   
+}
+
+
+.i1{
+    grid-area: i1;
+    width: 70%;
+}
+.i2{
+    grid-area: i2;
+    width: 70%;
+}
+.i3{
+    grid-area: i3;
+    width: 70%;
+}
+.i4{
+    grid-area: i4;
+    width: 40%;
+}
+.i5{
+    grid-area: i5;
+    width: 40%;
+}
+
+.i1,
+.i2,
+.i3,
+.i4,
+.i5{
+    margin: 60px auto 25px;
+    padding-left: 10px;
+}
+
+.btnAgregar{
+    margin: 20px auto;
+    grid-area: boton;
+    height: 75px;
+    padding: 0 20px;
+    font-size: 28px;
+    font-family: 'Inder', sans-serif;
+    background-color: #FFDC05;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* TABLET */
+@media screen and (max-width: 768px){
+    .contenedor{
+        width: 100%;
+        margin: 0;
+    }
+
+    .cuadro{
+        background-color: white;
+        padding: 10px;
+    }
+    .datos{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 60px 150px 60px 150px 60px 150px 60px 150px 100px;
+        grid-template-areas: "l1 l1"
+                             "i1 i1"
+                             "l2 l2"
+                             "i2 i2"
+                             "l3 l3"
+                             "i3 i3"
+                             "l4 l5"
+                             "i4 i5"
+                             "boton boton";
+    }
+
+    .i1,
+    .i2,
+    .i3,
+    .i4,
+    .i5{
+        margin: 30px auto 25px;
+        padding-left: 20px;
+    }
+
+    .datos input{
+        font-family: 'Inder', sans-serif;
+        font-size: 20px;
+        height: 70px;
+    }
+}
+
+/* CELULAR */
+@media screen and (max-width: 375px){
+    .datos{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 60px 150px 60px 150px 60px 150px 60px 150px 60px 150px 100px;
+        grid-template-areas: "l1 l1"
+                             "i1 i1"
+                             "l2 l2"
+                             "i2 i2"
+                             "l3 l3"
+                             "i3 i3"
+                             "l4 l4"
+                             "i4 i4"
+                             "l5 l5"
+                             "i5 i5"
+                             "boton boton";
+    }
+    
+    .datos label{
+        font-family: 'Inder', sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        border-bottom: 2px solid #FFDC05;
+    }
+    
+    .datos input{
+        font-family: 'Inder', sans-serif;
+        font-size: 20px;
+        height: 70px;
+    }
+
+    .cuadro{
+        padding: 0 0 20px;
+    }
+
+    .i1,
+    .i2,
+    .i3,
+    .i4,
+    .i5{
+        margin: 20px auto 25px;
+        padding-left: 20px;
+    }
+    
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>detallesCompra</title>
+
+  <link rel="stylesheet" href="/CSS/detallesCompra.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inder&amp;display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&amp;display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header">
+    <!-- th:href -->
+    <a href="#">
+      <img src="/IMG/EnlaceLogoBotonImg.png" alt="" class="enlaceLogoBotonImg" />
+    </a>
+    <!-- th:href -->
+
+    <!-- th:href -->
+    <a href="#">
+      <img src="/IMG/EnlacePerfilBotonImg.png" alt="" class="EnlacePerfilBotonImg" />
+    </a>
+  </header>
+  <!-- th:href -->
+
+  <div class="divDatosCompra">
+    <span class="datosCompraText"> Datos Compra: </span>
+    <div class="divNumeroOrden">
+      <span class="numeroOrdenText"> Numero de orden: </span>
+      <!-- th:value -->
+      <span class="numeroOrdenDato"> 0000<span th:text="${compra.numerp_orden}"></span> </span>
+      <!-- th:value -->
+    </div>
+
+    <div class="divFechaOrden">
+      <span class="fechaOrdenText"> Fecha de orden: </span>
+      <!-- th:value -->
+      <span class="fechaOrdenDato" th:text="${compra.fecha_compra}"></span>
+      <!-- th:value -->
+    </div>
+
+    <div class="divTipoEntrega">
+      <span class="retiroSucursalText"> Tipo de entrega: </span>
+      <!-- th:value -->
+      <span class="direccionDato" th:text="${perfil.domicilio}"> </span>
+      <!-- th:value -->
+    </div>
+
+    <span class="datosComrpadorText"> Datos del comprador: </span>
+
+    <div class="divNombre">
+      <span class="nombreCompradorText"> Nombre: </span>
+      <!-- th:value -->
+      <span class="nombreCompradorDato"> <span th:text="${perfil.nombre}"></span><span> </span><span
+          th:text="${perfil.apellido}"></span> </span>
+      <!-- th:value -->
+    </div>
+
+    <div class="divDni">
+      <span class="dniCompradorText"> DNI: </span>
+      <!-- th:value -->
+      <span class="dniCompradorDato" th:text="${perfil.dni}"></span>
+      <!-- th:value -->
+    </div>
+
+    <div class="divDomicilio">
+      <span class="domicilioCompradorText"> Domicilio: </span>
+      <!-- th:value -->
+      <span class="domicilioCompradorDato" th:text="${perfil.domicilio}"></span>
+      <!-- th:value -->
+    </div>
+
+    <div class="divMail">
+      <span class="mailCompradorText"> Mail: </span>
+      <!-- th:value -->
+      <span class="mailCompradorDato" th:text="${perfil.email}"></span>
+      <!-- th:value -->
+    </div>
+  </div>
+
+  <div class="divListaProductos_divTotal">
+
+    <!-- th:forEch -->
+    <div th:each=" producto : ${compra.carro.productos}">
+      <div class="divProducto" >
+        <!-- th:value -->
+        <span class="nombreProductoDato" th:text="${producto.nombre}"></span>
+        <!-- th:value -->
+
+        <div class="divNroUnidadesDato">
+          <!-- th:value -->
+          <span class="nroUnidadesDato" th:text="${producto.unidades}"> 2 </span>
+          <!-- th:value -->
+          <span class="signoNroUnidadesDato"> X </span>
+        </div>
+
+        <div class="divPrecioProductoDato">
+          <span class="signoPrecioProductoDato"> $ </span>
+          <!-- th:value -->
+          <span class="precioProductoDato" th:text="${producto.precio}"> </span>
+          <!-- th:value -->
+        </div>
+
+        <div class="divNroSubtotalProductoDato">
+          <span class="signoSubtotalProductoDato"> $ </span>
+          <!-- th:value -->
+          <span class="nroSubtotalProductoDato" th:text="${producto.precio * producto.unidades}"> </span>
+          <!-- th:value -->
+        </div>
+      </div>
+    </div>
+    <div class="rectanguloProdcutoVector"></div>
+    <!-- th:forEch -->
+
+    <div class="divTotal_Subtotal">
+      <div class="divSubtotal">
+        <span class="subtotalText"> Subtotal </span>
+
+        <div class="divNroSubtotalDato">
+          <span class="signoNroSubtotalDato"> $ </span>
+          <!-- th:value -->
+          <span class="nroSubtotalDato" th:text="${compra.carro.precio_total}"></span>
+          <!-- th:value -->
+        </div>
+      </div>
+
+      <div class="divTotal">
+        <span class="totalText"> Total </span>
+        <div class="divNroTotalDato">
+          <span class="signoNroTotalDato"> $ </span>
+          <!-- th:value -->
+          <span class="nroTotalDato" th:text="${compra.precio_final}"></span>
+          <!-- th:value -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
