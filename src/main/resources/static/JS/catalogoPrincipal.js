@@ -12,6 +12,6 @@ for (let index = 0; index < array.length; index++) {
                 prev: `.carousel__anterior${index}`,
                 next: `.carousel__siguiente${index}`
             }
-        });
-    });   
+        })
+    })  
 }

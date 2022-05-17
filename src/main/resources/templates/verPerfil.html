@@ -14,11 +14,15 @@
 </head>
 <body>
     <header class="header">
+        <a  class="botonHistorial"th:href="@{/compra/historial}">
+            Ver Historial de Compras
+            <img src="/IMG/boton_detalle.svg" alt="Icono Historial">
+        </a>
     </header>
     <main class="section">
         <div class="contenedor">
             <div class="encabezado">
-                <a class="botonAtras" th:href="@{/}"><img class="flecha" src="IMG/flecha.png" alt="">Volver a la Tienda</a>
+                <a class="botonAtras" th:href="@{/}"><img class="flecha" src="/IMG/flecha.png" alt="">Volver a la Tienda</a>
                 <div class="textoEncabezado">
                     <h2>¡HOLA USUARIO!</h2>
                     <p>Bienvenido a tu cuenta, aqui podras ver todos los datos necesarios para comprar en FULL MONKEY</p>
@@ -46,7 +50,7 @@
                     </div>
 
                     <div class="imagenPerfil">
-                        <img src="IMG/perfil.jpg" alt="Foto de Perfil">
+                        <img src="/IMG/perfil.jpg" alt="Foto de Perfil">
                     </div>
 
                     <div class="text2">

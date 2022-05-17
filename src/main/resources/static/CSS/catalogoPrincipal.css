@@ -901,6 +901,7 @@ top: 2332px;} */
 	display: flex;
 	flex-direction: row;
 	align-content: flex-start;
+	overflow:scroll;
 	/*position: relative;*/
 	/*width: auto;*/
 	/*height: 400px!important;*/

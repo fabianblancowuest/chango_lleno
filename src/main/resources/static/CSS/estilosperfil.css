@@ -15,11 +15,33 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-.header {
-  background-color: #ffdc05;
-  height: 70px;
-  width: 100%;
+/* inicio modificacion*/
+.header{
+    background-color: #FFDC05;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 }
+
+.botonHistorial{
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.botonHistorial img{
+    margin: 0 20px 0 10px;
+    width: 35px;
+    height: 40px;
+}
+/* fin modificacion*/
 
 .section {
   background-image: url("../img/carroCompra.png");

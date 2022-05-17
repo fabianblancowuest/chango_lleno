@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
 	<meta charset="UTF-8">
@@ -25,7 +25,7 @@
 		<div class="Encabezado"></div>
 
 		<!-- th:href -->
-		<a th:href="@{/listaDeProductos}">
+		<a th:href="@{/producto/listaDeProductos}">
 			<img src="/IMG/ImgLogo.png" class="ImgLogo">
 		</a>
 		<!-- th:href -->
@@ -42,12 +42,12 @@
 
 			<!-- th:value -->
 			<div th:if="${tarjeta != null}">
-				<img src="/IMG/mastercarLogoImg.png" class="mastercarLogoImg">
+				<img src="/IMG/tarjetaiconobyn.png" class="mastercarLogoImg">
 				<!-- th:value -->
 				<!-- th:value -->
 				<!-- th:value -->
 				<!-- th:value -->
-				<span class="nroBancoDato">**** **** **** <!--<span th:text="${tarjeta.numfinal}"></span>--></span>
+				<span class="nroBancoDato">**** **** **** ****<!--<span th:text="${tarjeta.numfinal}"></span>--></span>
 				<!-- th:value -->
 
 				<!-- th:value -->
@@ -67,7 +67,7 @@
 			<!-- th:value -->
 
 			<!-- th:value -->
-			<span class="direccionCompletaClienteText" th:text="${perfil.domicilio}"></span>
+			<!--<span class="direccionCompletaClienteText" th:text="${perfil.domicilio}"></span>-->
 			<!-- th:value -->
 
 			<!-- th:value -->
@@ -131,7 +131,7 @@
 			<input type="hidden" name="carro" th:value="${carro.id}">
 			<img src="/IMG/pulgarManoImg.png" class="pulgarManoImg">
 
-			<button type="submit">Confirmar Compra</button>
+			<button type="submit" class="confirmarCompraBoton">Confirmar Compra</button>
 
 			<!--<a class="confirmarCompraBoton" th:href="@{/compra/crearCompra}">Confirmar compra</a>-->
 			

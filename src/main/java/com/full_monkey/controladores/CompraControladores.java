@@ -61,9 +61,9 @@ public class CompraControladores {
             Usuario u = us.findById(user.getId());
             Perfil p = ps.findById(u.getPerfil().getId());
             ps.agregarCompra(p.getId(), c);
+            model.addAttribute("perfil", p);
             ps.cambiarCarrito(p, cs.crearCarrito());
-
-            return "redirect:/compra/historial";
+            return "CompraFinalizada.html";
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getMessage());

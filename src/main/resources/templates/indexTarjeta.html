@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -32,7 +32,7 @@
             <label class="display">
                 <div>
                     <input type="radio" name="color" value="azul" class="radio">
-                    <a th:href="@{/tarjeta/__${tarjeta.id}__}"><img class="img" src="/IMG/imgTarjeta.png" alt=""></a>
+                    <a th:href="@{/tarjeta/__${tarjeta.id}__}"><img class="img" src="/IMG/tarjetaiconobyn.png" alt=""></a>
                     <div class="div">
                         <span class="span-1">xxxx xxxx xxxx <span th:text="${tarjeta.numfinal}"></span></span>
                         <span class="span">Fecha de expiración</span>
