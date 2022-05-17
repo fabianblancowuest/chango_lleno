@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/newCascadeStyleSheettarjeta.css">
+    <link rel="stylesheet" href="/CSS/estilos.css">
+
+</head>
+
+<body>
+    
+
+    <div class="contenedortotal">
+        <div class="flechaatras">
+
+            <a th:href="@{/tarjeta}">
+                <img src="/IMG/flechaatras.png" alt="">
+            </a>
+        </div>
+        <div>
+            <h1>Nueva Tarjeta</h1>
+        </div>
+        <div class="contenedoriconostarjetas">
+            <img src="/IMG/visaazul.png" class="visaazul">
+            <img src="/IMG/maestro.jpg" class="maestro2">
+            <img src="/IMG/american.png" class="american">
+            <img src="/IMG/visanegra.jpg" class="visanegra">
+            <img src="/IMG/mastercard.png" class="mastercard">
+            <img src="/IMG/naranja.jpg" class="naranja">
+
+        </div>
+        <form th:action="@{/tarjeta/registro}" method="POST">
+
+            <div class="input-text">
+                
+                    <label for=""></label>
+                    <input name="numero" type="text" placeholder="numero de tarjeta">
+                
+
+                <label for=""></label>
+                <input name="expiracion" type="text" placeholder="Expiracion(MM/AA)">
+
+                <label for=""></label>
+                <input name="clave" type="password" placeholder="Codigo de seguridad">
+
+                <label for=""></label>
+                <input name="titular" type="text" placeholder="nombre como figura en la tarjeta">
+            </div>
+            <div class="iconoguardartarjeta">
+                <button id="guardartarjeta" type="submit"><img class="iconoguardartarjeta"
+                        src="/IMG/guardartarjeta.png" alt=""></button>
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -26,49 +26,59 @@ public class TarjetaController {
     private TarjetaServicio ts;
     @Autowired
     UsuarioServicio us;
-    
+
     @GetMapping("/registro")
-    public String registrarTarjeta(){
+    public String registrarTarjeta() {
         return "";
     }
-    
+
     @PostMapping("/registro")
-    public String registrarTarjeta(@RequestParam String titular, @RequestParam String fotoempresa,@RequestParam Long numero,@RequestParam Integer clave,@RequestParam String expiracion,HttpSession session) throws Exception{
-        try{
+    public String registrarTarjeta(@RequestParam String titular, @RequestParam String fotoempresa, @RequestParam Long numero, @RequestParam Integer clave, @RequestParam String expiracion, HttpSession session) throws Exception {
+        try {
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
             ts.crearTarjeta(titular, fotoempresa, numero, clave, clave, expiracion, u);
-        return ""; 
-        }catch(Exception e){
+            return "";
+        } catch (Exception e) {
             System.err.println(e.getMessage());
-         return "";   
+            return "";
         }
     }
-    
+
     @GetMapping
-    public String tarjetas(ModelMap modelo, HttpSession session){
-        try{
+    public String tarjetas(ModelMap modelo, HttpSession session) {
+        try {
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
             List<Tarjeta> lt = ts.findByUser(u);
             modelo.addAttribute("tarjetas", lt);
             return "";
-        }catch(Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
             return "";
         }
     }
-    
+
     @GetMapping("/{id}")
-    public String tarjetaId(@PathVariable String id,RedirectAttributes ra){
-       try{
-          ts.findById(id);
-          ra.addFlashAttribute("actual", ts.findById(id));
-          return "redirect:/compra/crearCompra";
-       }catch(Exception e){
-           System.err.println(e.getMessage());
-           return "redirect:/tarjeta";
-       } 
+    public String tarjetaId(@PathVariable String id, RedirectAttributes ra) {
+        try {
+            ts.findById(id);
+            ra.addFlashAttribute("actual", ts.findById(id));
+            return "redirect:/compra/crearCompra";
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return "redirect:/tarjeta";
+        }
+    }
+
+    @GetMapping("/eliminar/{id}")
+    public String eliminarTarjeta(@PathVariable String id) {
+        try{
+            ts.eliminarTarjeta(id);
+            return "redirect:/tarjeta";
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return "redirect:/tarjeta";
+        }
     }
 }
-

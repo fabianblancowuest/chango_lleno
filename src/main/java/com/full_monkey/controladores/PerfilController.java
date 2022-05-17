@@ -30,9 +30,10 @@ public class PerfilController {
        try{
            Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
-            modelo.addAttribute("perfil", ps.findById(u.getPerfil().getId()));
+            modelo.addAttribute("perfil", u);
             return "verPerfil.html";
        }catch (Exception e){
+           e.printStackTrace();
            return "redirect:/";
        }
     }

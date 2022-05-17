@@ -92,6 +92,16 @@ public class CarritoServicio {
             throw new Exception("No existe el carrito");
         }
     }
+    
+    public Carrito buscarId(String id) throws Exception{
+        Optional<Carrito> respuesta = carritoRepository.findById(id);
+         if (respuesta.isPresent()) {
+             Carrito carrito = respuesta.get();
+             return carrito;
+         } else {
+            throw new Exception("No existe el carrito");
+        }
+    }
 
     @Transactional
     public void modificarPrecioDeEnvio(String idCarrito, Double precio_envio) throws Exception {

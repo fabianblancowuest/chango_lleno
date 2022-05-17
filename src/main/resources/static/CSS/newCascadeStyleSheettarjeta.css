@@ -1,0 +1,196 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/05/2022, 17:05:29
+    Author     : andre
+*/
+
+.contenedor{
+position: absolute;
+width: 1291px;
+height: 667px;
+left: 43px;
+top: 83px;
+
+}
+
+.numerotarjeta{
+   position: absolute;
+
+height: 114.03px;
+left: 90px;
+top: 296px;
+border-bottom: 1px solid #000000;
+    
+}
+.contenedortotal{
+    box-sizing: border-box;
+position: absolute;
+width: 1300px;
+height: 715px;
+left: 31px;
+top: 10%;
+
+background: #FFFFFF;
+border: 4px solid #000000;
+}
+.iconoguardartarjeta{
+ position: absolute;
+width: 600px;
+height: 60px;
+
+top: 80%;
+left: 20%;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 32px;
+
+}
+
+
+.contenedornumtarjeta{
+
+position: absolute;
+width: 1261px;
+height: 114.03px;
+left: 1px;
+top: 296px;
+
+}
+.input-text{
+
+position: absolute;
+width: 700px;
+height: 700px;
+top: 45%;
+left: 10%;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 80px;
+line-height: 90px;
+
+color: #939393;
+border-bottom: 1px solid #000000;
+}
+
+
+h1{
+
+position: absolute;
+top: 10%;
+left: 40%;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+}
+
+
+.iconotarjetabyn{
+position: absolute;
+width: 100px;
+height: 100px;
+left: 1134px;
+top: 0px;
+
+background: url(tarjetas-de-credito.png);
+opacity: 0.8;
+}
+
+.contenedoriconostarjetas{
+top: 20%;
+left: 10%;
+position: absolute;
+width: 1130px;
+height: 142px;
+
+}
+
+
+.visaazul{
+position: absolute;
+width: 1261.01px;
+height: 0px;
+left: -49px;
+top: 171.99px;
+
+border: 1px solid #C4C4C4;
+transform: rotate(-0.18deg);
+
+position: absolute;
+width: 152px;
+height: 75px;
+left: 0px;
+top: 44px;
+
+}
+
+.maestro2{
+
+position: absolute;
+width: 78px;
+height: 78px;
+left: 194px;
+top: 41px;
+
+background: url(maestro.png);
+
+}
+.american{
+
+position: absolute;
+width: 140px;
+height: 52px;
+left: 326px;
+top: 58px;
+
+background: url(american-express.png);
+
+}
+.visanegra{
+
+position: absolute;
+width: 163px;
+height: 79px;
+left: 499px;
+top: 40px;
+
+}
+.mastercard{
+
+position: absolute;
+width: 120px;
+height: 100px;
+left: 703px;
+top: 18px;
+
+background: url(mastercard_PNG23.png);
+}
+.naranja{
+
+position: absolute;
+width: 160px;
+height: 120px;
+left: 887px;
+top: 0px;
+
+background: url(Logo_Naranja.png);
+}
+
+.flechaatras img{
+width: 70px;
+}
+.flechaatras img:hover{
+    -webkit-box-shadow: 10px 13px 21px 2px rgba(0,0,0,0.26);
+-moz-box-shadow: 10px 13px 21px 2px rgba(0,0,0,0.26);
+box-shadow: 10px 13px 21px 2px rgba(0,0,0,0.26);
+
+}

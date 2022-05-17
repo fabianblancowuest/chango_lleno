@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+@PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
 @RequestMapping("/carrito")
 public class CarritoController {
 
@@ -38,6 +38,25 @@ public class CarritoController {
 //        carritoServicio.crearCarrito();
 //        return "";
 //    }
+    @GetMapping("/mostrarProductos")
+    public String mostrarProductosDelCarrito(ModelMap modelo, HttpSession session) {
+        try {
+            Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
+            if(user == null){
+                throw new Exception(" hola");
+            }
+
+            List<Producto> productos;
+
+            productos = carritoServicio.mostrarProductos(u.getPerfil().getPendiente().getId());
+            modelo.addAttribute("listaProductos", productos);
+            return "Carrito.html";
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return "redirect:/producto/listaDeProductos";
+        }
+    }
 
     @PostMapping("/mostrarProductos")
     public String cargarCarrito(ModelMap modelo, @ModelAttribute List<String> idProducto, @ModelAttribute List<Integer> unidades, HttpSession session) {
@@ -84,7 +103,6 @@ public class CarritoController {
 //        modelo.addAttribute("listaProductos", producto);
 //        return "";
 //    }
-
 //    @PostMapping("/sacar/{idProducto}")
 //    public String sacarDelCarrito(ModelMap modelo, @PathVariable String idProducto, @RequestParam Integer unidades, HttpSession session) {
 //        try {
@@ -103,7 +121,6 @@ public class CarritoController {
 //            return "";
 //        }
 //    }
-
     @GetMapping("/sacarUno/{idProducto}")
     public String sacarUnoCarrito(ModelMap modelo, HttpSession session, @PathVariable String idProducto) throws Exception {
         Usuario user = (Usuario) session.getAttribute("usuariosession");
@@ -142,7 +159,6 @@ public class CarritoController {
 //            return "";
 //        }
 //    }
-
 //    @GetMapping("/moificarEnvio")
 //    public String mostrarPrecioEnvio(ModelMap modelo, HttpSession session) {
 //        Usuario user = (Usuario) session.getAttribute("usuariosession");
@@ -151,7 +167,6 @@ public class CarritoController {
 //        modelo.put("precioEnvio", u.getPerfil().getPendiente().getPrecio_envio());
 //        return "";
 //    }
-
     @PostMapping("/modificarEnvio")
     public String modificarPrecioEnvio(ModelMap modelo, HttpSession session, Double precioEnvio) {
         Usuario u = (Usuario) session.getAttribute("usuariosession");
@@ -160,22 +175,6 @@ public class CarritoController {
             return "";
         } catch (Exception ex) {
             return "";
-        }
-    }
-
-    @GetMapping("/mostrarProductos")
-    public String mostrarProductosDelCarrito(ModelMap modelo, HttpSession session) {
-        try {
-            Usuario user = (Usuario) session.getAttribute("usuariosession");
-            Usuario u = us.findById(user.getId());
-
-            List<Producto> producto;
-
-            producto = carritoServicio.mostrarProductos(u.getPerfil().getPendiente().getId());
-            modelo.addAttribute("listaProductos", producto);
-            return "Carrito.html";
-        } catch (Exception ex) {
-            return "redirect:/producto/listaDeProductos";
         }
     }
 }

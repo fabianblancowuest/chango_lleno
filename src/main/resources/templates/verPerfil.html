@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/normalizeperfil.css">
-    <link rel="stylesheet" href="static/CSS/estilosperfil.css">
+    <link rel="stylesheet" href="/CSS/normalizeperfil.css">
+    <link rel="stylesheet" href="/CSS/estilosperfil.css">
     <title>Ver Perfil</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <main class="section">
         <div class="contenedor">
             <div class="encabezado">
-                <a class="botonAtras" href=""><img class="flecha" src="IMG/flecha.png" alt="">Volver a la Tienda</a>
+                <a class="botonAtras" th:href="@{/}"><img class="flecha" src="IMG/flecha.png" alt="">Volver a la Tienda</a>
                 <div class="textoEncabezado">
                     <h2>¡HOLA USUARIO!</h2>
                     <p>Bienvenido a tu cuenta, aqui podras ver todos los datos necesarios para comprar en FULL MONKEY</p>
@@ -32,16 +32,16 @@
                 <div class="datos">
                     <div class="text1">
                         <p>Usuario</p>
-                        <p class="par" th:text="${perfil.usuario}">usuario</p>
+                        <p class="par" th:text="${perfil.username}">usuario</p>
                         
                         <p>Nombre<p>
-                        <p class="par" th:text="${perfil.email}">nombre</p>
+                        <p class="par" th:text="${perfil.perfil.nombre}">nombre</p>
 
                         <p>Apellido</p>
-                        <p class="par" th:text="${perfil.apellido}">apellido</p>                       
+                        <p class="par" th:text="${perfil.perfil.apellido}">apellido</p>                       
 
                         <p>DNI<p>
-                        <p class="par" th:text="${perfil.dni}"></p>
+                        <p class="par" th:text="${perfil.perfil.dni}"></p>
                         
                     </div>
 
@@ -51,13 +51,13 @@
 
                     <div class="text2">
                         <p >E-Mail</p>
-                        <p class="par" th:text="${perfil.email}">email</p>
+                        <p class="par" th:text="${perfil.perfil.email}">email</p>
 
                         <p>Fecha de Nacimiento</p>
-                        <p class="par" th:text="${perfil.nacimiento}">11/5/2000</p>
+                        <p class="par" th:text="${perfil.perfil.nacimiento}">11/5/2000</p>
 
                         <p>Domicilio</p>
-                        <p class="par" th:text="${perfil.domicilio}">Domicilio</p>
+                        <p class="par" th:text="${perfil.perfil.domicilio}">Domicilio</p>
                     </div>
                 </div>
 

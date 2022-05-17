@@ -24,6 +24,7 @@ public class Compra {
     private LocalDateTime fecha_compra;
     @OneToOne
     private Carrito carro;
+    @OneToOne
     private Tarjeta metodopago;
     private Double precio_final;
 

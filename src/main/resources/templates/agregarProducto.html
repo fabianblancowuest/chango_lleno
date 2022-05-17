@@ -14,11 +14,11 @@
 </head>
 <body>
     <header class="header">
-        <a href="">
+        <a th:href="@{/}">
             <img class="imgLogo" src="/IMG/ImgLogo.png" alt="">
         </a>
 
-        <a href="">
+        <a th:href="@{/perfil}">
             <img class="imgIcono" src="/IMG/btnPerfil.png" alt="">
         </a>
     </header>
@@ -26,7 +26,7 @@
     <main class="main">
         <div class="contenedor cuadro">
             <div class="">
-                <form class="datos" th:action="@{/producto/crear}">
+                <form class="datos" th:action="@{/producto/crear}" method="POST">
 
                     <label class="l1" for="">Foto Producto</label>
                     <input class="i1" name="img" type="text">

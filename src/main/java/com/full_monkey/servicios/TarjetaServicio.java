@@ -44,18 +44,27 @@ public class TarjetaServicio {
         tarjeta.setUser(user);
         return tr.save(tarjeta);
     }
-    
-    public Tarjeta findById(String id) throws Exception{
+
+    @Transactional(readOnly = true)
+    public Tarjeta findById(String id) throws Exception {
         Tarjeta tarjeta = tr.getById(id);
         if (tarjeta == null) {
             throw new Exception("No Existe una tarjeta con ese id");
-        } 
+        }
         return tr.getById(id);
     }
 
     @Transactional(readOnly = true)
     public List<Tarjeta> findByUser(Usuario user) {
         return tr.findByUser(user);
+    }
+
+    public void eliminarTarjeta(String id) throws Exception {
+        Tarjeta tarjeta = tr.getById(id);
+        if (tarjeta == null) {
+            throw new Exception("No Existe una tarjeta con ese id");
+        }
+        tr.delete(tarjeta);
     }
 
     public void validar(String titular, String fotoempresa, Long numero, Integer numfinal, Integer clave, String expiracion, Usuario user) throws Exception {

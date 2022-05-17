@@ -8,6 +8,7 @@ import com.full_monkey.entidades.Usuario;
 import com.full_monkey.servicios.CarritoServicio;
 import com.full_monkey.servicios.CompraServicio;
 import com.full_monkey.servicios.PerfilServicio;
+import com.full_monkey.servicios.TarjetaServicio;
 import com.full_monkey.servicios.UsuarioServicio;
 import java.time.LocalDateTime;
 import javax.servlet.http.HttpSession;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +37,8 @@ public class CompraControladores {
     private PerfilServicio ps;
     @Autowired
     UsuarioServicio us;
+     @Autowired
+    private TarjetaServicio ts;
 
     @GetMapping("/crearCompra")
     public String crearCompra() {
@@ -42,9 +46,10 @@ public class CompraControladores {
     }
 
     @PostMapping("/crearCompra")
-    public String llenarCompra(@RequestParam Carrito carro, @RequestParam Tarjeta metodopago, ModelMap model, HttpSession session) {
+    public String llenarCompra(@RequestParam String carro, @RequestParam String idmetodopago, ModelMap model, HttpSession session) {
         try {
-            Compra c = compraServicio.crearCompra(carro, metodopago);
+            
+            Compra c = compraServicio.crearCompra(cs.buscarId(carro), ts.findById(idmetodopago));
             model.addAttribute("compra", c);
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());

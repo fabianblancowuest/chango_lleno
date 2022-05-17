@@ -89,9 +89,6 @@ public class ProductoService {
         if (categoria == null){
             throw new Exception("El producto debe tener una categoria");
         }
-        if (descripcion == null ||descripcion.isEmpty()){
-            throw new Exception("No se permite un producto sin descripcion");
-        }
         if (stock == null || !Integer.class.isInstance(stock)){
             throw new Exception("El producto debe tener un stock");
         }

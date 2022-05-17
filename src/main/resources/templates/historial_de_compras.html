@@ -27,17 +27,15 @@
         <div th:each="compra : ${productos}">
             <div class="DivProductoCarrito">
 
-                <span class="nombreProducto" th:text="${compra.numerp_orden}">
-                    00000000001
+                <span class="nombreProducto">
+                    00000<span th:text="${compra.numerp_orden}"></span>
                 </span>
                 <span class="NroPrecioUnidad" th:text="${combra.fecha_compra}">
-                    21/04/2022
                 </span>
                 <span class="NroSubtotalUnidad" th:text="${compra.precio_final}">
-                    $ 180.00
                 </span>
 
-                <a th:href="@{detallesCompra/{id}(id = ${compra.id})}"><img src="/IMG/boton_detalle.svg" alt="" class="boton-detalle"></a>
+                <a th:href="@{compra/__${compra.id}__}"><img src="/IMG/boton_detalle.svg" alt="" class="boton-detalle"></a>
 
                 <!-- Barra gris -->
                 <div class="Encabezado2"></div>

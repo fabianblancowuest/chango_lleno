@@ -51,10 +51,11 @@ public class ProductoController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @RequestMapping(value = "/crear", method = RequestMethod.POST)
-    public ModelAndView productoCrear(ModelMap model,@RequestParam String img, @RequestParam String nombre, @RequestParam Double precio, @RequestParam Integer stock, @RequestParam String area, @RequestParam String descripcion, @RequestParam Integer unidades) throws Exception {
+    public ModelAndView productoCrear(ModelMap model,@RequestParam String img, @RequestParam String nombre, @RequestParam Double precio, @RequestParam Integer stock, @RequestParam String area, @RequestParam(required = false) String descripcion) throws Exception {
         try{
-            productoService.crearProducto(img, nombre, precio, stock, area, descripcion, unidades);
+            productoService.crearProducto(img, nombre, precio, stock, area, descripcion, 0);
         }catch(Exception e){
+            e.printStackTrace();
             model.put("error", e.getMessage());
         }
         return new ModelAndView("agregarProducto");
