@@ -21,11 +21,11 @@
   <body>
     <header class="header">
       <!-- th:href -->
-      <a href=""><img src="/IMG/logoBoton.png" alt="" class="logoBoton" /></a>
+      <a th:href="@{/}"><img src="/IMG/logoBoton.png" alt="" class="logoBoton" /></a>
       <!-- th:href -->
 
       <!-- th:href -->
-      <a href="">
+      <a th:href="@{/perfil}">
         <img src="/IMG/perfilBoton.png" class="perfilBoton">
       </a>
       <!-- th:href -->
@@ -90,7 +90,7 @@
     </div>
 
     <!-- th:href -->
-    <a href="" class="verDetalleDelPedidoBoton">Ver detalles del pedido</a>
+    <a th:href="@{/compra/info/__${compra.id}__}" class="verDetalleDelPedidoBoton">Ver detalles del pedido</a>
     <!-- th:href -->
   </body>
 </html>

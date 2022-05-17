@@ -69,9 +69,18 @@ private UsuarioServicio usuarioServicio;
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }finally{
-            return "redirect:/login";
+            return "redirect:/";
         }
     }
     
-    
+    @PostMapping("/recordar")
+    public String olvidarContrasenia(@RequestParam String email, @RequestParam String contrasenia, @RequestParam String pregunta) throws Exception{
+        try{
+            usuarioServicio.olvidarContrasenia(pregunta, contrasenia, email);
+            return "/";
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return "/";
+        }
+    }
 }

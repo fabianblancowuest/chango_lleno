@@ -23,10 +23,10 @@
 <body>
     <!-- Encabezado -->
     <header class="divHeader">
-        <input type="text" placeholder="   Busqueda" class="BarraBusquedaInput"></input>
-        <input type="image" src="/IMG/lupaImg.png" class="lupaImg" alt="">
-        <input type="image" src="/IMG/carrito.png" class="carritoImgBoton" alt="">
-        <input type="image" src="/IMG/perfilImgBoton.png" class="perfilImgBoton" alt="">
+        <!--<input type="text" placeholder="   Busqueda" class="BarraBusquedaInput"></input>
+        <input type="image" src="/IMG/lupaImg.png" class="lupaImg" alt="">-->
+        <a th:href="@{/carrito/mostrarProductos}"><img src="/IMG/carrito.png" class="carritoImgBoton" alt=""></a>
+        <a th:href="@{/perfil}"><img src="/IMG/perfilImgBoton.png" class="perfilImgBoton" alt=""></a>
     </header>
 
     <main class="CatalogoPrincipal">
@@ -57,45 +57,45 @@
         </div>
 
 
-        <div th:each=" categoria : ${categorias}">
+        <div th:each=" categoria : ${Categorias}">
             <!-- Categoria1 -->
             <div class="divCategoria">
                 <span class="categoria1Text" th:text="${categoria.nombre}">
-                    
+
                 </span>
             </div>
             <!-- Carrucel Items Productos -->
-            <div th:each=" producto : ${listaDeProductos}">
-                <div th:if="${producto.categoria==categoria}">
-                    <div class="divCarruselProductos1">
-                        <div class="carrusel__lista">
+            <div class="divCarruselProductos1">
+                <div class="carrusel__lista">
 
+                    <!--th: forEch-->
+                    
+                        <div th:each=" producto : ${listaDeProductos}" class="divProductoLista1" th:if="${producto.categoria==categoria}">
+
+                            <div class="rectanguloProductoCategoria1"></div>
+                            <img th:src="${producto.img}" class="imagenProductoImg">
+                            <div class="rectanguloProductoLista1"></div>
+
+                            <span class="nombreProductoLista1Dato" th:text="${producto.nombre}"></span>
+
+                            <span class="descripcionProductoLista1Dato" th:text="${producto.descripcion}"></span>
+
+                            <span class="signoPesosText">
+                                $
+                            </span>
+
+                            <span class="precioProductoLista1Dato" th:text="${producto.precio}"></span>
+                            <a th:href="@{/cargarUno/__${producto.id}__}"><img src="/IMG/agregarProductoLista1Boton.png"
+                                    class="agregarProductoLista1Boton"></a>
                             <!--th: forEch-->
-                            <div class="divProductoLista1">
-                                <div class="rectanguloProductoCategoria1"></div>
-                                <img th:src="${producto.img}" class="imagenProductoImg">
-                                <div class="rectanguloProductoLista1"></div>
 
-                                <span class="nombreProductoLista1Dato" th:text="${producto.nombre}"></span>
 
-                                <span class="descripcionProductoLista1Dato" th:text="${producto.descripcion}"></span>
-
-                                <span class="signoPesosText">
-                                    $
-                                </span>
-
-                                <span class="precioProductoLista1Dato" th:text="${producto.precio}"></span>
-                                <a href=""><img src="/IMG/agregarProductoLista1Boton.png" class="agregarProductoLista1Boton"></a>
-                                <!--th: forEch-->
-
-                            </div>
                             <!--th: forEch-->
                             <!--th: forEch-->
                         </div>
-                        <input type="image" src="/IMG/fechaIquierdaImg.png" class="carousel__anterior"></input>
+                    <input type="image" src="/IMG/fechaIquierdaImg.png" class="carousel__anterior"></input>
 
-                        <input type="image" src="/IMG/fechaDerechaImg.png" class="carousel__siguiente"></input>
-                    </div>
+                    <input type="image" src="/IMG/fechaDerechaImg.png" class="carousel__siguiente"></input>
                 </div>
             </div>
         </div>

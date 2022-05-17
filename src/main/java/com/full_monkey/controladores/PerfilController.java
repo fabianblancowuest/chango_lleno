@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,9 +30,10 @@ public class PerfilController {
        try{
            Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
-            modelo.addAttribute("perfil", ps.findById(u.getPerfil().getId()));
+            modelo.addAttribute("perfil", u);
             return "verPerfil.html";
        }catch (Exception e){
+           e.printStackTrace();
            return "redirect:/";
        }
     }
@@ -49,7 +51,7 @@ public class PerfilController {
     }
     
     @PostMapping("/modificar")
-    public String cambiarPerfil(HttpSession session,ModelMap modelo,@RequestParam String username,@RequestParam String password,@RequestParam String nombre,@RequestParam String apellido,@RequestParam Long dni,@RequestParam Date nacimiento,@RequestParam String email,@RequestParam String domicilio,@RequestParam(required = false) String fotoPerfil) throws Exception{
+    public String cambiarPerfil(HttpSession session,ModelMap modelo,@RequestParam String username,@RequestParam String password,@RequestParam String nombre,@RequestParam String apellido,@RequestParam Long dni,@ModelAttribute Date nacimiento,@RequestParam String email,@RequestParam String domicilio,@RequestParam(required = false) String fotoPerfil) throws Exception{
         try{
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());

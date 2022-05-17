@@ -66,12 +66,11 @@
 			<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
 			<h3>¿Olvidaste tu contraseña?</h3>
 			<h4>Completa los siguientes Datos.</h4>
-			<form action="">
+			<form th:action="@{/recordar}" method="POST">
 				<div class="contenedor-inputs">
-					<input type="email" placeholder="Ingresa tu Email">
-					<input type="password" placeholder="Contraseña">
-					<input type="password" placeholder="Repetir Contraseña">
-					<input type="text" placeholder="Nombre de tu Primer Mascota">
+					<input type="email" name="email" placeholder="Ingresa tu Email">
+					<input type="password" name="contrasenia" placeholder="Contraseña">
+					<input type="text" name="pregunta" placeholder="Nombre de tu Primer Mascota">
 				</div>
 				<input type="submit" class="btn-submit" value="Aceptar">
 			</form>

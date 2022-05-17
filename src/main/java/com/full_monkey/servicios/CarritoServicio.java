@@ -69,7 +69,7 @@ public class CarritoServicio {
             producto.setUnidades(producto.getUnidades() - unidades);
             Double total = producto.getPrecio() * unidades;
             carrito.setPrecio_total(carrito.getPrecio_total() - total);
-
+            carrito.getProductos().remove(producto);
             carritoRepository.save(carrito);
         } else {
             throw new Exception("No existe el carrito");
@@ -89,6 +89,16 @@ public class CarritoServicio {
                 throw new Exception("Carrito vacio");
             }
         } else {
+            throw new Exception("No existe el carrito");
+        }
+    }
+    
+    public Carrito buscarId(String id) throws Exception{
+        Optional<Carrito> respuesta = carritoRepository.findById(id);
+         if (respuesta.isPresent()) {
+             Carrito carrito = respuesta.get();
+             return carrito;
+         } else {
             throw new Exception("No existe el carrito");
         }
     }

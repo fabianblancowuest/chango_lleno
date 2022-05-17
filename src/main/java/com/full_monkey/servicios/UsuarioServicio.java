@@ -67,6 +67,18 @@ public class UsuarioServicio implements UserDetailsService {
         u.setUsername(username);
         return usuarioRepositorio.save(u);
     }
+    
+    public Usuario olvidarContrasenia(String pregunta,String password,String email) throws Exception{
+        Usuario u = usuarioRepositorio.findByEmail(email);
+        if(u == null){
+            throw new Exception("no existe usuario con ese email");
+        }
+        if (!u.getPerfil().getPregunta().equalsIgnoreCase(email)){
+            throw new Exception("la respuesta es incorrecta");
+        }
+        u.setPassword(password);
+        return usuarioRepositorio.save(u);
+    }
 
     @Transactional(readOnly = true)
     public Usuario findById(String id) {

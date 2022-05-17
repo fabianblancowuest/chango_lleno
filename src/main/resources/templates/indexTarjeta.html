@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/cssTarjetas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300&family=Raleway:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Tarjeta</title>
+</head>
+
+<body>
+    <a th:href="@{/compra/crearCompra}" class="volver"><img src="/IMG/arrow_back_left_icon_123734.png" alt=""
+            class="flecha">Volver al
+        Carrito</a>
+    <div class="volver-carrito"></div>
+    <div>
+        <h2 class="info">El monto de la compra se descontará una vez que confirmes el medio de pago</h2>
+        <hr class="linea">
+        <h2 class="subtitulo">TARJETAS REGISTRADAS</h2>
+        <a th:href="@{/tarjeta/registro}" class="agregar">AGREGAR NUEVA TARJETA</a>
+
+    </div>
+    <!-- <div class="lineaGris"></div> -->
+    <div th:each=" tarjeta : ${tarjetas}">
+        <fieldset class="fieldset">
+            <label class="display">
+                <div>
+                    <input type="radio" name="color" value="azul" class="radio">
+                    <a th:href="@{/tarjeta/__${tarjeta.id}__}"><img class="img" src="/IMG/imgTarjeta.png" alt=""></a>
+                    <div class="div">
+                        <span class="span-1">xxxx xxxx xxxx <span th:text="${tarjeta.numfinal}"></span></span>
+                        <span class="span">Fecha de expiración</span>
+                        <span class="span" th:text="${tarjeta.expiracion}"></span>
+                    </div>
+
+                </div>
+                <a th:href="@{/eliminar/__${tarjeta.id}__}"><img class="bote" src="/IMG/img_Delete.png" alt=""></a>
+                <div>
+            </label>
+        </fieldset>
+    </div>
+
+</body>
+
+</html>

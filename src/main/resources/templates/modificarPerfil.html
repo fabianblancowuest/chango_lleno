@@ -23,7 +23,7 @@
     <section class="section" >
         <div class="formulario"  id="contenedorForm">
             <h1>Modificar Perfil</h1>
-            <form action="@{/modificar/{id}}" th:object="${Perfil}" method="post" id="FormularioPerfil">
+            <form action="@{/modificar/__${perfil.id}__}" th:object="${Perfil}" method="post" id="FormularioPerfil">
                 <div class="input-file">
                     <input type="file" id="file" class="input-file-input">
                     <label for="file" class="input-file__btn">

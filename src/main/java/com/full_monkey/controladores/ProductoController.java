@@ -21,21 +21,21 @@ public class ProductoController {
     @Autowired
     private CategoriaServicio cs;
 
-    @RequestMapping(value = "/{nombre}", method = RequestMethod.GET)
-    public ModelAndView listaDeProductosConNombre(@PathVariable String nombre) {
-        List<Producto> listaEncontrados = productoService.findByNombre(nombre);
-        ModelMap modelo = new ModelMap();
-        modelo.addAttribute("productos", listaEncontrados);
-        return new ModelAndView("home", modelo);
-    }
+//    @RequestMapping(value = "/{nombre}", method = RequestMethod.GET)
+//    public ModelAndView listaDeProductosConNombre(@PathVariable String nombre) {
+//        List<Producto> listaEncontrados = productoService.findByNombre(nombre);
+//        ModelMap modelo = new ModelMap();
+//        modelo.addAttribute("productos", listaEncontrados);
+//        return new ModelAndView("home", modelo);
+//    }
 
-    @RequestMapping(value = "categoria/{categoria}", method = RequestMethod.GET)
-    public ModelAndView listaDeProductosPorCategoria(@PathVariable String categoria) {
-        List<Producto> listaEncontrados = productoService.finByCategoria(categoria);
-        ModelMap modelo = new ModelMap();
-        modelo.addAttribute("productos", listaEncontrados);
-        return new ModelAndView("home", modelo);
-    }
+//    @RequestMapping(value = "categoria/{categoria}", method = RequestMethod.GET)
+//    public ModelAndView listaDeProductosPorCategoria(@PathVariable String categoria) {
+//        List<Producto> listaEncontrados = productoService.finByCategoria(categoria);
+//        ModelMap modelo = new ModelMap();
+//        modelo.addAttribute("productos", listaEncontrados);
+//        return new ModelAndView("home", modelo);
+//    }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @RequestMapping(value = "eliminar/{id}", method = RequestMethod.DELETE)
@@ -51,27 +51,28 @@ public class ProductoController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @RequestMapping(value = "/crear", method = RequestMethod.POST)
-    public ModelAndView productoCrear(ModelMap model,@RequestParam String img, @RequestParam String nombre, @RequestParam Double precio, @RequestParam Integer stock, @RequestParam String area, @RequestParam String descripcion, @RequestParam Integer unidades) throws Exception {
+    public ModelAndView productoCrear(ModelMap model,@RequestParam String img, @RequestParam String nombre, @RequestParam Double precio, @RequestParam Integer stock, @RequestParam String area, @RequestParam(required = false) String descripcion) throws Exception {
         try{
-            productoService.crearProducto(img, nombre, precio, stock, area, descripcion, unidades);
+            productoService.crearProducto(img, nombre, precio, stock, area, descripcion, 0);
         }catch(Exception e){
+            e.printStackTrace();
             model.put("error", e.getMessage());
         }
         return new ModelAndView("agregarProducto");
     }
 
-    @RequestMapping(value = "/actualizar/{id}", method = RequestMethod.GET)
-    public ModelAndView productoActualizar(@RequestParam String id) throws Exception {
-        ModelMap modelo = new ModelMap();
-        modelo.put("producto", productoService.getOne(id));
-        return new ModelAndView("actualizar", modelo);
-    }
+//    @RequestMapping(value = "/actualizar/{id}", method = RequestMethod.GET)
+//    public ModelAndView productoActualizar(@RequestParam String id) throws Exception {
+//        ModelMap modelo = new ModelMap();
+//        modelo.put("producto", productoService.getOne(id));
+//        return new ModelAndView("actualizar", modelo);
+//    }
 
-    @RequestMapping(value = "/productoActualizado", method = RequestMethod.PUT)
-    public ModelAndView procesarActualizacion(@ModelAttribute("producto") Producto producto) throws Exception {
-        productoService.modificarProducto(producto);
-        return new ModelAndView("actualizado");
-    }
+//    @RequestMapping(value = "/productoActualizado", method = RequestMethod.PUT)
+//    public ModelAndView procesarActualizacion(@ModelAttribute("producto") Producto producto) throws Exception {
+//        productoService.modificarProducto(producto);
+//        return new ModelAndView("actualizado");
+//    }
 
     @RequestMapping(value = "/listaDeProductos", method = RequestMethod.GET)
     public ModelAndView traerTodosLosProductos(ModelMap modelo) throws Exception {
