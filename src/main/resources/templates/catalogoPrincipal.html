@@ -85,7 +85,7 @@
                             </span>
 
                             <span class="precioProductoLista1Dato" th:text="${producto.precio}"></span>
-                            <a th:href="@{/cargarUno/__${producto.id}__}"><img src="/IMG/agregarProductoLista1Boton.png"
+                            <a th:href="@{/carrito/cargar/__${producto.id}__}"><img src="/IMG/agregarProductoLista1Boton.png"
                                     class="agregarProductoLista1Boton"></a>
                             <!--th: forEch-->
 
@@ -93,9 +93,9 @@
                             <!--th: forEch-->
                             <!--th: forEch-->
                         </div>
-                    <input type="image" src="/IMG/fechaIquierdaImg.png" class="carousel__anterior"></input>
+                    <img type="image" src="/IMG/fechaIquierdaImg.png" class="carousel__anterior">
 
-                    <input type="image" src="/IMG/fechaDerechaImg.png" class="carousel__siguiente"></input>
+                    <img type="image" src="/IMG/fechaDerechaImg.png" class="carousel__siguiente">
                 </div>
             </div>
         </div>

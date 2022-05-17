@@ -74,9 +74,9 @@ public class TarjetaServicio {
 
         }
 
-        if (fotoempresa == null || fotoempresa.trim().isEmpty()) {
-            throw new Exception("fotoempresa no tiene que estar vacío");
-        }
+//        if (fotoempresa == null || fotoempresa.trim().isEmpty()) {
+//            throw new Exception("fotoempresa no tiene que estar vacío");
+//        }
 
         if (numero == null || numero < 1) {
             throw new Exception("numero no puede estar vacio");

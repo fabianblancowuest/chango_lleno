@@ -47,13 +47,13 @@
 				<!-- th:value -->
 				<!-- th:value -->
 				<!-- th:value -->
-				<span class="nroBancoDato">**** **** **** <span th:text="${tarjeta.numfinal}"></span></span>
+				<span class="nroBancoDato">**** **** **** <!--<span th:text="${tarjeta.numfinal}"></span>--></span>
 				<!-- th:value -->
 
-				<a th:href="@{/modificarPago}" class="modificarPagoText">Modificar</a>
 				<!-- th:value -->
 				<input type="hidden" name="idmetodopago" th:value="${tarjeta.id}">
 			</div>
+			<a th:href="@{/tarjeta}" class="modificarPagoText">Modificar</a>
 		</div>
 
 		<span class="detallesDelEnvioText">Envio a domicilio</span>
@@ -63,7 +63,7 @@
 			<input type="radio" class="checkBoxEnvio" name="envio" id="checkEnvio" checked></input>
 
 			<!-- th:value -->
-			<span class=" direccionEnvioText"></span>
+			<span class=" direccionEnvioText" th:text="${perfil.domicilio}"></span>
 			<!-- th:value -->
 
 			<!-- th:value -->
@@ -106,7 +106,7 @@
 					<!-- Sobtotal detalle -->
 
 					<!-- th:value -->
-					<span class="nroEnvioDato" th:text="" id="envioPrecio">2</span>
+					<span class="nroEnvioDato" id="envioPrecio">2</span>
 					<!-- th:value -->
 					<span class="SignoNroEnvioText">$</span>
 
@@ -131,13 +131,13 @@
 			<input type="hidden" name="carro" th:value="${carro.id}">
 			<img src="/IMG/pulgarManoImg.png" class="pulgarManoImg">
 
+			<button type="submit">Confirmar Compra</button>
 
-			<input type="submit" value="Confirmar Compra">
 			<!--<a class="confirmarCompraBoton" th:href="@{/compra/crearCompra}">Confirmar compra</a>-->
-
-
+			
+			
 		</div>
-
+		
 	</form>
 	<script src="/JS/script.js" type="text/javascript"></script>
 </body>

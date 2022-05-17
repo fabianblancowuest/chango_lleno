@@ -26,7 +26,7 @@ public class CompraServicio {
         List<Compra> c = compraRepositorio.findAll();
         compra.setNumerp_orden(c.size());
         compra.setMetodopago(metodopago);
-        compra.setPrecio_final(carro.getPrecio_total() + carro.getPrecio_envio());
+        compra.setPrecio_final(carro.getPrecio_total());
         return compraRepositorio.save(compra);
     }
 

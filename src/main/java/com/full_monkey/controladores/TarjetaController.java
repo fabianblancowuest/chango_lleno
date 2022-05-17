@@ -29,19 +29,19 @@ public class TarjetaController {
 
     @GetMapping("/registro")
     public String registrarTarjeta() {
-        return "";
+        return "tarjeta.html";
     }
 
     @PostMapping("/registro")
-    public String registrarTarjeta(@RequestParam String titular, @RequestParam String fotoempresa, @RequestParam Long numero, @RequestParam Integer clave, @RequestParam String expiracion, HttpSession session) throws Exception {
+    public String registrarTarjeta(@RequestParam String titular, @RequestParam(required = false) String fotoempresa, @RequestParam Long numero,@RequestParam Integer numfinal, @RequestParam Integer clave, @RequestParam String expiracion, HttpSession session) throws Exception {
         try {
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
-            ts.crearTarjeta(titular, fotoempresa, numero, clave, clave, expiracion, u);
-            return "";
+            ts.crearTarjeta(titular, fotoempresa, numero, numfinal, clave, expiracion, u);
+            return "redirect:/tarjeta";
         } catch (Exception e) {
             System.err.println(e.getMessage());
-            return "";
+            return "redirect:/compra/crearCompra";
         }
     }
 
@@ -52,10 +52,10 @@ public class TarjetaController {
             Usuario u = us.findById(user.getId());
             List<Tarjeta> lt = ts.findByUser(u);
             modelo.addAttribute("tarjetas", lt);
-            return "";
+            return "indexTarjeta.html";
         } catch (Exception e) {
             System.err.println(e.getMessage());
-            return "";
+            return "redirect:/compra/crearCompra";
         }
     }
 
@@ -63,7 +63,7 @@ public class TarjetaController {
     public String tarjetaId(@PathVariable String id, RedirectAttributes ra) {
         try {
             ts.findById(id);
-            ra.addFlashAttribute("actual", ts.findById(id));
+            ra.addFlashAttribute("tarjeta", ts.findById(id));
             return "redirect:/compra/crearCompra";
         } catch (Exception e) {
             System.err.println(e.getMessage());

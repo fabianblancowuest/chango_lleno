@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    
+
 
     <div class="contenedortotal">
         <div class="flechaatras">
@@ -35,10 +35,12 @@
         <form th:action="@{/tarjeta/registro}" method="POST">
 
             <div class="input-text">
-                
-                    <label for=""></label>
-                    <input name="numero" type="text" placeholder="numero de tarjeta">
-                
+
+                <label for=""></label>
+                <input name="numero" type="text" placeholder="numero de tarjeta">
+
+                <label for=""></label>
+                <input name="numfinal" type="text" placeholder="ultimos 4 digitos de la tarjeta">
 
                 <label for=""></label>
                 <input name="expiracion" type="text" placeholder="Expiracion(MM/AA)">
@@ -50,8 +52,8 @@
                 <input name="titular" type="text" placeholder="nombre como figura en la tarjeta">
             </div>
             <div class="iconoguardartarjeta">
-                <button id="guardartarjeta" type="submit"><img class="iconoguardartarjeta"
-                        src="/IMG/guardartarjeta.png" alt=""></button>
+                <button id="guardartarjeta" type="submit"><img class="iconoguardartarjeta" src="/IMG/guardartarjeta.png"
+                        alt=""></button>
             </div>
         </form>
     </div>

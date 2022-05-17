@@ -1,7 +1,8 @@
-*{
+* {
 	margin: 0;
 	box-sizing: border-box;
 }
+
 .bordesito {
 	border-radius: 100px;
 }
@@ -52,23 +53,23 @@
 	display: flex;
 }
 
-.divFooter{
+.divFooter {
 
 
-/* Auto layout */
+	/* Auto layout */
 
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 0px;
-gap: 262px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	gap: 262px;
 
-position: relative;
-background: #FFDC05;
-/* width: 1366px; */
-height: 40px;  
-/* left: 10px;
+	position: relative;
+	background: #FFDC05;
+	/* width: 1366px; */
+	height: 40px;
+	/* left: 10px;
 top: 2332px;} */
 }
 
@@ -249,48 +250,50 @@ top: 2332px;} */
 .mailText {
 
 
-width: 339px;
-height: 40px;
+	width: 339px;
+	height: 40px;
 
-font-family: 'Inder';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 40px;
-/* identical to box height */
-
-
-color: #000000;
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 40px;
+	/* identical to box height */
 
 
-/* Inside auto layout */
+	color: #000000;
 
-flex: none;
-order: 3;
-flex-grow: 0;}
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 3;
+	flex-grow: 0;
+}
 
 .direccionText {
 
 
-width: 249px;
-height: 40px;
+	width: 249px;
+	height: 40px;
 
-font-family: 'Inder';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 40px;
-/* identical to box height */
-
-
-color: #000000;
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 40px;
+	/* identical to box height */
 
 
-/* Inside auto layout */
+	color: #000000;
 
-flex: none;
-order: 2;
-flex-grow: 0;}
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 2;
+	flex-grow: 0;
+}
 
 
 
@@ -770,7 +773,7 @@ flex-grow: 0;}
 	color: #000000;
 }
 
-.divCategoria{
+.divCategoria {
 	position: relative;
 	/*width: 1366px;*/
 }
@@ -822,7 +825,7 @@ flex-grow: 0;}
 }
 
 .carousel__siguiente,
-.carousel__anterior{
+.carousel__anterior {
 	position: absolute;
 	display: block;
 	width: 52px;
@@ -837,16 +840,16 @@ flex-grow: 0;}
 
 }
 
-.carousel__anterior{
+.carousel__anterior {
 	left: -54px;
 }
 
-.carousel__siguiente{
+.carousel__siguiente {
 	right: -44px;
 }
 
 .carousel__siguiente2,
-.carousel__anterior2{
+.carousel__anterior2 {
 	position: absolute;
 	display: block;
 	width: 52px;
@@ -861,16 +864,16 @@ flex-grow: 0;}
 
 }
 
-.carousel__anterior2{
+.carousel__anterior2 {
 	left: -54px;
 }
 
-.carousel__siguiente2{
+.carousel__siguiente2 {
 	right: -44px;
 }
 
 .carousel__siguiente3,
-.carousel__anterior3{
+.carousel__anterior3 {
 	position: absolute;
 	display: block;
 	width: 52px;
@@ -885,16 +888,19 @@ flex-grow: 0;}
 
 }
 
-.carousel__anterior3{
+.carousel__anterior3 {
 	left: -54px;
 }
 
-.carousel__siguiente3{
+.carousel__siguiente3 {
 	right: -44px;
 }
 
-.carrusel__lista{
+.carrusel__lista {
 
+	display: flex;
+	flex-direction: row;
+	align-content: flex-start;
 	/*position: relative;*/
 	/*width: auto;*/
 	/*height: 400px!important;*/
@@ -911,8 +917,8 @@ flex-grow: 0;}
 .divProductoLista1 {
 
 	position: relative;
-	width: 312px!important;
-	height: 393px!important;
+	width: 312px !important;
+	height: 393px !important;
 	/*margin: 0px 29px;*/
 	/*left: 0px;*/
 	top: 0px;
@@ -920,7 +926,7 @@ flex-grow: 0;}
 	order: 0;
 	flex-grow: 0;
 
-;
+	;
 	/*left: 0px;*/
 
 	/*top: 0px;*/
@@ -1192,25 +1198,26 @@ rectanguloBanner {
 
 
 
-.telefonoText{
+.telefonoText {
 
 
-width: 235px;
-height: 40px;
+	width: 235px;
+	height: 40px;
 
-font-family: 'Inder';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 40px;
-/* identical to box height */
-
-
-color: #000000;
+	font-family: 'Inder';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 40px;
+	/* identical to box height */
 
 
-/* Inside auto layout */
+	color: #000000;
 
-flex: none;
-order: 0;
-flex-grow: 0;}
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}

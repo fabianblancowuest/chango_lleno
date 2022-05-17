@@ -30,12 +30,12 @@
                 <span class="nombreProducto">
                     00000<span th:text="${compra.numerp_orden}"></span>
                 </span>
-                <span class="NroPrecioUnidad" th:text="${combra.fecha_compra}">
+                <span class="NroPrecioUnidad" th:text="${compra.fecha_compra}">
                 </span>
                 <span class="NroSubtotalUnidad" th:text="${compra.precio_final}">
                 </span>
 
-                <a th:href="@{compra/__${compra.id}__}"><img src="/IMG/boton_detalle.svg" alt="" class="boton-detalle"></a>
+                <a th:href="@{/compra/__${compra.id}__}"><img src="/IMG/boton_detalle.svg" alt="" class="boton-detalle"></a>
 
                 <!-- Barra gris -->
                 <div class="Encabezado2"></div>

@@ -51,7 +51,7 @@
     <div class="divTipoEntrega">
       <span class="retiroSucursalText"> Tipo de entrega: </span>
       <!-- th:value -->
-      <span class="direccionDato" th:text="${perfil.domicilio}"> </span>
+      <span class="direccionDato" th:text="${perfil.perfil.domicilio}"> </span>
       <!-- th:value -->
     </div>
 
@@ -60,29 +60,29 @@
     <div class="divNombre">
       <span class="nombreCompradorText"> Nombre: </span>
       <!-- th:value -->
-      <span class="nombreCompradorDato"> <span th:text="${perfil.nombre}"></span><span> </span><span
-          th:text="${perfil.apellido}"></span> </span>
+      <span class="nombreCompradorDato"> <span th:text="${perfil.perfil.nombre}"></span><span> </span><span
+          th:text="${perfil.perfil.apellido}"></span> </span>
       <!-- th:value -->
     </div>
 
     <div class="divDni">
       <span class="dniCompradorText"> DNI: </span>
       <!-- th:value -->
-      <span class="dniCompradorDato" th:text="${perfil.dni}"></span>
+      <span class="dniCompradorDato" th:text="${perfil.perfil.dni}"></span>
       <!-- th:value -->
     </div>
 
     <div class="divDomicilio">
       <span class="domicilioCompradorText"> Domicilio: </span>
       <!-- th:value -->
-      <span class="domicilioCompradorDato" th:text="${perfil.domicilio}"></span>
+      <span class="domicilioCompradorDato" th:text="${perfil.perfil.domicilio}"></span>
       <!-- th:value -->
     </div>
 
     <div class="divMail">
       <span class="mailCompradorText"> Mail: </span>
       <!-- th:value -->
-      <span class="mailCompradorDato" th:text="${perfil.email}"></span>
+      <span class="mailCompradorDato" th:text="${perfil.perfil.email}"></span>
       <!-- th:value -->
     </div>
   </div>

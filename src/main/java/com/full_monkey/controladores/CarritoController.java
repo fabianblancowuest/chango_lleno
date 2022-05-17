@@ -1,9 +1,12 @@
 package com.full_monkey.controladores;
 
+import com.full_monkey.entidades.Carrito;
+import com.full_monkey.entidades.Perfil;
 import com.full_monkey.entidades.Producto;
 import com.full_monkey.entidades.Usuario;
 
 import com.full_monkey.servicios.CarritoServicio;
+import com.full_monkey.servicios.PerfilServicio;
 import com.full_monkey.servicios.ProductoService;
 import com.full_monkey.servicios.UsuarioServicio;
 import java.util.List;
@@ -32,6 +35,7 @@ public class CarritoController {
 
     @Autowired
     UsuarioServicio us;
+    
 
 //    @GetMapping("/crearCarrito")
 //    public String crearCarrito(HttpSession session) {
@@ -43,14 +47,13 @@ public class CarritoController {
         try {
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
-            if(user == null){
-                throw new Exception(" hola");
-            }
 
             List<Producto> productos;
-
-            productos = carritoServicio.mostrarProductos(u.getPerfil().getPendiente().getId());
-            modelo.addAttribute("listaProductos", productos);
+            Perfil p = u.getPerfil();
+            Carrito c = p.getPendiente();
+            modelo.addAttribute("carro", c);
+            productos = carritoServicio.mostrarProductos(c.getId());
+            modelo.addAttribute("listaproductos", productos);
             return "Carrito.html";
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -58,39 +61,60 @@ public class CarritoController {
         }
     }
 
-    @PostMapping("/mostrarProductos")
-    public String cargarCarrito(ModelMap modelo, @ModelAttribute List<String> idProducto, @ModelAttribute List<Integer> unidades, HttpSession session) {
-        try {
-            if (unidades == null) {
-                throw new Exception();
-            }
-
-            Usuario user = (Usuario) session.getAttribute("usuariosession");
-            Usuario u = us.findById(user.getId());
-            for (String producto : idProducto) {
-                for (Integer unidad : unidades) {
-                    Producto prod = productoServicio.getOne(producto);
-                    prod.setStock(prod.getStock() - unidad);
-                    prod.setUnidades(unidad);
-                    carritoServicio.poner(u.getPerfil().getPendiente().getId(), prod);
-                }
-            }
-            return "redirect:/compra/crearCompra";
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            return "redirect:/";
-        }
-    }
+//    @PostMapping("/mostrarProductos")
+//    public String cargarCarrito(ModelMap modelo, @ModelAttribute List<String> idProducto, @ModelAttribute List<Integer> unidades, HttpSession session) {
+//        try {
+//            if (unidades == null) {
+//                throw new Exception();
+//            }
+//
+//            Usuario user = (Usuario) session.getAttribute("usuariosession");
+//            Usuario u = us.findById(user.getId());
+//            for (String producto : idProducto) {
+//                for (Integer unidad : unidades) {
+//                    Producto prod = productoServicio.getOne(producto);
+//                    prod.setStock(prod.getStock() - unidad);
+//                    prod.setUnidades(unidad);
+//                    carritoServicio.poner(u.getPerfil().getPendiente().getId(), prod);
+//                }
+//            }
+//            modelo.addAttribute("carro", u.getPerfil().getPendiente());
+//            return "redirect:/compra/crearCompra";
+//        } catch (Exception ex) {
+//            System.out.println(ex.getMessage());
+//            return "redirect:/";
+//        }
+//    }
 
     @GetMapping("/cargarUno/{idProducto}")
     public String cargarUnoCarrito(ModelMap modelo, @PathVariable String idProducto, HttpSession session) throws Exception {
-        Usuario user = (Usuario) session.getAttribute("usuariosession");
-        Usuario u = us.findById(user.getId());
+        try {
+            Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
 
-        Producto prod = productoServicio.getOne(idProducto);
-        prod.setStock(prod.getStock() - 1);
-        prod.setUnidades(1);
-        carritoServicio.poner(u.getPerfil().getPendiente().getId(), prod);
+            Producto prod = productoServicio.getOne(idProducto);
+            prod.setStock(prod.getStock() - 1);
+            prod.setUnidades(prod.getUnidades() + 1);
+            carritoServicio.poner(u.getPerfil().getPendiente().getId(), prod);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:/carrito/mostrarProductos";
+    }
+    
+    @GetMapping("/cargar/{idProducto}")
+    public String cargarCarrito(ModelMap modelo, @PathVariable String idProducto, HttpSession session) throws Exception {
+        try {
+            Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
+
+            Producto prod = productoServicio.getOne(idProducto);
+            prod.setStock(prod.getStock() - 1);
+            prod.setUnidades(1);
+            carritoServicio.poner(u.getPerfil().getPendiente().getId(), prod);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "redirect:/producto/listaDeProductos";
     }
 
@@ -121,14 +145,25 @@ public class CarritoController {
 //            return "";
 //        }
 //    }
-    @GetMapping("/sacarUno/{idProducto}")
-    public String sacarUnoCarrito(ModelMap modelo, HttpSession session, @PathVariable String idProducto) throws Exception {
+    @GetMapping("/sacar/{idProducto}")
+    public String sacarCarrito(ModelMap modelo, HttpSession session, @PathVariable String idProducto) throws Exception {
         Usuario user = (Usuario) session.getAttribute("usuariosession");
         Usuario u = us.findById(user.getId());
 
         Producto prod = productoServicio.getOne(idProducto);
         prod.setStock(prod.getStock() + prod.getUnidades());
         carritoServicio.sacar(u.getPerfil().getPendiente().getId(), prod, prod.getUnidades());
+        return "redirect:/carrito/mostrarProductos";
+    }
+    
+    @GetMapping("/sacarUno/{idProducto}")
+    public String sacarUnoCarrito(ModelMap modelo, HttpSession session, @PathVariable String idProducto) throws Exception {
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+        Usuario u = us.findById(user.getId());
+
+        Producto prod = productoServicio.getOne(idProducto);
+        prod.setStock(prod.getStock() + 1);
+        carritoServicio.sacar(u.getPerfil().getPendiente().getId(), prod, 1);
         return "redirect:/carrito/mostrarProductos";
     }
 

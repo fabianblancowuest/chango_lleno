@@ -28,40 +28,40 @@
         </div>
         <div class="divListaProductos">
             <!--Contenedor Producto-->
-            <form th:href="@{/carrito/mostrarProductos}">
-                <div th:each="producto : ${productos}">
+            
+                <div th:each="producto : ${listaproductos}">
                     <div class="DivProductoCarrito">
-                        <img src="/IMG/ImgProducto.png" class="ImgProducto">
+                        <img th:src="${producto.img}" class="ImgProducto">
                         <span class="NombreProducto" th:text="${producto.nombre}"></span>
                         <span id="precioProducto" class="NroPrecioUnidad precio" th:text="${producto.precio}"></span>
                         <span class="signoPrecioUnidad">$</span>
                         <span id="unidadesProducto" class="NroCantidad unidades" th:text="${producto.unidades}"></span>
                         <span id="subtotalProducto" class="NroSubtotalUnidad subtotal"
-                            th:text="${producto.precio}"></span>
+                            th:text="${producto.precio * producto.unidades}"></span>
                         <span class="signoSubtotalUnidad">$</span>
-                        <a th:href="@{/sacarUno/__{producto.id}__}"><input type="image" src="/IMG/BotonImgEliminar.png"
+                        <a th:href="@{/carrito/sacar/__${producto.id}__}"><input type="image" src="/IMG/BotonImgEliminar.png"
                                 class="BotonImgEliminar"></a>
-                        <input id="restarBoton" type="image" src="/IMG/ImgMenos.png" class="ImgMenos sacar">
-                        <input id="sumarBoton" type="image" src="/IMG/ImgMas.png" class="ImgMas agregar">
+                        <a th:href="@{/carrito/sacarUno/__${producto.id}__}"><img  src="/IMG/ImgMenos.png" class="ImgMenos sacar"></a>
+                        <a th:href="@{/carrito/cargarUno/__${producto.id}__}"><img  src="/IMG/ImgMas.png" class="ImgMas agregar"></a>
                         <div class="RectanguloProducto"></div>
-                        <input type="hidden" name="idProducto" th:value="${producto.id}">
+                        
                     </div>
                     <div id="forms">
                     </div>
                 </div>
-            </form>
 
-            <!--Contenedor Total Productos-->
-            <div class="DivTotal">
-                <p class="TextSubtotal2">Subtotal</p>
-                <p class="NroSubtotal">$ <span id="subtotalid"></span></p>
-                <p class="TextTotal">Total</p>
-                <p class="NroTotal">$<span id="totalid"></span></p>
-                <input type="image" src="/IMG/ImgComprar.png" class="ImgComprar">
-            </div>
+                <!--Contenedor Total Productos-->
+                <div class="DivTotal">
+                    <p class="TextSubtotal2">Subtotal</p>
+                    <p class="NroSubtotal">$ <span th:text="${carro.precio_total}"></span></p>
+                    <p class="TextTotal">Total</p>
+                    <p class="NroTotal">$<span th:text="${carro.precio_total}"></span></p>
+                    <a th:href="@{/compra/crearCompra}"><img src="/IMG/ImgComprar.png" class="ImgComprar"></a>
+                </div>
+            
         </div>
     </div>
-    <script src="/JS/Carrito.js"></script>
+    <!--<script src="/JS/Carrito.js"></script>-->
 </body>
 
 </html>

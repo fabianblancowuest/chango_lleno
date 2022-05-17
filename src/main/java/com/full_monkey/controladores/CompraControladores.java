@@ -37,18 +37,24 @@ public class CompraControladores {
     private PerfilServicio ps;
     @Autowired
     UsuarioServicio us;
-     @Autowired
+    @Autowired
     private TarjetaServicio ts;
 
     @GetMapping("/crearCompra")
-    public String crearCompra() {
+    public String crearCompra(HttpSession session, ModelMap model) {
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+        Usuario u = us.findById(user.getId());
+        Perfil p = u.getPerfil();
+        Carrito carro = p.getPendiente();
+        model.addAttribute("perfil", p);
+        model.addAttribute("carro", carro);
         return "DetallesPreCompra.html";
     }
 
     @PostMapping("/crearCompra")
     public String llenarCompra(@RequestParam String carro, @RequestParam String idmetodopago, ModelMap model, HttpSession session) {
         try {
-            
+
             Compra c = compraServicio.crearCompra(cs.buscarId(carro), ts.findById(idmetodopago));
             model.addAttribute("compra", c);
             Usuario user = (Usuario) session.getAttribute("usuariosession");
@@ -56,27 +62,36 @@ public class CompraControladores {
             Perfil p = ps.findById(u.getPerfil().getId());
             ps.agregarCompra(p.getId(), c);
             ps.cambiarCarrito(p, cs.crearCarrito());
-            return "redirect/crearCompra/info";
+
+            return "redirect:/compra/historial";
         } catch (Exception e) {
-            System.err.println(e.getStackTrace());
+            e.printStackTrace();
+            System.out.println(e.getMessage());
             return "redirect:/";
         }
     }
 
     @GetMapping("/info/{id}")
-    public String compraFinal(@PathVariable String id, Model model) {
+    public String compraFinal(@PathVariable String id, Model model, HttpSession session) {
         try {
             Compra c = compraServicio.buscarPorId(id);
             model.addAttribute("compra", c);
-            return "CompraFinalizada.html";
+            Usuario user = (Usuario) session.getAttribute("usuariosession");
+            Usuario u = us.findById(user.getId());
+            model.addAttribute("perfil", u);
+            return "detallesCompra.html";
         } catch (Exception e) {
             return "redirect:/";
         }
     }
 
     @GetMapping("/{id}")
-    public String mostarCompra(@PathVariable String id, Model model) {
+    public String mostarCompra(@PathVariable String id, Model model, HttpSession session) throws Exception {
         Compra compra = compraServicio.buscarPorId(id);
+        Usuario user = (Usuario) session.getAttribute("usuariosession");
+        Usuario u = us.findById(user.getId());
+        Perfil p = ps.findById(u.getPerfil().getId());
+        model.addAttribute("perfil", p);
         model.addAttribute("compra", compra);
         return "CompraFinalizada.html";
     }
@@ -92,14 +107,12 @@ public class CompraControladores {
 //            return "redirect:/compra";
 //        }
 //    }
-
 //    @GetMapping("/eliminar/{id}")
 //    public String eliminarCompra(@PathVariable String id) {
 //        Compra compra = compraServicio.buscarPorId(id);
 //        compraServicio.eliminar(compra);
 //        return "redirect:/compra";
 //    }
-
 //    @PostMapping("/editar/{id}")
 //    public String editCompra(String id, Carrito carro, Tarjeta metodopago, Double precio_final) {
 //        try {
@@ -110,14 +123,13 @@ public class CompraControladores {
 //            return "redirect:/compra";
 //        }
 //    }
-
     @GetMapping("/historial")
     public String historial(ModelMap model, HttpSession session) throws Exception {
         try {
             Usuario user = (Usuario) session.getAttribute("usuariosession");
             Usuario u = us.findById(user.getId());
             Perfil p = ps.findById(u.getPerfil().getId());
-            model.addAttribute("productos",p.getHistorial());
+            model.addAttribute("productos", p.getHistorial());
             return "historial_de_compras.html";
         } catch (Exception e) {
             e.printStackTrace();
